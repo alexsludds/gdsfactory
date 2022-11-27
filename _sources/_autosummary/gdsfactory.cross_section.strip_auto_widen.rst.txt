@@ -1,0 +1,6 @@
+﻿gdsfactory.cross\_section.strip\_auto\_widen
+============================================
+
+.. currentmodule:: gdsfactory.cross_section
+
+.. autofunction:: strip_auto_widen

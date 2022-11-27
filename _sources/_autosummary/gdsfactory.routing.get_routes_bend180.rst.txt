@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.get\_routes\_bend180
+=======================================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: get_routes_bend180

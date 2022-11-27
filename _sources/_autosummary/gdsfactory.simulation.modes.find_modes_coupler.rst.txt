@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.modes.find\_modes\_coupler
+================================================
+
+.. currentmodule:: gdsfactory.simulation.modes
+
+.. autofunction:: find_modes_coupler

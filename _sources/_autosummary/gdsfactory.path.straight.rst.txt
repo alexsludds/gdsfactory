@@ -1,0 +1,6 @@
+﻿gdsfactory.path.straight
+========================
+
+.. currentmodule:: gdsfactory.path
+
+.. autofunction:: straight

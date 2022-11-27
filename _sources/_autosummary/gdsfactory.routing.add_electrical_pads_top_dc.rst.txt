@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.add\_electrical\_pads\_top\_dc
+=================================================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: add_electrical_pads_top_dc

@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.fanout\_component
+====================================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: fanout_component

@@ -1,0 +1,1782 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>API &#8212; gdsfactory 6.2.6 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gdsfactory.Component" href="_autosummary/gdsfactory.Component.html" />
+    <link rel="prev" title="Components" href="components.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   gdsfactory 6.2.6
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="git.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/_2_install.html">
+     Install gdsfactory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/_2_klayout.html">
+     Klayout integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/_3_vscode.html">
+     VScode, PyCharm, Spyder, JupyterLab integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/_4_gdsfactory_in_5minutes.html">
+     gdsfactory in 5 minutes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/_0_python.html">
+     Python intro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/_1_git.html">
+     Git: Version control intro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workflow.html">
+   Workflow
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="notebooks.html">
+   Layout tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/00_geometry.html">
+     Component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/01_references.html">
+     References and ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/02_movement.html">
+     Movement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/03_cells_autoname_and_cache.html">
+     Cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/03_layer_stack.html">
+     Layers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/03_waveguides_paths_crossections.html">
+     Path and CrossSection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/04_components_.html">
+     Components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/04_components_hierarchy.html">
+     Components with hierarchy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/04_routing.html">
+     Routing optical and RF ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/041_routing_electical.html">
+     Routing electrical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/07_mask.html">
+     Reticle assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/08_pdk.html">
+     PDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/09_pdk_import.html">
+     Import PDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/common_mistakes.html">
+     Common mistakes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/11_get_netlist.html">
+     get_netlist
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/10_yaml_component.html">
+     YAML Place and AutoRoute
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="plugins_process.html">
+   Plugins: Device simulators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/plugins/devsim/01_pin_waveguide.html">
+     DEVSIM TCAD simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/plugins/thermal/thermal.html">
+     Thermal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="plugins_mode_solver.html">
+   Plugins: Mode solvers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/plugins/mpb/001_mpb_waveguide.html">
+     MPB mode-solver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/plugins/tidy3d/01_tidy3d_modes.html">
+     Tidy3D mode solver
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="plugins_fdtd.html">
+   Plugins: FDTD
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/plugins/lumerical/1_fdtd_sparameters.html">
+     FDTD Lumerical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/plugins/meep/001_meep_sparameters.html">
+     Meep FDTD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/plugins/meep/002_gratings.html">
+     FDTD Meep gratings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/plugins/tidy3d/00_tidy3d.html">
+     FDTD tidy3d
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="plugins_circuits.html">
+   Plugins: Circuit simulators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/plugins/sax/sax.html">
+     SAX circuit simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/plugins/simphony/01_components.html">
+     Simphony circuit simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/plugins/lumerical/2_interconnect.html">
+     Lumerical INTERCONNECT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribution.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CHANGELOG.html">
+   CHANGELOG
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="components.html">
+   Components
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   API
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.Component.html">
+     gdsfactory.Component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.ComponentReference.html">
+     gdsfactory.ComponentReference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.read.import_gds.html">
+     gdsfactory.read.import_gds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.read.from_yaml.html">
+     gdsfactory.read.from_yaml
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.read.from_np.html">
+     gdsfactory.read.from_np
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.read.from_phidl.html">
+     gdsfactory.read.from_phidl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.read.from_dphox.html">
+     gdsfactory.read.from_dphox
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.path.Path.html">
+     gdsfactory.path.Path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.path.straight.html">
+     gdsfactory.path.straight
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.path.euler.html">
+     gdsfactory.path.euler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.path.arc.html">
+     gdsfactory.path.arc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.path.spiral_archimedean.html">
+     gdsfactory.path.spiral_archimedean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.path.smooth.html">
+     gdsfactory.path.smooth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.CrossSection.html">
+     gdsfactory.cross_section.CrossSection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.Transition.html">
+     gdsfactory.cross_section.Transition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.cross_section.html">
+     gdsfactory.cross_section.cross_section
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.strip.html">
+     gdsfactory.cross_section.strip
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.strip_auto_widen.html">
+     gdsfactory.cross_section.strip_auto_widen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.heater_metal.html">
+     gdsfactory.cross_section.heater_metal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.pin.html">
+     gdsfactory.cross_section.pin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.pn.html">
+     gdsfactory.cross_section.pn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.strip_heater_metal_undercut.html">
+     gdsfactory.cross_section.strip_heater_metal_undercut
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.strip_heater_metal.html">
+     gdsfactory.cross_section.strip_heater_metal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.strip_heater_doped.html">
+     gdsfactory.cross_section.strip_heater_doped
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.rib_heater_doped.html">
+     gdsfactory.cross_section.rib_heater_doped
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cross_section.rib_heater_doped_via_stack.html">
+     gdsfactory.cross_section.rib_heater_doped_via_stack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.path.transition.html">
+     gdsfactory.path.transition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cell.html">
+     gdsfactory.cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.cell_without_validator.html">
+     gdsfactory.cell_without_validator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.types.Layer.html">
+     gdsfactory.types.Layer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.types.ComponentSpec.html">
+     gdsfactory.types.ComponentSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.types.LayerSpec.html">
+     gdsfactory.types.LayerSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.types.CrossSectionSpec.html">
+     gdsfactory.types.CrossSectionSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.types.CellSpec.html">
+     gdsfactory.types.CellSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.pack.html">
+     gdsfactory.pack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.grid.html">
+     gdsfactory.grid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.grid_with_text.html">
+     gdsfactory.grid_with_text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.get_netlist.get_netlist.html">
+     gdsfactory.get_netlist.get_netlist
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.write_drc_deck_macro.html">
+     gdsfactory.geometry.write_drc.write_drc_deck_macro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_width.html">
+     gdsfactory.geometry.write_drc.rule_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_space.html">
+     gdsfactory.geometry.write_drc.rule_space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_min_width_or_space.html">
+     gdsfactory.geometry.write_drc.rule_min_width_or_space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_separation.html">
+     gdsfactory.geometry.write_drc.rule_separation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_enclosing.html">
+     gdsfactory.geometry.write_drc.rule_enclosing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_area.html">
+     gdsfactory.geometry.write_drc.rule_area
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_density.html">
+     gdsfactory.geometry.write_drc.rule_density
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_not_inside.html">
+     gdsfactory.geometry.write_drc.rule_not_inside
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.Waveguide.html">
+     gdsfactory.simulation.gtidy3d.modes.Waveguide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler.html">
+     gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_width.html">
+     gdsfactory.simulation.gtidy3d.modes.sweep_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss.html">
+     gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.group_index.html">
+     gdsfactory.simulation.gtidy3d.modes.group_index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.plot_sweep_width.html">
+     gdsfactory.simulation.gtidy3d.modes.plot_sweep_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_modes_waveguide.html">
+     gdsfactory.simulation.modes.find_modes_waveguide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_modes_coupler.html">
+     gdsfactory.simulation.modes.find_modes_coupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_neff_vs_width.html">
+     gdsfactory.simulation.modes.find_neff_vs_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_mode_dispersion.html">
+     gdsfactory.simulation.modes.find_mode_dispersion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_coupling_vs_gap.html">
+     gdsfactory.simulation.modes.find_coupling_vs_gap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_neff_ng_dw_dh.html">
+     gdsfactory.simulation.modes.find_neff_ng_dw_dh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.plot_neff_ng_dw_dh.html">
+     gdsfactory.simulation.modes.plot_neff_ng_dw_dh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.plot_neff_vs_width.html">
+     gdsfactory.simulation.modes.plot_neff_vs_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.plot_coupling_vs_gap.html">
+     gdsfactory.simulation.modes.plot_coupling_vs_gap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.plot.plot_sparameters.html">
+     gdsfactory.simulation.plot.plot_sparameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.plot.plot_imbalance2x2.html">
+     gdsfactory.simulation.plot.plot_imbalance2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.plot.plot_loss2x2.html">
+     gdsfactory.simulation.plot.plot_loss2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.get_effective_indices.html">
+     gdsfactory.simulation.get_effective_indices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_mpi.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep_mpi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_batch.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_mpi.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating_mpi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_batch.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_batch.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.write_sparameters_lumerical.html">
+     gdsfactory.simulation.lumerical.write_sparameters_lumerical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.sax.read.model_from_csv.html">
+     gdsfactory.simulation.sax.read.model_from_csv
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.sax.read.model_from_component.html">
+     gdsfactory.simulation.sax.read.model_from_component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.sax.plot_model.html">
+     gdsfactory.simulation.sax.plot_model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.sax.models.html">
+     gdsfactory.simulation.sax.models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.simphony.plot_model.html">
+     gdsfactory.simulation.simphony.plot_model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.simphony.plot_circuit.html">
+     gdsfactory.simulation.simphony.plot_circuit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.simphony.plot_circuit_montecarlo.html">
+     gdsfactory.simulation.simphony.plot_circuit_montecarlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.simphony.components.html">
+     gdsfactory.simulation.simphony.components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.simphony.component_to_circuit.html">
+     gdsfactory.simulation.simphony.component_to_circuit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.install_design_kit.html">
+     gdsfactory.simulation.lumerical.interconnect.install_design_kit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.add_interconnect_element.html">
+     gdsfactory.simulation.lumerical.interconnect.add_interconnect_element
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings.html">
+     gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.send_to_interconnect.html">
+     gdsfactory.simulation.lumerical.interconnect.send_to_interconnect
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep.html">
+     gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep.html">
+     gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="routing.html">
+   Routing API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.get_route.html">
+     gdsfactory.routing.get_route
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.get_route_from_steps.html">
+     gdsfactory.routing.get_route_from_steps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.route_quad.html">
+     gdsfactory.routing.route_quad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.route_sharp.html">
+     gdsfactory.routing.route_sharp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.get_bundle.html">
+     gdsfactory.routing.get_bundle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.get_bundle_from_steps.html">
+     gdsfactory.routing.get_bundle_from_steps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.get_bundle_path_length_match.html">
+     gdsfactory.routing.get_bundle_path_length_match
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.route_ports_to_side.html">
+     gdsfactory.routing.route_ports_to_side
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.route_south.html">
+     gdsfactory.routing.route_south
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.get_routes_bend180.html">
+     gdsfactory.routing.get_routes_bend180
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.get_routes_straight.html">
+     gdsfactory.routing.get_routes_straight
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.get_route_sbend.html">
+     gdsfactory.routing.get_route_sbend
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.get_bundle_sbend.html">
+     gdsfactory.routing.get_bundle_sbend
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.fanout2x2.html">
+     gdsfactory.routing.fanout2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.fanout_component.html">
+     gdsfactory.routing.fanout_component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.fanout_ports.html">
+     gdsfactory.routing.fanout_ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.add_fiber_array.add_fiber_array.html">
+     gdsfactory.routing.add_fiber_array.add_fiber_array
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.add_fiber_single.add_fiber_single.html">
+     gdsfactory.routing.add_fiber_single.add_fiber_single
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.add_electrical_pads_shortest.html">
+     gdsfactory.routing.add_electrical_pads_shortest
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.add_electrical_pads_top.html">
+     gdsfactory.routing.add_electrical_pads_top
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_autosummary/gdsfactory.routing.add_electrical_pads_top_dc.html">
+     gdsfactory.routing.add_electrical_pads_top_dc
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cli.html">
+   Command line interface
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory/issues/new?title=Issue%20on%20page%20%2Fapi.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory/edit/master/docs/api.rst"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/api.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometry-construction">
+   Geometry Construction
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pack">
+   Pack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#netlist">
+   Netlist
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#klayout-drc">
+   Klayout DRC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mode-solver-plugins">
+   Mode solver Plugins
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fdtd-simulation-plugins">
+   FDTD Simulation Plugins
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#circuit-solver-plugins">
+   Circuit solver Plugins
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>API</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometry-construction">
+   Geometry Construction
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pack">
+   Pack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#netlist">
+   Netlist
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#klayout-drc">
+   Klayout DRC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mode-solver-plugins">
+   Mode solver Plugins
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fdtd-simulation-plugins">
+   FDTD Simulation Plugins
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#circuit-solver-plugins">
+   Circuit solver Plugins
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">#</a></h1>
+<section id="geometry-construction">
+<h2>Geometry Construction<a class="headerlink" href="#geometry-construction" title="Permalink to this headline">#</a></h2>
+<p>Classes and functions for construction and manipulation of geometric objects.</p>
+<p class="rubric">Component definition</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.Component.html#gdsfactory.Component" title="gdsfactory.Component"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Component</span></code></a>([name, with_uuid])</p></td>
+<td><p>A Component is an empty canvas where you add polygons, references and ports             (to connect to other components).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.ComponentReference.html#gdsfactory.ComponentReference" title="gdsfactory.ComponentReference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComponentReference</span></code></a>(component[, origin, ...])</p></td>
+<td><p>Pointer to a Component with x, y, rotation, mirror.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.read.import_gds.html#gdsfactory.read.import_gds" title="gdsfactory.read.import_gds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read.import_gds</span></code></a>(gdspath[, cellname, gdsdir, ...])</p></td>
+<td><p>Returns a Componenent from a GDS file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.read.from_yaml.html#gdsfactory.read.from_yaml" title="gdsfactory.read.from_yaml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read.from_yaml</span></code></a>(yaml_str[, routing_strategy, ...])</p></td>
+<td><p>Returns Component from YAML string or file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.read.from_np.html#gdsfactory.read.from_np" title="gdsfactory.read.from_np"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read.from_np</span></code></a>(ndarray[, nm_per_pixel, layer, ...])</p></td>
+<td><p>Returns Component from a np.ndarray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.read.from_phidl.html#gdsfactory.read.from_phidl" title="gdsfactory.read.from_phidl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read.from_phidl</span></code></a>(component[, port_layer])</p></td>
+<td><p>Returns gdsfactory Component from a phidl Device or function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.read.from_dphox.html#gdsfactory.read.from_dphox" title="gdsfactory.read.from_dphox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read.from_dphox</span></code></a>(device, foundry)</p></td>
+<td><p>Returns Gdsfactory Component from a dphox Device.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">paths</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.path.Path.html#gdsfactory.path.Path" title="gdsfactory.path.Path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Path</span></code></a>([path])</p></td>
+<td><p>Path object for smooth Paths.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.path.straight.html#gdsfactory.path.straight" title="gdsfactory.path.straight"><code class="xref py py-obj docutils literal notranslate"><span class="pre">straight</span></code></a>([length, npoints])</p></td>
+<td><p>Returns a straight path.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.path.euler.html#gdsfactory.path.euler" title="gdsfactory.path.euler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">euler</span></code></a>([radius, angle, p, use_eff, npoints])</p></td>
+<td><p>Returns an euler bend that adiabatically transitions from straight to curved.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.path.arc.html#gdsfactory.path.arc" title="gdsfactory.path.arc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arc</span></code></a>([radius, angle, npoints])</p></td>
+<td><p>Returns a radial arc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.path.spiral_archimedean.html#gdsfactory.path.spiral_archimedean" title="gdsfactory.path.spiral_archimedean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spiral_archimedean</span></code></a>(min_bend_radius, ...)</p></td>
+<td><p>Returns an Archimedean spiral.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.path.smooth.html#gdsfactory.path.smooth" title="gdsfactory.path.smooth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smooth</span></code></a>(points[, radius, bend])</p></td>
+<td><p>Returns a smooth Path from a series of waypoints.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">cross_section functions</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.CrossSection.html#gdsfactory.cross_section.CrossSection" title="gdsfactory.cross_section.CrossSection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CrossSection</span></code></a></p></td>
+<td><p>Waveguide information to extrude a path.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.Transition.html#gdsfactory.cross_section.Transition" title="gdsfactory.cross_section.Transition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Transition</span></code></a></p></td>
+<td><p>Waveguide information to extrude a path between two CrossSection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.cross_section.html#gdsfactory.cross_section.cross_section" title="gdsfactory.cross_section.cross_section"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cross_section</span></code></a>([width, offset, layer, ...])</p></td>
+<td><p>Return CrossSection.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.strip.html#gdsfactory.cross_section.strip" title="gdsfactory.cross_section.strip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strip</span></code></a>([width, offset, layer, width_wide, ...])</p></td>
+<td><p>Return CrossSection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.strip_auto_widen.html#gdsfactory.cross_section.strip_auto_widen" title="gdsfactory.cross_section.strip_auto_widen"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strip_auto_widen</span></code></a>([width, offset, layer, ...])</p></td>
+<td><p>Return CrossSection.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.heater_metal.html#gdsfactory.cross_section.heater_metal" title="gdsfactory.cross_section.heater_metal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heater_metal</span></code></a>(*[, width, offset, layer, ...])</p></td>
+<td><p>Return CrossSection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.pin.html#gdsfactory.cross_section.pin" title="gdsfactory.cross_section.pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pin</span></code></a>([width, layer, layer_slab, ...])</p></td>
+<td><p>Rib PIN doped cross_section.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.pn.html#gdsfactory.cross_section.pn" title="gdsfactory.cross_section.pn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pn</span></code></a>([width, layer, layer_slab, ...])</p></td>
+<td><p>Rib PN doped cross_section.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.strip_heater_metal_undercut.html#gdsfactory.cross_section.strip_heater_metal_undercut" title="gdsfactory.cross_section.strip_heater_metal_undercut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strip_heater_metal_undercut</span></code></a>([width, layer, ...])</p></td>
+<td><p>Returns strip cross_section with top metal and undercut trenches on both.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.strip_heater_metal.html#gdsfactory.cross_section.strip_heater_metal" title="gdsfactory.cross_section.strip_heater_metal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strip_heater_metal</span></code></a>([width, layer, ...])</p></td>
+<td><p>Returns strip cross_section with top heater metal.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.strip_heater_doped.html#gdsfactory.cross_section.strip_heater_doped" title="gdsfactory.cross_section.strip_heater_doped"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strip_heater_doped</span></code></a>([width, layer, ...])</p></td>
+<td><p>Returns strip cross_section with N++ doped heaters on both sides.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.rib_heater_doped.html#gdsfactory.cross_section.rib_heater_doped" title="gdsfactory.cross_section.rib_heater_doped"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rib_heater_doped</span></code></a>([width, layer, ...])</p></td>
+<td><p>Returns rib cross_section with N++ doped heaters on both sides.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cross_section.rib_heater_doped_via_stack.html#gdsfactory.cross_section.rib_heater_doped_via_stack" title="gdsfactory.cross_section.rib_heater_doped_via_stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rib_heater_doped_via_stack</span></code></a>([width, layer, ...])</p></td>
+<td><p>Returns rib cross_section with N++ doped heaters on both sides.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">transitions</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.path.transition.html#gdsfactory.path.transition" title="gdsfactory.path.transition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transition</span></code></a>(cross_section1, cross_section2[, ...])</p></td>
+<td><p>Returns a smoothly-transitioning between two CrossSections.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">decorators</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cell.html#gdsfactory.cell" title="gdsfactory.cell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cell</span></code></a>(func, *args, **kwargs)</p></td>
+<td><p>Decorator for Component functions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.cell_without_validator.html#gdsfactory.cell_without_validator" title="gdsfactory.cell_without_validator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cell_without_validator</span></code></a>(func)</p></td>
+<td><p>Decorator for Component functions.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">types</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.types.Layer.html#gdsfactory.types.Layer" title="gdsfactory.types.Layer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer</span></code></a></p></td>
+<td><p>Tuple of integers (layer, datatype).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.types.ComponentSpec.html#gdsfactory.types.ComponentSpec" title="gdsfactory.types.ComponentSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComponentSpec</span></code></a></p></td>
+<td><p>Description capable of generating a component.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.types.LayerSpec.html#gdsfactory.types.LayerSpec" title="gdsfactory.types.LayerSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LayerSpec</span></code></a></p></td>
+<td><p>Description capable of generating a Layer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.types.CrossSectionSpec.html#gdsfactory.types.CrossSectionSpec" title="gdsfactory.types.CrossSectionSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CrossSectionSpec</span></code></a></p></td>
+<td><p>Description capable of generating a cross_section function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.types.CellSpec.html#gdsfactory.types.CellSpec" title="gdsfactory.types.CellSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CellSpec</span></code></a></p></td>
+<td><p>Description capable of generating a cell function.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pack">
+<h2>Pack<a class="headerlink" href="#pack" title="Permalink to this headline">#</a></h2>
+<p class="rubric">pack</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.pack.html#gdsfactory.pack" title="gdsfactory.pack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pack</span></code></a>(component_list[, spacing, ...])</p></td>
+<td><p>Pack a list of components into as few Components as possible.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.grid.html#gdsfactory.grid" title="gdsfactory.grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid</span></code></a>([components, spacing, separation, ...])</p></td>
+<td><p>Returns Component with a 1D or 2D grid of components.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.grid_with_text.html#gdsfactory.grid_with_text" title="gdsfactory.grid_with_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_with_text</span></code></a>([components, text_prefix, ...])</p></td>
+<td><p>Returns Component with 1D or 2D grid of components with text labels.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="netlist">
+<h2>Netlist<a class="headerlink" href="#netlist" title="Permalink to this headline">#</a></h2>
+<p class="rubric">get_netlist</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.get_netlist.get_netlist.html#gdsfactory.get_netlist.get_netlist" title="gdsfactory.get_netlist.get_netlist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_netlist</span></code></a>(component[, full_settings, ...])</p></td>
+<td><p>From Component returns instances, connections and placements dict.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="klayout-drc">
+<h2>Klayout DRC<a class="headerlink" href="#klayout-drc" title="Permalink to this headline">#</a></h2>
+<p class="rubric">klayout drc</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.write_drc_deck_macro.html#gdsfactory.geometry.write_drc.write_drc_deck_macro" title="gdsfactory.geometry.write_drc.write_drc_deck_macro"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_drc_deck_macro</span></code></a>(rules, layers[, name, ...])</p></td>
+<td><p>Write klayout DRC macro.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_width.html#gdsfactory.geometry.write_drc.rule_width" title="gdsfactory.geometry.write_drc.rule_width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rule_width</span></code></a>(value, layer[, angle_limit])</p></td>
+<td><p>Min feature size.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_space.html#gdsfactory.geometry.write_drc.rule_space" title="gdsfactory.geometry.write_drc.rule_space"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rule_space</span></code></a>(value, layer[, angle_limit])</p></td>
+<td><p>Min Space between shapes of layer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_min_width_or_space.html#gdsfactory.geometry.write_drc.rule_min_width_or_space" title="gdsfactory.geometry.write_drc.rule_min_width_or_space"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rule_min_width_or_space</span></code></a>(width, space, layer)</p></td>
+<td><p>Min width or space violations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_separation.html#gdsfactory.geometry.write_drc.rule_separation" title="gdsfactory.geometry.write_drc.rule_separation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rule_separation</span></code></a>(value, layer1, layer2)</p></td>
+<td><p>Min space between different layers.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_enclosing.html#gdsfactory.geometry.write_drc.rule_enclosing" title="gdsfactory.geometry.write_drc.rule_enclosing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rule_enclosing</span></code></a>(value, layer1, layer2[, ...])</p></td>
+<td><p>Checks if layer1 encloses (is bigger than) layer2 by value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_area.html#gdsfactory.geometry.write_drc.rule_area" title="gdsfactory.geometry.write_drc.rule_area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rule_area</span></code></a>(layer[, min_area_um2])</p></td>
+<td><p>Return script for min area checking.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_density.html#gdsfactory.geometry.write_drc.rule_density" title="gdsfactory.geometry.write_drc.rule_density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rule_density</span></code></a>([layer, layer_floorplan, ...])</p></td>
+<td><p>Return script to ensure density of layer is within min and max.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.geometry.write_drc.rule_not_inside.html#gdsfactory.geometry.write_drc.rule_not_inside" title="gdsfactory.geometry.write_drc.rule_not_inside"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rule_not_inside</span></code></a>(layer, not_inside)</p></td>
+<td><p>Checks for that a layer is not inside another layer.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mode-solver-plugins">
+<h2>Mode solver Plugins<a class="headerlink" href="#mode-solver-plugins" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Mode solver tidy3d</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.Waveguide.html#gdsfactory.simulation.gtidy3d.modes.Waveguide" title="gdsfactory.simulation.gtidy3d.modes.Waveguide"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Waveguide</span></code></a></p></td>
+<td><p>Waveguide Model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler.html#gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler" title="gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WaveguideCoupler</span></code></a></p></td>
+<td><p>Waveguide coupler Model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_width.html#gdsfactory.simulation.gtidy3d.modes.sweep_width" title="gdsfactory.simulation.gtidy3d.modes.sweep_width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sweep_width</span></code></a>([width1, width2, steps, nmodes])</p></td>
+<td><p>Sweep waveguide width and compute effective index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss.html#gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss" title="gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sweep_bend_loss</span></code></a>([bend_radius_min, ...])</p></td>
+<td><p>Returns overlap integral squared for the bend mode mismatch loss.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.group_index.html#gdsfactory.simulation.gtidy3d.modes.group_index" title="gdsfactory.simulation.gtidy3d.modes.group_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">group_index</span></code></a>(wavelength[, wavelength_step, ...])</p></td>
+<td><p>Returns group_index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.modes.plot_sweep_width.html#gdsfactory.simulation.gtidy3d.modes.plot_sweep_width" title="gdsfactory.simulation.gtidy3d.modes.plot_sweep_width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_sweep_width</span></code></a>([width1, width2, steps, ...])</p></td>
+<td><p>Sweep waveguide width and compute effective index.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Mode solver MPB</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_modes_waveguide.html#gdsfactory.simulation.modes.find_modes_waveguide" title="gdsfactory.simulation.modes.find_modes_waveguide"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_modes_waveguide</span></code></a>([tol, wavelength, ...])</p></td>
+<td><p>Computes mode effective and group index for a rectangular waveguide.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_modes_coupler.html#gdsfactory.simulation.modes.find_modes_coupler" title="gdsfactory.simulation.modes.find_modes_coupler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_modes_coupler</span></code></a>([tol, wavelength, ...])</p></td>
+<td><p>Computes mode effective and group index for a rectangular waveguide.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_neff_vs_width.html#gdsfactory.simulation.modes.find_neff_vs_width" title="gdsfactory.simulation.modes.find_neff_vs_width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_neff_vs_width</span></code></a>([width1, width2, steps, ...])</p></td>
+<td><p>Sweep waveguide width and compute effective index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_mode_dispersion.html#gdsfactory.simulation.modes.find_mode_dispersion" title="gdsfactory.simulation.modes.find_mode_dispersion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_mode_dispersion</span></code></a>([wavelength, ...])</p></td>
+<td><p>Returns Mode with correct dispersion (ng).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_coupling_vs_gap.html#gdsfactory.simulation.modes.find_coupling_vs_gap" title="gdsfactory.simulation.modes.find_coupling_vs_gap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_coupling_vs_gap</span></code></a>([gap1, gap2, steps, ...])</p></td>
+<td><p>Returns coupling vs gap pandas DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.find_neff_ng_dw_dh.html#gdsfactory.simulation.modes.find_neff_ng_dw_dh" title="gdsfactory.simulation.modes.find_neff_ng_dw_dh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_neff_ng_dw_dh</span></code></a>([width, thickness, ...])</p></td>
+<td><p>Computes group and effective index for different widths and heights.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.plot_neff_ng_dw_dh.html#gdsfactory.simulation.modes.plot_neff_ng_dw_dh" title="gdsfactory.simulation.modes.plot_neff_ng_dw_dh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_neff_ng_dw_dh</span></code></a>([width, thickness, ...])</p></td>
+<td><p>Plot neff and group index versus width (dw) and height (dh) variations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.plot_neff_vs_width.html#gdsfactory.simulation.modes.plot_neff_vs_width" title="gdsfactory.simulation.modes.plot_neff_vs_width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_neff_vs_width</span></code></a>(df, **kwargs)</p></td>
+<td><p>Plots effective index versus waveguide width.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.modes.plot_coupling_vs_gap.html#gdsfactory.simulation.modes.plot_coupling_vs_gap" title="gdsfactory.simulation.modes.plot_coupling_vs_gap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_coupling_vs_gap</span></code></a>(df, **kwargs)</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fdtd-simulation-plugins">
+<h2>FDTD Simulation Plugins<a class="headerlink" href="#fdtd-simulation-plugins" title="Permalink to this headline">#</a></h2>
+<p class="rubric">common FDTD functions</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.plot.plot_sparameters.html#gdsfactory.simulation.plot.plot_sparameters" title="gdsfactory.simulation.plot.plot_sparameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_sparameters</span></code></a>(sp[, logscale, keys, ...])</p></td>
+<td><p>Plots Sparameters from a dict of np.ndarrays.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.plot.plot_imbalance2x2.html#gdsfactory.simulation.plot.plot_imbalance2x2" title="gdsfactory.simulation.plot.plot_imbalance2x2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_imbalance2x2</span></code></a>(sp[, port1, port2])</p></td>
+<td><p>Plots imbalance in % for 2x2 coupler.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.plot.plot_loss2x2.html#gdsfactory.simulation.plot.plot_loss2x2" title="gdsfactory.simulation.plot.plot_loss2x2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_loss2x2</span></code></a>(sp[, port1, port2])</p></td>
+<td><p>Plots imbalance in % for 2x2 coupler.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.get_effective_indices.html#gdsfactory.simulation.get_effective_indices" title="gdsfactory.simulation.get_effective_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_effective_indices</span></code></a>(ncore, nsubstrate, ...)</p></td>
+<td><p>Returns the effective refractive indices for a 1D mode.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">FDTD meep</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep.html#gdsfactory.simulation.gmeep.write_sparameters_meep" title="gdsfactory.simulation.gmeep.write_sparameters_meep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sparameters_meep</span></code></a>(component[, ...])</p></td>
+<td><p>Returns Sparameters and writes them to npz filepath.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_mpi.html#gdsfactory.simulation.gmeep.write_sparameters_meep_mpi" title="gdsfactory.simulation.gmeep.write_sparameters_meep_mpi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sparameters_meep_mpi</span></code></a>(component[, ...])</p></td>
+<td><p>Write Sparameters using multiple cores and MPI and returns Sparameters filepath.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_batch.html#gdsfactory.simulation.gmeep.write_sparameters_meep_batch" title="gdsfactory.simulation.gmeep.write_sparameters_meep_batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sparameters_meep_batch</span></code></a>(jobs[, ...])</p></td>
+<td><p>Write Sparameters for a batch of jobs using MPI and returns results filepaths.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating.html#gdsfactory.simulation.gmeep.write_sparameters_grating" title="gdsfactory.simulation.gmeep.write_sparameters_grating"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sparameters_grating</span></code></a>([plot, ...])</p></td>
+<td><p>Write grating coupler with fiber Sparameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_mpi.html#gdsfactory.simulation.gmeep.write_sparameters_grating_mpi" title="gdsfactory.simulation.gmeep.write_sparameters_grating_mpi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sparameters_grating_mpi</span></code></a>(instance[, ...])</p></td>
+<td><p>Write grating coupler Sparameters using multiple cores.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_batch.html#gdsfactory.simulation.gmeep.write_sparameters_grating_batch" title="gdsfactory.simulation.gmeep.write_sparameters_grating_batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sparameters_grating_batch</span></code></a>(instances[, ...])</p></td>
+<td><p>Write grating coupler Sparameters using multiple cores in batches of simulations.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">FDTD tidy3d</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters.html#gdsfactory.simulation.gtidy3d.write_sparameters" title="gdsfactory.simulation.gtidy3d.write_sparameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sparameters</span></code></a>(component[, ...])</p></td>
+<td><p>Get full sparameter matrix from a gdsfactory Component.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_batch.html#gdsfactory.simulation.gtidy3d.write_sparameters_batch" title="gdsfactory.simulation.gtidy3d.write_sparameters_batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sparameters_batch</span></code></a>(jobs, **kwargs)</p></td>
+<td><p>Returns Sparameters for a list of write_sparameters_grating_coupler kwargs             where it runs each simulation in parallel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler.html#gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler" title="gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sparameters_grating_coupler</span></code></a>(component)</p></td>
+<td><p>Get sparameter matrix from a gdsfactory grating coupler.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch.html#gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch" title="gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sparameters_grating_coupler_batch</span></code></a>(...)</p></td>
+<td><p>Returns Sparameters for a list of write_sparameters_grating_coupler settings.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">FDTD lumerical</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.write_sparameters_lumerical.html#gdsfactory.simulation.lumerical.write_sparameters_lumerical" title="gdsfactory.simulation.lumerical.write_sparameters_lumerical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_sparameters_lumerical</span></code></a>(component[, ...])</p></td>
+<td><p>Returns and writes component Sparameters using Lumerical FDTD.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="circuit-solver-plugins">
+<h2>Circuit solver Plugins<a class="headerlink" href="#circuit-solver-plugins" title="Permalink to this headline">#</a></h2>
+<p class="rubric">SAX</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.sax.read.model_from_csv.html#gdsfactory.simulation.sax.read.model_from_csv" title="gdsfactory.simulation.sax.read.model_from_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read.model_from_csv</span></code></a>(filepath[, xkey, ...])</p></td>
+<td><p>Returns a SAX Sparameters Model from a CSV file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.sax.read.model_from_component.html#gdsfactory.simulation.sax.read.model_from_component" title="gdsfactory.simulation.sax.read.model_from_component"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read.model_from_component</span></code></a>(component, ...)</p></td>
+<td><p>Returns SAX model from lumerical FDTD simulations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.sax.plot_model.html#gdsfactory.simulation.sax.plot_model" title="gdsfactory.simulation.sax.plot_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_model</span></code></a>(model[, port1, ports2, logscale, ...])</p></td>
+<td><p>Plot Model Sparameters Magnitude.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.sax.models.html#module-gdsfactory.simulation.sax.models" title="gdsfactory.simulation.sax.models"><code class="xref py py-obj docutils literal notranslate"><span class="pre">models</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">simphony</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.simphony.plot_model.html#gdsfactory.simulation.simphony.plot_model" title="gdsfactory.simulation.simphony.plot_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_model</span></code></a>(model[, pin_in, pins, ...])</p></td>
+<td><p>Plot simphony Sparameters for a model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.simphony.plot_circuit.html#gdsfactory.simulation.simphony.plot_circuit" title="gdsfactory.simulation.simphony.plot_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_circuit</span></code></a>(circuit[, pin_in, pins_out, ...])</p></td>
+<td><p>Plot Sparameter circuit transmission over wavelength.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.simphony.plot_circuit_montecarlo.html#gdsfactory.simulation.simphony.plot_circuit_montecarlo" title="gdsfactory.simulation.simphony.plot_circuit_montecarlo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_circuit_montecarlo</span></code></a>(circuit[, pin_in, ...])</p></td>
+<td><p>Plot MonteCarlo simulations variation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.simphony.components.html#module-gdsfactory.simulation.simphony.components" title="gdsfactory.simulation.simphony.components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">components</span></code></a></p></td>
+<td><p>components for gdsfactory simphony circuit simulation plugin.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.simphony.component_to_circuit.html#gdsfactory.simulation.simphony.component_to_circuit" title="gdsfactory.simulation.simphony.component_to_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">component_to_circuit</span></code></a>(component[, model_factory])</p></td>
+<td><p>Returns Simphony circuit from a gdsfactory component netlist.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Lumerical interconnect</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.install_design_kit.html#gdsfactory.simulation.lumerical.interconnect.install_design_kit" title="gdsfactory.simulation.lumerical.interconnect.install_design_kit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">install_design_kit</span></code></a>(session[, install_dir, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.add_interconnect_element.html#gdsfactory.simulation.lumerical.interconnect.add_interconnect_element" title="gdsfactory.simulation.lumerical.interconnect.add_interconnect_element"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_interconnect_element</span></code></a>(session, label, model)</p></td>
+<td><p>Add an element to the Interconnect session.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings.html#gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings" title="gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_interconnect_settings</span></code></a>(instance)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.send_to_interconnect.html#gdsfactory.simulation.lumerical.interconnect.send_to_interconnect" title="gdsfactory.simulation.lumerical.interconnect.send_to_interconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_to_interconnect</span></code></a>(component, session[, ...])</p></td>
+<td><p>Send netlist components to Interconnect and connect them according to netlist.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep.html#gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep" title="gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_wavelength_sweep</span></code></a>(component[, session, ...])</p></td>
+<td><p>Args are the following.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep.html#gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep" title="gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_wavelength_sweep</span></code></a>(ports_out, results[, ...])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="components.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Components</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="_autosummary/gdsfactory.Component.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">gdsfactory.Component</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+      &copy; Copyright 2020, MIT License.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

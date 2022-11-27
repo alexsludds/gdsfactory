@@ -1,0 +1,1856 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gdsfactory.routing.get_bundle &#8212; gdsfactory 6.2.6 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../README.html">
+   gdsfactory 6.2.6
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../git.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/_2_install.html">
+     Install gdsfactory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/_2_klayout.html">
+     Klayout integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/_3_vscode.html">
+     VScode, PyCharm, Spyder, JupyterLab integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/_4_gdsfactory_in_5minutes.html">
+     gdsfactory in 5 minutes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/_0_python.html">
+     Python intro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/_1_git.html">
+     Git: Version control intro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../workflow.html">
+   Workflow
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../notebooks.html">
+   Layout tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/00_geometry.html">
+     Component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/01_references.html">
+     References and ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/02_movement.html">
+     Movement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/03_cells_autoname_and_cache.html">
+     Cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/03_layer_stack.html">
+     Layers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/03_waveguides_paths_crossections.html">
+     Path and CrossSection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/04_components_.html">
+     Components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/04_components_hierarchy.html">
+     Components with hierarchy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/04_routing.html">
+     Routing optical and RF ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/041_routing_electical.html">
+     Routing electrical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/07_mask.html">
+     Reticle assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/08_pdk.html">
+     PDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/09_pdk_import.html">
+     Import PDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/common_mistakes.html">
+     Common mistakes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/11_get_netlist.html">
+     get_netlist
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/10_yaml_component.html">
+     YAML Place and AutoRoute
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../plugins_process.html">
+   Plugins: Device simulators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/plugins/devsim/01_pin_waveguide.html">
+     DEVSIM TCAD simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/plugins/thermal/thermal.html">
+     Thermal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../plugins_mode_solver.html">
+   Plugins: Mode solvers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/plugins/mpb/001_mpb_waveguide.html">
+     MPB mode-solver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/plugins/tidy3d/01_tidy3d_modes.html">
+     Tidy3D mode solver
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../plugins_fdtd.html">
+   Plugins: FDTD
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/plugins/lumerical/1_fdtd_sparameters.html">
+     FDTD Lumerical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/plugins/meep/001_meep_sparameters.html">
+     Meep FDTD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/plugins/meep/002_gratings.html">
+     FDTD Meep gratings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/plugins/tidy3d/00_tidy3d.html">
+     FDTD tidy3d
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../plugins_circuits.html">
+   Plugins: Circuit simulators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/plugins/sax/sax.html">
+     SAX circuit simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/plugins/simphony/01_components.html">
+     Simphony circuit simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../notebooks/plugins/lumerical/2_interconnect.html">
+     Lumerical INTERCONNECT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../contribution.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CHANGELOG.html">
+   CHANGELOG
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../components.html">
+   Components
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../api.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.Component.html">
+     gdsfactory.Component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.ComponentReference.html">
+     gdsfactory.ComponentReference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.read.import_gds.html">
+     gdsfactory.read.import_gds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.read.from_yaml.html">
+     gdsfactory.read.from_yaml
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.read.from_np.html">
+     gdsfactory.read.from_np
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.read.from_phidl.html">
+     gdsfactory.read.from_phidl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.read.from_dphox.html">
+     gdsfactory.read.from_dphox
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.path.Path.html">
+     gdsfactory.path.Path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.path.straight.html">
+     gdsfactory.path.straight
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.path.euler.html">
+     gdsfactory.path.euler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.path.arc.html">
+     gdsfactory.path.arc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.path.spiral_archimedean.html">
+     gdsfactory.path.spiral_archimedean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.path.smooth.html">
+     gdsfactory.path.smooth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.CrossSection.html">
+     gdsfactory.cross_section.CrossSection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.Transition.html">
+     gdsfactory.cross_section.Transition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.cross_section.html">
+     gdsfactory.cross_section.cross_section
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.strip.html">
+     gdsfactory.cross_section.strip
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.strip_auto_widen.html">
+     gdsfactory.cross_section.strip_auto_widen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.heater_metal.html">
+     gdsfactory.cross_section.heater_metal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.pin.html">
+     gdsfactory.cross_section.pin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.pn.html">
+     gdsfactory.cross_section.pn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.strip_heater_metal_undercut.html">
+     gdsfactory.cross_section.strip_heater_metal_undercut
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.strip_heater_metal.html">
+     gdsfactory.cross_section.strip_heater_metal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.strip_heater_doped.html">
+     gdsfactory.cross_section.strip_heater_doped
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.rib_heater_doped.html">
+     gdsfactory.cross_section.rib_heater_doped
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cross_section.rib_heater_doped_via_stack.html">
+     gdsfactory.cross_section.rib_heater_doped_via_stack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.path.transition.html">
+     gdsfactory.path.transition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cell.html">
+     gdsfactory.cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.cell_without_validator.html">
+     gdsfactory.cell_without_validator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.types.Layer.html">
+     gdsfactory.types.Layer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.types.ComponentSpec.html">
+     gdsfactory.types.ComponentSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.types.LayerSpec.html">
+     gdsfactory.types.LayerSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.types.CrossSectionSpec.html">
+     gdsfactory.types.CrossSectionSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.types.CellSpec.html">
+     gdsfactory.types.CellSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.pack.html">
+     gdsfactory.pack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.grid.html">
+     gdsfactory.grid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.grid_with_text.html">
+     gdsfactory.grid_with_text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.get_netlist.get_netlist.html">
+     gdsfactory.get_netlist.get_netlist
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.geometry.write_drc.write_drc_deck_macro.html">
+     gdsfactory.geometry.write_drc.write_drc_deck_macro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.geometry.write_drc.rule_width.html">
+     gdsfactory.geometry.write_drc.rule_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.geometry.write_drc.rule_space.html">
+     gdsfactory.geometry.write_drc.rule_space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.geometry.write_drc.rule_min_width_or_space.html">
+     gdsfactory.geometry.write_drc.rule_min_width_or_space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.geometry.write_drc.rule_separation.html">
+     gdsfactory.geometry.write_drc.rule_separation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.geometry.write_drc.rule_enclosing.html">
+     gdsfactory.geometry.write_drc.rule_enclosing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.geometry.write_drc.rule_area.html">
+     gdsfactory.geometry.write_drc.rule_area
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.geometry.write_drc.rule_density.html">
+     gdsfactory.geometry.write_drc.rule_density
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.geometry.write_drc.rule_not_inside.html">
+     gdsfactory.geometry.write_drc.rule_not_inside
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.Waveguide.html">
+     gdsfactory.simulation.gtidy3d.modes.Waveguide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler.html">
+     gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_width.html">
+     gdsfactory.simulation.gtidy3d.modes.sweep_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss.html">
+     gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.group_index.html">
+     gdsfactory.simulation.gtidy3d.modes.group_index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.plot_sweep_width.html">
+     gdsfactory.simulation.gtidy3d.modes.plot_sweep_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.modes.find_modes_waveguide.html">
+     gdsfactory.simulation.modes.find_modes_waveguide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.modes.find_modes_coupler.html">
+     gdsfactory.simulation.modes.find_modes_coupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.modes.find_neff_vs_width.html">
+     gdsfactory.simulation.modes.find_neff_vs_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.modes.find_mode_dispersion.html">
+     gdsfactory.simulation.modes.find_mode_dispersion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.modes.find_coupling_vs_gap.html">
+     gdsfactory.simulation.modes.find_coupling_vs_gap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.modes.find_neff_ng_dw_dh.html">
+     gdsfactory.simulation.modes.find_neff_ng_dw_dh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.modes.plot_neff_ng_dw_dh.html">
+     gdsfactory.simulation.modes.plot_neff_ng_dw_dh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.modes.plot_neff_vs_width.html">
+     gdsfactory.simulation.modes.plot_neff_vs_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.modes.plot_coupling_vs_gap.html">
+     gdsfactory.simulation.modes.plot_coupling_vs_gap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.plot.plot_sparameters.html">
+     gdsfactory.simulation.plot.plot_sparameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.plot.plot_imbalance2x2.html">
+     gdsfactory.simulation.plot.plot_imbalance2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.plot.plot_loss2x2.html">
+     gdsfactory.simulation.plot.plot_loss2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.get_effective_indices.html">
+     gdsfactory.simulation.get_effective_indices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_mpi.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep_mpi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_batch.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_mpi.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating_mpi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_batch.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_batch.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.lumerical.write_sparameters_lumerical.html">
+     gdsfactory.simulation.lumerical.write_sparameters_lumerical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.sax.read.model_from_csv.html">
+     gdsfactory.simulation.sax.read.model_from_csv
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.sax.read.model_from_component.html">
+     gdsfactory.simulation.sax.read.model_from_component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.sax.plot_model.html">
+     gdsfactory.simulation.sax.plot_model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.sax.models.html">
+     gdsfactory.simulation.sax.models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.simphony.plot_model.html">
+     gdsfactory.simulation.simphony.plot_model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.simphony.plot_circuit.html">
+     gdsfactory.simulation.simphony.plot_circuit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.simphony.plot_circuit_montecarlo.html">
+     gdsfactory.simulation.simphony.plot_circuit_montecarlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.simphony.components.html">
+     gdsfactory.simulation.simphony.components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.simphony.component_to_circuit.html">
+     gdsfactory.simulation.simphony.component_to_circuit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.install_design_kit.html">
+     gdsfactory.simulation.lumerical.interconnect.install_design_kit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.add_interconnect_element.html">
+     gdsfactory.simulation.lumerical.interconnect.add_interconnect_element
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings.html">
+     gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.send_to_interconnect.html">
+     gdsfactory.simulation.lumerical.interconnect.send_to_interconnect
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep.html">
+     gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep.html">
+     gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../routing.html">
+   Routing API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.get_route.html">
+     gdsfactory.routing.get_route
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.get_route_from_steps.html">
+     gdsfactory.routing.get_route_from_steps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.route_quad.html">
+     gdsfactory.routing.route_quad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.route_sharp.html">
+     gdsfactory.routing.route_sharp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.get_bundle.html">
+     gdsfactory.routing.get_bundle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.get_bundle_from_steps.html">
+     gdsfactory.routing.get_bundle_from_steps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.get_bundle_path_length_match.html">
+     gdsfactory.routing.get_bundle_path_length_match
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.route_ports_to_side.html">
+     gdsfactory.routing.route_ports_to_side
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.route_south.html">
+     gdsfactory.routing.route_south
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.get_routes_bend180.html">
+     gdsfactory.routing.get_routes_bend180
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.get_routes_straight.html">
+     gdsfactory.routing.get_routes_straight
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.get_route_sbend.html">
+     gdsfactory.routing.get_route_sbend
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.get_bundle_sbend.html">
+     gdsfactory.routing.get_bundle_sbend
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.fanout2x2.html">
+     gdsfactory.routing.fanout2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.fanout_component.html">
+     gdsfactory.routing.fanout_component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.fanout_ports.html">
+     gdsfactory.routing.fanout_ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.add_fiber_array.add_fiber_array.html">
+     gdsfactory.routing.add_fiber_array.add_fiber_array
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.add_fiber_single.add_fiber_single.html">
+     gdsfactory.routing.add_fiber_single.add_fiber_single
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.add_electrical_pads_shortest.html">
+     gdsfactory.routing.add_electrical_pads_shortest
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.add_electrical_pads_top.html">
+     gdsfactory.routing.add_electrical_pads_top
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../_autosummary/gdsfactory.routing.add_electrical_pads_top_dc.html">
+     gdsfactory.routing.add_electrical_pads_top_dc
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cli.html">
+   Command line interface
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory/issues/new?title=Issue%20on%20page%20%2F_modules/gdsfactory/routing/get_bundle.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <h1>Source code for gdsfactory.routing.get_bundle</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Routes bundles of ports (river routing).</span>
+
+<span class="sd">get bundle is the generic river routing function</span>
+<span class="sd">get_bundle calls different function depending on the port orientation.</span>
+
+<span class="sd"> - get_bundle_same_axis: ports facing each other with arbitrary pitch on each side</span>
+<span class="sd"> - get_bundle_corner: 90Deg / 270Deg between ports with arbitrary pitch</span>
+<span class="sd"> - get_bundle_udirect: ports with direct U-turns</span>
+<span class="sd"> - get_bundle_uindirect: ports with indirect U-turns</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">ndarray</span>
+
+<span class="kn">import</span> <span class="nn">gdsfactory</span> <span class="k">as</span> <span class="nn">gf</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.component</span> <span class="kn">import</span> <span class="n">Component</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.components.bend_euler</span> <span class="kn">import</span> <span class="n">bend_euler</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.components.straight</span> <span class="kn">import</span> <span class="n">straight</span> <span class="k">as</span> <span class="n">straight_function</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.components.via_corner</span> <span class="kn">import</span> <span class="n">via_corner</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.components.wire</span> <span class="kn">import</span> <span class="n">wire_corner</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.cross_section</span> <span class="kn">import</span> <span class="n">strip</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.port</span> <span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.routing.get_bundle_corner</span> <span class="kn">import</span> <span class="n">get_bundle_corner</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.routing.get_bundle_from_steps</span> <span class="kn">import</span> <span class="n">get_bundle_from_steps</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.routing.get_bundle_from_waypoints</span> <span class="kn">import</span> <span class="n">get_bundle_from_waypoints</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.routing.get_bundle_sbend</span> <span class="kn">import</span> <span class="n">get_bundle_sbend</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.routing.get_bundle_u</span> <span class="kn">import</span> <span class="n">get_bundle_udirect</span><span class="p">,</span> <span class="n">get_bundle_uindirect</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.routing.get_route</span> <span class="kn">import</span> <span class="n">get_route</span><span class="p">,</span> <span class="n">get_route_from_waypoints</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.routing.manhattan</span> <span class="kn">import</span> <span class="n">generate_manhattan_waypoints</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.routing.path_length_matching</span> <span class="kn">import</span> <span class="n">path_length_matched_points</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.routing.sort_ports</span> <span class="kn">import</span> <span class="n">get_port_x</span><span class="p">,</span> <span class="n">get_port_y</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.routing.sort_ports</span> <span class="kn">import</span> <span class="n">sort_ports</span> <span class="k">as</span> <span class="n">sort_ports_function</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.types</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ComponentSpec</span><span class="p">,</span>
+    <span class="n">CrossSectionSpec</span><span class="p">,</span>
+    <span class="n">MultiCrossSectionAngleSpec</span><span class="p">,</span>
+    <span class="n">Route</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_bundle"><a class="viewcode-back" href="../../../_autosummary/gdsfactory.routing.get_bundle.html#gdsfactory.routing.get_bundle">[docs]</a><span class="k">def</span> <span class="nf">get_bundle</span><span class="p">(</span>
+    <span class="n">ports1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">],</span>
+    <span class="n">ports2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">],</span>
+    <span class="n">separation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">,</span>
+    <span class="n">extension_length</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">straight</span><span class="p">:</span> <span class="n">ComponentSpec</span> <span class="o">=</span> <span class="n">straight_function</span><span class="p">,</span>
+    <span class="n">bend</span><span class="p">:</span> <span class="n">ComponentSpec</span> <span class="o">=</span> <span class="n">bend_euler</span><span class="p">,</span>
+    <span class="n">with_sbend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">sort_ports</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">cross_section</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CrossSectionSpec</span><span class="p">,</span> <span class="n">MultiCrossSectionAngleSpec</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;strip&quot;</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Route</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Returns list of routes to connect two groups of ports.</span>
+
+<span class="sd">    Routes connect a bundle of ports with a river router.</span>
+<span class="sd">    Chooses the correct routing function depending on port angles.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ports1: list of starting ports.</span>
+<span class="sd">        ports2: list of end ports.</span>
+<span class="sd">        separation: bundle separation (center to center).</span>
+<span class="sd">        extension_length: adds straight extension.</span>
+<span class="sd">        bend: function for the bend. Defaults to euler.</span>
+<span class="sd">        with_sbend: use s_bend routing when there is no space for manhattan routing.</span>
+<span class="sd">        sort_ports: sort port coordinates.</span>
+<span class="sd">        cross_section: CrossSection or function that returns a cross_section.</span>
+
+<span class="sd">    Keyword Args:</span>
+<span class="sd">        width: main layer waveguide width (um).</span>
+<span class="sd">        layer: main layer for waveguide.</span>
+<span class="sd">        width_wide: wide waveguides width (um) for low loss routing.</span>
+<span class="sd">        auto_widen: taper to wide waveguides for low loss routing.</span>
+<span class="sd">        auto_widen_minimum_length: minimum straight length for auto_widen.</span>
+<span class="sd">        taper_length: taper_length for auto_widen.</span>
+<span class="sd">        bbox_layers: list of layers for rectangular bounding box.</span>
+<span class="sd">        bbox_offsets: list of bounding box offsets.</span>
+<span class="sd">        cladding_layers: list of layers to extrude.</span>
+<span class="sd">        cladding_offsets: list of offset from main Section edge.</span>
+<span class="sd">        radius: bend radius (um).</span>
+<span class="sd">        sections: list of Sections(width, offset, layer, ports).</span>
+<span class="sd">        port_names: for input and output (&#39;o1&#39;, &#39;o2&#39;).</span>
+<span class="sd">        port_types: for input and output: electrical, optical, vertical_te ...</span>
+<span class="sd">        min_length: defaults to 1nm = 10e-3um for routing.</span>
+<span class="sd">        start_straight_length: straight length at the beginning of the route.</span>
+<span class="sd">        end_straight_length: end length at the beginning of the route.</span>
+<span class="sd">        snap_to_grid: can snap points to grid when extruding the path.</span>
+<span class="sd">        steps: specify waypoint steps to route using get_bundle_from_steps.</span>
+<span class="sd">        waypoints: specify waypoints to route using get_bundle_from_steps.</span>
+<span class="sd">        path_length_match_loops: Integer number of loops to add to bundle</span>
+<span class="sd">            for path length matching (won&#39;t try to match if None).</span>
+<span class="sd">        path_length_match_extra_length: Extra length to add</span>
+<span class="sd">            to path length matching loops (requires path_length_match_loops != None).</span>
+<span class="sd">        path_length_match_modify_segment_i: Index of straight segment to add path</span>
+<span class="sd">            length matching loops to (requires path_length_match_loops != None).</span>
+
+<span class="sd">    .. plot::</span>
+<span class="sd">        :include-source:</span>
+
+<span class="sd">        import gdsfactory as gf</span>
+
+<span class="sd">        @gf.cell</span>
+<span class="sd">        def test_north_to_south():</span>
+<span class="sd">            dy = 200.0</span>
+<span class="sd">            xs1 = [-500, -300, -100, -90, -80, -55, -35, 200, 210, 240, 500, 650]</span>
+
+<span class="sd">            pitch = 10.0</span>
+<span class="sd">            N = len(xs1)</span>
+<span class="sd">            xs2 = [-20 + i * pitch for i in range(N // 2)]</span>
+<span class="sd">            xs2 += [400 + i * pitch for i in range(N // 2)]</span>
+
+<span class="sd">            a1 = 90</span>
+<span class="sd">            a2 = a1 + 180</span>
+
+<span class="sd">            ports1 = [gf.Port(f&quot;top_{i}&quot;, center=(xs1[i], +0), width=0.5, orientation=a1, layer=(1,0)) for i in range(N)]</span>
+<span class="sd">            ports2 = [gf.Port(f&quot;bot_{i}&quot;, center=(xs2[i], dy), width=0.5, orientation=a2, layer=(1,0)) for i in range(N)]</span>
+
+<span class="sd">            c = gf.Component()</span>
+<span class="sd">            routes = gf.routing.get_bundle(ports1, ports2)</span>
+<span class="sd">            for route in routes:</span>
+<span class="sd">                c.add(route.references)</span>
+
+<span class="sd">            return c</span>
+
+
+<span class="sd">        gf.config.set_plot_options(show_subports=False)</span>
+<span class="sd">        c = test_north_to_south()</span>
+<span class="sd">        c.plot()</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># convert single port to list</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ports1</span><span class="p">,</span> <span class="n">Port</span><span class="p">):</span>
+        <span class="n">ports1</span> <span class="o">=</span> <span class="p">[</span><span class="n">ports1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ports2</span><span class="p">,</span> <span class="n">Port</span><span class="p">):</span>
+        <span class="n">ports2</span> <span class="o">=</span> <span class="p">[</span><span class="n">ports2</span><span class="p">]</span>
+
+    <span class="c1"># convert ports dict to list</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ports1</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">ports1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ports1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ports2</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">ports2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ports2</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ports1</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span> <span class="o">%</span> <span class="mi">360</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">orientation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">p</span><span class="o">.</span><span class="n">orientation</span>
+        <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ports2</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span> <span class="o">%</span> <span class="mi">360</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">orientation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">p</span><span class="o">.</span><span class="n">orientation</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ports1</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ports2</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ports1=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ports1</span><span class="p">)</span><span class="si">}</span><span class="s2"> and ports2=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ports2</span><span class="p">)</span><span class="si">}</span><span class="s2"> must be equal&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">sort_ports</span><span class="p">:</span>
+        <span class="n">ports1</span><span class="p">,</span> <span class="n">ports2</span> <span class="o">=</span> <span class="n">sort_ports_function</span><span class="p">(</span><span class="n">ports1</span><span class="p">,</span> <span class="n">ports2</span><span class="p">)</span>
+
+    <span class="n">start_port_angles</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">orientation</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ports1</span><span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">start_port_angles</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;All start port angles </span><span class="si">{</span><span class="n">start_port_angles</span><span class="si">}</span><span class="s2"> must be equal&quot;</span><span class="p">)</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;ports1&quot;</span><span class="p">:</span> <span class="n">ports1</span><span class="p">,</span>
+        <span class="s2">&quot;ports2&quot;</span><span class="p">:</span> <span class="n">ports2</span><span class="p">,</span>
+        <span class="s2">&quot;separation&quot;</span><span class="p">:</span> <span class="n">separation</span><span class="p">,</span>
+        <span class="s2">&quot;bend&quot;</span><span class="p">:</span> <span class="n">bend</span><span class="p">,</span>
+        <span class="s2">&quot;straight&quot;</span><span class="p">:</span> <span class="n">straight</span><span class="p">,</span>
+        <span class="s2">&quot;cross_section&quot;</span><span class="p">:</span> <span class="n">cross_section</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">start_angle</span> <span class="o">=</span> <span class="n">ports1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">orientation</span>
+    <span class="n">end_angle</span> <span class="o">=</span> <span class="n">ports2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">orientation</span>
+
+    <span class="n">start_axis</span> <span class="o">=</span> <span class="s2">&quot;X&quot;</span> <span class="k">if</span> <span class="n">start_angle</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;Y&quot;</span>
+    <span class="n">end_axis</span> <span class="o">=</span> <span class="s2">&quot;X&quot;</span> <span class="k">if</span> <span class="n">end_angle</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;Y&quot;</span>
+
+    <span class="n">x_start</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ports1</span><span class="p">])</span>
+    <span class="n">x_end</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ports2</span><span class="p">])</span>
+
+    <span class="n">y_start</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ports1</span><span class="p">])</span>
+    <span class="n">y_end</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ports2</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="s2">&quot;steps&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">get_bundle_from_steps</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="s2">&quot;waypoints&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">get_bundle_from_waypoints</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">start_axis</span> <span class="o">!=</span> <span class="n">end_axis</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">get_bundle_corner</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">start_angle</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="ow">and</span> <span class="n">end_angle</span> <span class="o">==</span> <span class="mi">180</span>
+        <span class="ow">and</span> <span class="n">x_start</span> <span class="o">&lt;</span> <span class="n">x_end</span>
+        <span class="ow">or</span> <span class="n">start_angle</span> <span class="o">==</span> <span class="mi">180</span>
+        <span class="ow">and</span> <span class="n">end_angle</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="ow">and</span> <span class="n">x_start</span> <span class="o">&gt;</span> <span class="n">x_end</span>
+        <span class="ow">or</span> <span class="n">start_angle</span> <span class="o">==</span> <span class="mi">90</span>
+        <span class="ow">and</span> <span class="n">end_angle</span> <span class="o">==</span> <span class="mi">270</span>
+        <span class="ow">and</span> <span class="n">y_start</span> <span class="o">&lt;</span> <span class="n">y_end</span>
+        <span class="ow">or</span> <span class="n">start_angle</span> <span class="o">==</span> <span class="mi">270</span>
+        <span class="ow">and</span> <span class="n">end_angle</span> <span class="o">==</span> <span class="mi">90</span>
+        <span class="ow">and</span> <span class="n">y_start</span> <span class="o">&gt;</span> <span class="n">y_end</span>
+    <span class="p">):</span>
+        <span class="c1"># print(&quot;get_bundle_same_axis&quot;)</span>
+        <span class="k">if</span> <span class="n">with_sbend</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">get_bundle_sbend</span><span class="p">(</span><span class="n">ports1</span><span class="p">,</span> <span class="n">ports2</span><span class="p">,</span> <span class="n">sort_ports</span><span class="o">=</span><span class="n">sort_ports</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">get_bundle_same_axis</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">start_angle</span> <span class="o">==</span> <span class="n">end_angle</span><span class="p">:</span>
+        <span class="c1"># print(&#39;get_bundle_udirect&#39;)</span>
+        <span class="k">return</span> <span class="n">get_bundle_udirect</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">end_angle</span> <span class="o">==</span> <span class="p">(</span><span class="n">start_angle</span> <span class="o">+</span> <span class="mi">180</span><span class="p">)</span> <span class="o">%</span> <span class="mi">360</span><span class="p">:</span>
+        <span class="c1"># print(&quot;get_bundle_uindirect&quot;)</span>
+        <span class="k">return</span> <span class="n">get_bundle_uindirect</span><span class="p">(</span><span class="n">extension_length</span><span class="o">=</span><span class="n">extension_length</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;This should never happen&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">get_port_width</span><span class="p">(</span><span class="n">port</span><span class="p">:</span> <span class="n">Port</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="n">port</span><span class="o">.</span><span class="n">width</span>
+
+
+<span class="k">def</span> <span class="nf">are_decoupled</span><span class="p">(</span>
+    <span class="n">x1</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">x1p</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">x2</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">x2p</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">sep</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;metal_spacing&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+    <span class="n">sep</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">get_constant</span><span class="p">(</span><span class="n">sep</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x2p</span> <span class="o">+</span> <span class="n">sep</span> <span class="o">&gt;</span> <span class="n">x1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">x2</span> <span class="o">&lt;</span> <span class="n">x1p</span> <span class="o">+</span> <span class="n">sep</span> <span class="k">else</span> <span class="n">x2</span> <span class="o">&gt;=</span> <span class="n">x1p</span> <span class="o">-</span> <span class="n">sep</span>
+
+
+<span class="k">def</span> <span class="nf">get_bundle_same_axis</span><span class="p">(</span>
+    <span class="n">ports1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">],</span>
+    <span class="n">ports2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">],</span>
+    <span class="n">separation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">,</span>
+    <span class="n">end_straight_length</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">start_straight_length</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">bend</span><span class="p">:</span> <span class="n">ComponentSpec</span> <span class="o">=</span> <span class="n">bend_euler</span><span class="p">,</span>
+    <span class="n">sort_ports</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">path_length_match_loops</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">path_length_match_extra_length</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">path_length_match_modify_segment_i</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">cross_section</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CrossSectionSpec</span><span class="p">,</span> <span class="n">MultiCrossSectionAngleSpec</span><span class="p">]</span> <span class="o">=</span> <span class="n">strip</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Route</span><span class="p">]:</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Semi auto-routing for two lists of ports.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ports1: first list of ports.</span>
+<span class="sd">        ports2: second list of ports.</span>
+<span class="sd">        separation: minimum separation between two straights.</span>
+<span class="sd">        end_straight_length: offset to add at the end of each straight.</span>
+<span class="sd">        start_straight_length: in um.</span>
+<span class="sd">        bend: spec.</span>
+<span class="sd">        sort_ports: sort the ports according to the axis.</span>
+<span class="sd">        path_length_match_loops: Integer number of loops to add to bundle</span>
+<span class="sd">            for path length matching (won&#39;t try to match if None).</span>
+<span class="sd">        path_length_match_extra_length: Extra length to add</span>
+<span class="sd">            to path length matching loops (requires path_length_match_loops != None).</span>
+<span class="sd">        path_length_match_modify_segment_i: Index of straight segment to add path</span>
+<span class="sd">            length matching loops to (requires path_length_match_loops != None).</span>
+<span class="sd">        cross_section: CrossSection or function that returns a cross_section.</span>
+<span class="sd">        kwargs: cross_section settings.</span>
+
+
+<span class="sd">    Returns:</span>
+<span class="sd">        `[route_filter(r) for r in routes]` list of lists of coordinates</span>
+<span class="sd">        e.g with default `get_route_from_waypoints`,</span>
+<span class="sd">        returns a list of elements which can be added to a component</span>
+
+
+<span class="sd">    The routing assumes manhattan routing between the different ports.</span>
+<span class="sd">    The strategy is to modify `start_straight` and `end_straight` for each</span>
+<span class="sd">    straight such that straights do not collide.</span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">        1             X    X     X  X X  X</span>
+<span class="sd">        |-----------|    |     |  | |  |-----------------------|</span>
+<span class="sd">        |          |-----|     |  | |---------------|          |</span>
+<span class="sd">        |          |          ||  |------|          |          |</span>
+<span class="sd">        2 X          X          X          X          X          X</span>
+
+
+<span class="sd">    ports1: at the top</span>
+<span class="sd">    ports2: at the bottom</span>
+
+<span class="sd">    The general strategy is:</span>
+<span class="sd">    Group tracks which would collide together and apply the following method</span>
+<span class="sd">    on each group:</span>
+
+<span class="sd">        if x2 &gt;= x1, increase ``end_straight``</span>
+<span class="sd">            (as seen on the right 3 ports)</span>
+<span class="sd">        otherwise, decrease ``end_straight``</span>
+<span class="sd">            (as seen on the first 2 ports)</span>
+
+<span class="sd">    We deal with negative end_straight by doing at the end</span>
+<span class="sd">        end_straights = end_straights - min(end_straights)</span>
+
+<span class="sd">    This method deals with different metal track/wg/wire widths too.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;straight&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;straight&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">ports1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span>
+        <span class="n">ports2</span>
+    <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;ports1=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ports1</span><span class="p">)</span><span class="si">}</span><span class="s2"> and ports2=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ports2</span><span class="p">)</span><span class="si">}</span><span class="s2"> must be equal&quot;</span>
+    <span class="k">if</span> <span class="n">sort_ports</span><span class="p">:</span>
+        <span class="n">ports1</span><span class="p">,</span> <span class="n">ports2</span> <span class="o">=</span> <span class="n">sort_ports_function</span><span class="p">(</span><span class="n">ports1</span><span class="p">,</span> <span class="n">ports2</span><span class="p">)</span>
+
+    <span class="n">routes</span> <span class="o">=</span> <span class="n">_get_bundle_waypoints</span><span class="p">(</span>
+        <span class="n">ports1</span><span class="p">,</span>
+        <span class="n">ports2</span><span class="p">,</span>
+        <span class="n">separation</span><span class="o">=</span><span class="n">separation</span><span class="p">,</span>
+        <span class="n">bend</span><span class="o">=</span><span class="n">bend</span><span class="p">,</span>
+        <span class="n">cross_section</span><span class="o">=</span><span class="n">cross_section</span><span class="p">,</span>
+        <span class="n">end_straight_length</span><span class="o">=</span><span class="n">end_straight_length</span><span class="p">,</span>
+        <span class="n">start_straight_length</span><span class="o">=</span><span class="n">start_straight_length</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">path_length_match_loops</span><span class="p">:</span>
+        <span class="n">routes</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">route</span><span class="p">)</span> <span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="n">routes</span><span class="p">]</span>
+        <span class="n">routes</span> <span class="o">=</span> <span class="n">path_length_matched_points</span><span class="p">(</span>
+            <span class="n">routes</span><span class="p">,</span>
+            <span class="n">extra_length</span><span class="o">=</span><span class="n">path_length_match_extra_length</span><span class="p">,</span>
+            <span class="n">bend</span><span class="o">=</span><span class="n">bend</span><span class="p">,</span>
+            <span class="n">nb_loops</span><span class="o">=</span><span class="n">path_length_match_loops</span><span class="p">,</span>
+            <span class="n">modify_segment_i</span><span class="o">=</span><span class="n">path_length_match_modify_segment_i</span><span class="p">,</span>
+            <span class="n">cross_section</span><span class="o">=</span><span class="n">cross_section</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">get_route_from_waypoints</span><span class="p">(</span>
+            <span class="n">route</span><span class="p">,</span>
+            <span class="n">bend</span><span class="o">=</span><span class="n">bend</span><span class="p">,</span>
+            <span class="n">cross_section</span><span class="o">=</span><span class="n">cross_section</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="n">routes</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_get_bundle_waypoints</span><span class="p">(</span>
+    <span class="n">ports1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">],</span>
+    <span class="n">ports2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">],</span>
+    <span class="n">separation</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="n">end_straight_length</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">tol</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.00001</span><span class="p">,</span>
+    <span class="n">start_straight_length</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">cross_section</span><span class="p">:</span> <span class="n">CrossSectionSpec</span> <span class="o">=</span> <span class="s2">&quot;strip&quot;</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ndarray</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Returns route coordinates List.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ports1: list of starting ports.</span>
+<span class="sd">        ports2: list of end ports.</span>
+<span class="sd">        separation: route spacing.</span>
+<span class="sd">        end_straight_length: adds a straight.</span>
+<span class="sd">        tol: tolerance.</span>
+<span class="sd">        start_straight_length: length of straight.</span>
+<span class="sd">        cross_section: CrossSection or function that returns a cross_section.</span>
+<span class="sd">        kwargs: cross_section settings.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ports1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ports2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">ports1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span>
+        <span class="n">ports2</span>
+    <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;ports1=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ports1</span><span class="p">)</span><span class="si">}</span><span class="s2"> and ports2=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ports2</span><span class="p">)</span><span class="si">}</span><span class="s2"> must be equal&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ports1</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">ports2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;WARNING! ports1=</span><span class="si">{</span><span class="n">ports1</span><span class="si">}</span><span class="s2"> or ports2=</span><span class="si">{</span><span class="n">ports2</span><span class="si">}</span><span class="s2"> are empty&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="n">axis</span> <span class="o">=</span> <span class="s2">&quot;X&quot;</span> <span class="k">if</span> <span class="n">ports1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">orientation</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;Y&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ports1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">ports2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">generate_manhattan_waypoints</span><span class="p">(</span>
+                <span class="n">ports1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">ports2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">start_straight_length</span><span class="o">=</span><span class="n">start_straight_length</span><span class="p">,</span>
+                <span class="n">end_straight_length</span><span class="o">=</span><span class="n">end_straight_length</span><span class="p">,</span>
+                <span class="n">cross_section</span><span class="o">=</span><span class="n">cross_section</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+
+    <span class="c1"># Contains end_straight of tracks which need to be adjusted together</span>
+    <span class="n">end_straights_in_group</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Once a group is finished, all the lengths are appended to end_straights</span>
+    <span class="n">end_straights</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Keep track of how many ports should be routed together</span>
+
+    <span class="k">if</span> <span class="n">axis</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">}:</span>
+        <span class="n">x1_prev</span> <span class="o">=</span> <span class="n">get_port_y</span><span class="p">(</span><span class="n">ports1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">x2_prev</span> <span class="o">=</span> <span class="n">get_port_y</span><span class="p">(</span><span class="n">ports2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">y0</span> <span class="o">=</span> <span class="n">get_port_x</span><span class="p">(</span><span class="n">ports2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">get_port_x</span><span class="p">(</span><span class="n">ports1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># X axis</span>
+        <span class="n">x1_prev</span> <span class="o">=</span> <span class="n">get_port_x</span><span class="p">(</span><span class="n">ports1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">x2_prev</span> <span class="o">=</span> <span class="n">get_port_x</span><span class="p">(</span><span class="n">ports2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">y0</span> <span class="o">=</span> <span class="n">get_port_y</span><span class="p">(</span><span class="n">ports2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">get_port_y</span><span class="p">(</span><span class="n">ports1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">sign</span><span class="p">(</span><span class="n">y0</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+    <span class="n">curr_end_straight</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">end_straight_length</span> <span class="o">=</span> <span class="n">end_straight_length</span> <span class="ow">or</span> <span class="mf">15.0</span>
+
+    <span class="n">Le</span> <span class="o">=</span> <span class="n">end_straight_length</span>
+
+    <span class="c1"># First pass - loop on all the ports to find the tentative end_straights</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ports1</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">axis</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">}:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">get_port_y</span><span class="p">(</span><span class="n">ports1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">get_port_y</span><span class="p">(</span><span class="n">ports2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">get_port_x</span><span class="p">(</span><span class="n">ports2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">get_port_x</span><span class="p">(</span><span class="n">ports1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">get_port_x</span><span class="p">(</span><span class="n">ports2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">get_port_y</span><span class="p">(</span><span class="n">ports2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">are_decoupled</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">x2_prev</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x1_prev</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">separation</span><span class="p">):</span>
+            <span class="c1"># If this metal track does not impact the previous one, then start a new</span>
+            <span class="c1"># group.</span>
+            <span class="n">L</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">end_straights_in_group</span><span class="p">)</span>
+            <span class="n">end_straights</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">L</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Le</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">end_straights_in_group</span><span class="p">]</span>
+
+            <span class="c1"># Start new group</span>
+            <span class="n">end_straights_in_group</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">curr_end_straight</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">elif</span> <span class="n">x2</span> <span class="o">&gt;=</span> <span class="n">x1</span><span class="p">:</span>
+            <span class="n">curr_end_straight</span> <span class="o">+=</span> <span class="n">separation</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">curr_end_straight</span> <span class="o">-=</span> <span class="n">separation</span>
+
+        <span class="n">end_straights_in_group</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">curr_end_straight</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span>
+
+        <span class="n">x1_prev</span> <span class="o">=</span> <span class="n">x1</span>
+        <span class="n">x2_prev</span> <span class="o">=</span> <span class="n">x2</span>
+
+    <span class="c1"># Append the last group</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">end_straights_in_group</span><span class="p">)</span>
+
+    <span class="n">end_straights</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">L</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Le</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">end_straights_in_group</span><span class="p">]</span>
+
+    <span class="c1"># Second pass - route the ports pairwise</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ports1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">generate_manhattan_waypoints</span><span class="p">(</span>
+            <span class="n">ports1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+            <span class="n">ports2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+            <span class="n">start_straight_length</span><span class="o">=</span><span class="n">start_straight_length</span><span class="p">,</span>
+            <span class="n">end_straight_length</span><span class="o">=</span><span class="n">end_straights</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+            <span class="n">cross_section</span><span class="o">=</span><span class="n">cross_section</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">compute_ports_max_displacement</span><span class="p">(</span><span class="n">ports1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">],</span> <span class="n">ports2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">ports1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">orientation</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">]:</span>
+        <span class="n">a1</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ports1</span><span class="p">]</span>
+        <span class="n">a2</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ports2</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">a1</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ports1</span><span class="p">]</span>
+        <span class="n">a2</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ports2</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">a2</span><span class="p">)),</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="n">a2</span><span class="p">)))</span>
+
+
+<span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+
+<span class="k">def</span> <span class="nf">get_min_spacing</span><span class="p">(</span>
+    <span class="n">ports1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">],</span>
+    <span class="n">ports2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">],</span>
+    <span class="n">sep</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">,</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">,</span>
+    <span class="n">sort_ports</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Returns the minimum amount of spacing in um required to create a \</span>
+<span class="sd">    fanout.&quot;&quot;&quot;</span>
+    <span class="n">axis</span> <span class="o">=</span> <span class="s2">&quot;X&quot;</span> <span class="k">if</span> <span class="n">ports1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">orientation</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;Y&quot;</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">min_j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">sort_ports</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">axis</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">}:</span>
+            <span class="n">ports1</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_port_y</span><span class="p">)</span>
+            <span class="n">ports2</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_port_y</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ports1</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_port_x</span><span class="p">)</span>
+            <span class="n">ports2</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_port_x</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">port1</span><span class="p">,</span> <span class="n">port2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ports1</span><span class="p">,</span> <span class="n">ports2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">axis</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">}:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">get_port_y</span><span class="p">(</span><span class="n">ports1</span><span class="p">)</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">get_port_y</span><span class="p">(</span><span class="n">port2</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">get_port_x</span><span class="p">(</span><span class="n">port1</span><span class="p">)</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">get_port_x</span><span class="p">(</span><span class="n">port2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">x2</span> <span class="o">&gt;=</span> <span class="n">x1</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">min_j</span><span class="p">:</span>
+            <span class="n">min_j</span> <span class="o">=</span> <span class="n">j</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="n">max_j</span><span class="p">:</span>
+            <span class="n">max_j</span> <span class="o">=</span> <span class="n">j</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">max_j</span> <span class="o">-</span> <span class="n">min_j</span><span class="p">)</span> <span class="o">*</span> <span class="n">sep</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">+</span> <span class="mf">1.0</span>
+
+
+<span class="k">def</span> <span class="nf">get_bundle_same_axis_no_grouping</span><span class="p">(</span>
+    <span class="n">ports1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">],</span>
+    <span class="n">ports2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">],</span>
+    <span class="n">sep</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">,</span>
+    <span class="n">route_filter</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="n">get_route</span><span class="p">,</span>
+    <span class="n">start_straight_length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">end_straight_length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">sort_ports</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">cross_section</span><span class="p">:</span> <span class="n">CrossSectionSpec</span> <span class="o">=</span> <span class="n">strip</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Route</span><span class="p">]:</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Returns a list of route elements.</span>
+
+<span class="sd">    Compared to get_bundle_same_axis, this function does not do any grouping.</span>
+<span class="sd">    It is not as smart for the routing, but it can fall back on arclinarc</span>
+<span class="sd">    connection if needed. We can also specify longer start_straight and end_straight</span>
+
+<span class="sd">    Semi auto routing for optical ports</span>
+<span class="sd">    The routing assumes manhattan routing between the different ports.</span>
+<span class="sd">    The strategy is to modify ``start_straight`` and ``end_straight`` for each</span>
+<span class="sd">    straight such that straights do not collide.</span>
+
+
+<span class="sd">    We want to connect something like this:</span>
+
+<span class="sd">    ::</span>
+
+<span class="sd">         2             X    X     X  X X  X</span>
+<span class="sd">           |-----------|    |     |  | |  |-----------------------|</span>
+<span class="sd">           |          |-----|     |  | |---------------|          |</span>
+<span class="sd">           |          |          ||  |------|          |          |</span>
+<span class="sd">         1 X          X          X          X          X          X</span>
+
+<span class="sd">    ``start`` is at the bottom</span>
+<span class="sd">    ``end`` is at the top</span>
+
+<span class="sd">    The general strategy is:</span>
+
+<span class="sd">    if x2 &lt; x1, decrease ``start straight``, and increase ``end_straight``</span>
+<span class="sd">        (as seen on left two ports)</span>
+<span class="sd">    otherwise, decrease ``start_straight``, and increase ``end_straight``</span>
+<span class="sd">        (as seen on the last 3 right ports)</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ports1: first list of optical ports.</span>
+<span class="sd">        ports2: second list of optical ports.</span>
+<span class="sd">        axis: specifies &quot;X&quot; or &quot;Y&quot; direction along which the port is going.</span>
+<span class="sd">        route_filter: ManhattanExpandedWgConnector or ManhattanWgConnector.</span>
+<span class="sd">            or any other connector function with the same input.</span>
+<span class="sd">        radius: bend radius. If unspecified, uses the default radius.</span>
+<span class="sd">        start_straight_length: offset on the starting length before the first bend.</span>
+<span class="sd">        end_straight_length: offset on the ending length after the last bend.</span>
+<span class="sd">        sort_ports: True -&gt; sort the ports according to the axis.</span>
+<span class="sd">            False -&gt; no sort applied.</span>
+<span class="sd">        cross_section: CrossSection or function that returns a cross_section.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        a list of routes the connecting straights.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">axis</span> <span class="o">=</span> <span class="s2">&quot;X&quot;</span> <span class="k">if</span> <span class="n">ports1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">orientation</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;Y&quot;</span>
+    <span class="n">elems</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># min and max offsets needed for avoiding collisions between straights</span>
+    <span class="n">min_j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_j</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">sort_ports</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">axis</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">}:</span>
+            <span class="n">ports1</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_port_y</span><span class="p">)</span>
+            <span class="n">ports2</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_port_y</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ports1</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_port_x</span><span class="p">)</span>
+            <span class="n">ports2</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_port_x</span><span class="p">)</span>
+
+    <span class="c1"># Compute max_j and min_j</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ports1</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">axis</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">}:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">ports1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">ports2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">ports1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">ports2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">x2</span> <span class="o">&gt;=</span> <span class="n">x1</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">min_j</span><span class="p">:</span>
+            <span class="n">min_j</span> <span class="o">=</span> <span class="n">j</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="n">max_j</span><span class="p">:</span>
+            <span class="n">max_j</span> <span class="o">=</span> <span class="n">j</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">start_straight_length</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">start_straight_length</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+    <span class="k">if</span> <span class="n">end_straight_length</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">end_straight_length</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+    <span class="n">start_straight_length</span> <span class="o">+=</span> <span class="n">max_j</span> <span class="o">*</span> <span class="n">sep</span>
+    <span class="n">end_straight_length</span> <span class="o">+=</span> <span class="o">-</span><span class="n">min_j</span> <span class="o">*</span> <span class="n">sep</span>
+
+    <span class="c1"># Do case with wire direct if the ys are close to each other</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ports1</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">axis</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">}:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">ports1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">ports2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">ports1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">ports2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">s_straight</span> <span class="o">=</span> <span class="n">start_straight_length</span> <span class="o">-</span> <span class="n">j</span> <span class="o">*</span> <span class="n">sep</span>
+        <span class="n">e_straight</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">sep</span> <span class="o">+</span> <span class="n">end_straight_length</span>
+
+        <span class="n">elems</span> <span class="o">+=</span> <span class="p">[</span>
+            <span class="n">route_filter</span><span class="p">(</span>
+                <span class="n">ports1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                <span class="n">ports2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                <span class="n">start_straight_length</span><span class="o">=</span><span class="n">s_straight</span><span class="p">,</span>
+                <span class="n">end_straight_length</span><span class="o">=</span><span class="n">e_straight</span><span class="p">,</span>
+                <span class="n">cross_section</span><span class="o">=</span><span class="n">cross_section</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">x2</span> <span class="o">&gt;=</span> <span class="n">x1</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">elems</span>
+
+
+<span class="n">get_bundle_electrical</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span>
+    <span class="n">get_bundle</span><span class="p">,</span> <span class="n">bend</span><span class="o">=</span><span class="n">wire_corner</span><span class="p">,</span> <span class="n">cross_section</span><span class="o">=</span><span class="s2">&quot;metal_routing&quot;</span>
+<span class="p">)</span>
+
+<span class="n">get_bundle_electrical_multilayer</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+    <span class="n">get_bundle</span><span class="p">,</span>
+    <span class="n">bend</span><span class="o">=</span><span class="n">via_corner</span><span class="p">,</span>
+    <span class="n">cross_section</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">cross_section</span><span class="o">.</span><span class="n">metal2</span><span class="p">,</span> <span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">270</span><span class="p">)),</span>
+        <span class="p">(</span><span class="s2">&quot;metal_routing&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">)),</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+
+
+<span class="nd">@gf</span><span class="o">.</span><span class="n">cell</span>
+<span class="k">def</span> <span class="nf">test_get_bundle_small</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Component</span><span class="p">:</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">Component</span><span class="p">()</span>
+    <span class="n">c1</span> <span class="o">=</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">mmi2x2</span><span class="p">()</span>
+    <span class="n">c2</span> <span class="o">=</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">mmi2x2</span><span class="p">()</span>
+    <span class="n">c2</span><span class="o">.</span><span class="n">move</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
+    <span class="n">routes</span> <span class="o">=</span> <span class="n">get_bundle</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">c1</span><span class="o">.</span><span class="n">ports</span><span class="p">[</span><span class="s2">&quot;o3&quot;</span><span class="p">],</span> <span class="n">c1</span><span class="o">.</span><span class="n">ports</span><span class="p">[</span><span class="s2">&quot;o4&quot;</span><span class="p">]],</span>
+        <span class="p">[</span><span class="n">c2</span><span class="o">.</span><span class="n">ports</span><span class="p">[</span><span class="s2">&quot;o1&quot;</span><span class="p">],</span> <span class="n">c2</span><span class="o">.</span><span class="n">ports</span><span class="p">[</span><span class="s2">&quot;o2&quot;</span><span class="p">]],</span>
+        <span class="n">separation</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
+        <span class="n">cross_section</span><span class="o">=</span><span class="n">gf</span><span class="o">.</span><span class="n">cross_section</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="c1"># cross_section=gf.cross_section.strip,</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="n">routes</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">references</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">length</span><span class="p">,</span> <span class="mf">111.136</span><span class="p">),</span> <span class="n">route</span><span class="o">.</span><span class="n">length</span>
+    <span class="k">return</span> <span class="n">c</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="c1"># c = test_connect_corner(None, check=False)</span>
+    <span class="c1"># c = test_get_bundle_small()</span>
+    <span class="c1"># c = test_get_bundle_small()</span>
+    <span class="c1"># c = test_facing_ports()</span>
+    <span class="c1"># c = test_get_bundle_u_indirect()</span>
+    <span class="c1"># c = test_get_bundle_udirect()</span>
+    <span class="c1"># c = test_connect_corner()</span>
+
+    <span class="kn">import</span> <span class="nn">gdsfactory</span> <span class="k">as</span> <span class="nn">gf</span>
+
+    <span class="c1"># c = gf.Component(&quot;get_bundle_none_orientation&quot;)</span>
+    <span class="c1"># pt = c &lt;&lt; gf.components.pad_array(orientation=None, columns=3)</span>
+    <span class="c1"># pb = c &lt;&lt; gf.components.pad_array(orientation=None, columns=3)</span>
+    <span class="c1"># pt.move((100, 200))</span>
+    <span class="c1"># routes = gf.routing.get_bundle_electrical_multilayer(</span>
+    <span class="c1">#     pb.ports,</span>
+    <span class="c1">#     pt.ports,</span>
+    <span class="c1">#     start_straight_length=1,</span>
+    <span class="c1">#     end_straight_length=10,</span>
+    <span class="c1">#     separation=30,</span>
+    <span class="c1"># )</span>
+    <span class="c1"># for route in routes:</span>
+    <span class="c1">#     c.add(route.references)</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">Component</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span>
+    <span class="n">c1</span> <span class="o">=</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">mmi2x2</span><span class="p">()</span>
+    <span class="n">c2</span> <span class="o">=</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">mmi2x2</span><span class="p">()</span>
+    <span class="n">c2</span><span class="o">.</span><span class="n">move</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
+    <span class="n">routes</span> <span class="o">=</span> <span class="n">get_bundle</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">c1</span><span class="o">.</span><span class="n">ports</span><span class="p">[</span><span class="s2">&quot;o2&quot;</span><span class="p">],</span> <span class="n">c1</span><span class="o">.</span><span class="n">ports</span><span class="p">[</span><span class="s2">&quot;o1&quot;</span><span class="p">]],</span>
+        <span class="p">[</span><span class="n">c2</span><span class="o">.</span><span class="n">ports</span><span class="p">[</span><span class="s2">&quot;o1&quot;</span><span class="p">],</span> <span class="n">c2</span><span class="o">.</span><span class="n">ports</span><span class="p">[</span><span class="s2">&quot;o2&quot;</span><span class="p">]],</span>
+        <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="c1"># layer=(2, 0),</span>
+        <span class="n">straight</span><span class="o">=</span><span class="n">gf</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">straight</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="n">routes</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">references</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">show_ports</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+      &copy; Copyright 2020, MIT License.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

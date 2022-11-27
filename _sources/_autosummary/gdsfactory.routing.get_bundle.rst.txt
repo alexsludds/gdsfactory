@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.get\_bundle
+==============================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: get_bundle

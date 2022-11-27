@@ -1,0 +1,79 @@
+﻿gdsfactory.ComponentReference
+=============================
+
+.. currentmodule:: gdsfactory
+
+.. autoclass:: ComponentReference
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ComponentReference.__init__
+      ~ComponentReference.area
+      ~ComponentReference.connect
+      ~ComponentReference.get_bounding_box
+      ~ComponentReference.get_labels
+      ~ComponentReference.get_paths
+      ~ComponentReference.get_polygons
+      ~ComponentReference.get_ports_dict
+      ~ComponentReference.get_ports_list
+      ~ComponentReference.get_ports_xsize
+      ~ComponentReference.get_ports_ysize
+      ~ComponentReference.mirror
+      ~ComponentReference.mirror_x
+      ~ComponentReference.mirror_y
+      ~ComponentReference.move
+      ~ComponentReference.movex
+      ~ComponentReference.movey
+      ~ComponentReference.port_by_orientation_ccw
+      ~ComponentReference.port_by_orientation_cw
+      ~ComponentReference.pprint_ports
+      ~ComponentReference.rotate
+      ~ComponentReference.snap_ports_to_grid
+      ~ComponentReference.to_dict
+      ~ComponentReference.translate
+      ~ComponentReference.validate
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ComponentReference.bbox
+      ~ComponentReference.center
+      ~ComponentReference.columns
+      ~ComponentReference.info
+      ~ComponentReference.magnification
+      ~ComponentReference.metadata_child
+      ~ComponentReference.name
+      ~ComponentReference.origin
+      ~ComponentReference.owner
+      ~ComponentReference.parent
+      ~ComponentReference.ports
+      ~ComponentReference.ports_layer
+      ~ComponentReference.rotation
+      ~ComponentReference.rows
+      ~ComponentReference.size
+      ~ComponentReference.size_info
+      ~ComponentReference.spacing
+      ~ComponentReference.v1
+      ~ComponentReference.v2
+      ~ComponentReference.x
+      ~ComponentReference.x_reflection
+      ~ComponentReference.xmax
+      ~ComponentReference.xmin
+      ~ComponentReference.xsize
+      ~ComponentReference.y
+      ~ComponentReference.ymax
+      ~ComponentReference.ymin
+      ~ComponentReference.ysize
+   
+   

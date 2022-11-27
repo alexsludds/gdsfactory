@@ -1,0 +1,6 @@
+﻿gdsfactory.cross\_section.rib\_heater\_doped
+============================================
+
+.. currentmodule:: gdsfactory.cross_section
+
+.. autofunction:: rib_heater_doped

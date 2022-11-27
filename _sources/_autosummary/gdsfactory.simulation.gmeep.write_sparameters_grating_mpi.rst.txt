@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.gmeep.write\_sparameters\_grating\_mpi
+============================================================
+
+.. currentmodule:: gdsfactory.simulation.gmeep
+
+.. autofunction:: write_sparameters_grating_mpi

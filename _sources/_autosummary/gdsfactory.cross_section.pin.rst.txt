@@ -1,0 +1,6 @@
+﻿gdsfactory.cross\_section.pin
+=============================
+
+.. currentmodule:: gdsfactory.cross_section
+
+.. autofunction:: pin

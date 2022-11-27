@@ -1,0 +1,6 @@
+﻿gdsfactory.types.CellSpec
+=========================
+
+.. currentmodule:: gdsfactory.types
+
+.. autodata:: CellSpec

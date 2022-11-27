@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.add\_fiber\_single.add\_fiber\_single
+========================================================
+
+.. currentmodule:: gdsfactory.routing.add_fiber_single
+
+.. autofunction:: add_fiber_single

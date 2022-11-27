@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.lumerical.interconnect.add\_interconnect\_element
+=======================================================================
+
+.. currentmodule:: gdsfactory.simulation.lumerical.interconnect
+
+.. autofunction:: add_interconnect_element

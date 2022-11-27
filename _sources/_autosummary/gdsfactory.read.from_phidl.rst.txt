@@ -1,0 +1,6 @@
+﻿gdsfactory.read.from\_phidl
+===========================
+
+.. currentmodule:: gdsfactory.read
+
+.. autofunction:: from_phidl

@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.modes.find\_modes\_waveguide
+==================================================
+
+.. currentmodule:: gdsfactory.simulation.modes
+
+.. autofunction:: find_modes_waveguide

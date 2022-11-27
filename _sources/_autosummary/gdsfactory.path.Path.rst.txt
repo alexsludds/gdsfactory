@@ -1,0 +1,52 @@
+﻿gdsfactory.path.Path
+====================
+
+.. currentmodule:: gdsfactory.path
+
+.. autoclass:: Path
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Path.__init__
+      ~Path.append
+      ~Path.copy
+      ~Path.curvature
+      ~Path.extrude
+      ~Path.hash_geometry
+      ~Path.length
+      ~Path.mirror
+      ~Path.move
+      ~Path.movex
+      ~Path.movey
+      ~Path.offset
+      ~Path.plot
+      ~Path.rotate
+      ~Path.to_dict
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Path.bbox
+      ~Path.center
+      ~Path.size
+      ~Path.x
+      ~Path.xmax
+      ~Path.xmin
+      ~Path.xsize
+      ~Path.y
+      ~Path.ymax
+      ~Path.ymin
+      ~Path.ysize
+   
+   

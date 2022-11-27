@@ -1,0 +1,121 @@
+﻿gdsfactory.Component
+====================
+
+.. currentmodule:: gdsfactory
+
+.. autoclass:: Component
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Component.__init__
+      ~Component.absorb
+      ~Component.add
+      ~Component.add_array
+      ~Component.add_label
+      ~Component.add_padding
+      ~Component.add_polygon
+      ~Component.add_port
+      ~Component.add_ports
+      ~Component.add_ref
+      ~Component.align
+      ~Component.assert_ports_on_grid
+      ~Component.auto_rename_ports
+      ~Component.auto_rename_ports_counter_clockwise
+      ~Component.auto_rename_ports_layer_orientation
+      ~Component.auto_rename_ports_orientation
+      ~Component.copy
+      ~Component.copy_child_info
+      ~Component.distribute
+      ~Component.extract
+      ~Component.flatten
+      ~Component.flatten_reference
+      ~Component.get_component_spec
+      ~Component.get_dependencies
+      ~Component.get_info
+      ~Component.get_labels
+      ~Component.get_layers
+      ~Component.get_netlist
+      ~Component.get_netlist_recursive
+      ~Component.get_netlist_yaml
+      ~Component.get_polygons
+      ~Component.get_ports
+      ~Component.get_ports_dict
+      ~Component.get_ports_list
+      ~Component.get_ports_xsize
+      ~Component.get_ports_ysize
+      ~Component.get_setting
+      ~Component.hash_geometry
+      ~Component.is_unlocked
+      ~Component.lock
+      ~Component.mirror
+      ~Component.move
+      ~Component.movex
+      ~Component.movey
+      ~Component.plot
+      ~Component.plot_netlist
+      ~Component.ploth
+      ~Component.plotqt
+      ~Component.port_by_orientation_ccw
+      ~Component.port_by_orientation_cw
+      ~Component.pprint
+      ~Component.pprint_ports
+      ~Component.ref
+      ~Component.ref_center
+      ~Component.remap_layers
+      ~Component.remove
+      ~Component.remove_labels
+      ~Component.remove_layers
+      ~Component.rotate
+      ~Component.show
+      ~Component.snap_ports_to_grid
+      ~Component.to_3d
+      ~Component.to_dict
+      ~Component.to_dict_polygons
+      ~Component.to_yaml
+      ~Component.unlock
+      ~Component.validate
+      ~Component.write_gds
+      ~Component.write_gds_with_metadata
+      ~Component.write_netlist
+      ~Component.write_netlist_dot
+      ~Component.write_oas
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Component.area
+      ~Component.bbox
+      ~Component.center
+      ~Component.labels
+      ~Component.layers
+      ~Component.metadata
+      ~Component.metadata_child
+      ~Component.name
+      ~Component.named_references
+      ~Component.paths
+      ~Component.polygons
+      ~Component.ports_layer
+      ~Component.references
+      ~Component.size
+      ~Component.size_info
+      ~Component.x
+      ~Component.xmax
+      ~Component.xmin
+      ~Component.xsize
+      ~Component.y
+      ~Component.ymax
+      ~Component.ymin
+      ~Component.ysize
+   
+   

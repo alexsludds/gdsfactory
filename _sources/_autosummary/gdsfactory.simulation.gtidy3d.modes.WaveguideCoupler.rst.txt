@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler
+====================================================
+
+.. currentmodule:: gdsfactory.simulation.gtidy3d.modes
+
+.. autopydantic_model:: WaveguideCoupler

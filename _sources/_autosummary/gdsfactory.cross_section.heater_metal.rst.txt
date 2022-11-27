@@ -1,0 +1,6 @@
+﻿gdsfactory.cross\_section.heater\_metal
+=======================================
+
+.. currentmodule:: gdsfactory.cross_section
+
+.. autofunction:: heater_metal

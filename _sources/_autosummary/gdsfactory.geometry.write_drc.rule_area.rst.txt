@@ -1,0 +1,6 @@
+﻿gdsfactory.geometry.write\_drc.rule\_area
+=========================================
+
+.. currentmodule:: gdsfactory.geometry.write_drc
+
+.. autofunction:: rule_area

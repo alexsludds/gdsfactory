@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.get\_route
+=============================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: get_route

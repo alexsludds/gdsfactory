@@ -1,0 +1,1384 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gdsfactory.simulation.modes.find_modes &#8212; gdsfactory 6.2.6 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../README.html">
+   gdsfactory 6.2.6
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../git.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_2_install.html">
+     Install gdsfactory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_2_klayout.html">
+     Klayout integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_3_vscode.html">
+     VScode, PyCharm, Spyder, JupyterLab integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_4_gdsfactory_in_5minutes.html">
+     gdsfactory in 5 minutes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_0_python.html">
+     Python intro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_1_git.html">
+     Git: Version control intro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../workflow.html">
+   Workflow
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../notebooks.html">
+   Layout tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/00_geometry.html">
+     Component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/01_references.html">
+     References and ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/02_movement.html">
+     Movement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/03_cells_autoname_and_cache.html">
+     Cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/03_layer_stack.html">
+     Layers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/03_waveguides_paths_crossections.html">
+     Path and CrossSection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/04_components_.html">
+     Components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/04_components_hierarchy.html">
+     Components with hierarchy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/04_routing.html">
+     Routing optical and RF ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/041_routing_electical.html">
+     Routing electrical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/07_mask.html">
+     Reticle assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/08_pdk.html">
+     PDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/09_pdk_import.html">
+     Import PDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/common_mistakes.html">
+     Common mistakes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/11_get_netlist.html">
+     get_netlist
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/10_yaml_component.html">
+     YAML Place and AutoRoute
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../plugins_process.html">
+   Plugins: Device simulators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/devsim/01_pin_waveguide.html">
+     DEVSIM TCAD simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/thermal/thermal.html">
+     Thermal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../plugins_mode_solver.html">
+   Plugins: Mode solvers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/mpb/001_mpb_waveguide.html">
+     MPB mode-solver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/tidy3d/01_tidy3d_modes.html">
+     Tidy3D mode solver
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../plugins_fdtd.html">
+   Plugins: FDTD
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/lumerical/1_fdtd_sparameters.html">
+     FDTD Lumerical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/meep/001_meep_sparameters.html">
+     Meep FDTD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/meep/002_gratings.html">
+     FDTD Meep gratings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/tidy3d/00_tidy3d.html">
+     FDTD tidy3d
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../plugins_circuits.html">
+   Plugins: Circuit simulators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/sax/sax.html">
+     SAX circuit simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/simphony/01_components.html">
+     Simphony circuit simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/lumerical/2_interconnect.html">
+     Lumerical INTERCONNECT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../contribution.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../CHANGELOG.html">
+   CHANGELOG
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../components.html">
+   Components
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../api.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.Component.html">
+     gdsfactory.Component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.ComponentReference.html">
+     gdsfactory.ComponentReference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.read.import_gds.html">
+     gdsfactory.read.import_gds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.read.from_yaml.html">
+     gdsfactory.read.from_yaml
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.read.from_np.html">
+     gdsfactory.read.from_np
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.read.from_phidl.html">
+     gdsfactory.read.from_phidl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.read.from_dphox.html">
+     gdsfactory.read.from_dphox
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.Path.html">
+     gdsfactory.path.Path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.straight.html">
+     gdsfactory.path.straight
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.euler.html">
+     gdsfactory.path.euler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.arc.html">
+     gdsfactory.path.arc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.spiral_archimedean.html">
+     gdsfactory.path.spiral_archimedean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.smooth.html">
+     gdsfactory.path.smooth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.CrossSection.html">
+     gdsfactory.cross_section.CrossSection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.Transition.html">
+     gdsfactory.cross_section.Transition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.cross_section.html">
+     gdsfactory.cross_section.cross_section
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.strip.html">
+     gdsfactory.cross_section.strip
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.strip_auto_widen.html">
+     gdsfactory.cross_section.strip_auto_widen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.heater_metal.html">
+     gdsfactory.cross_section.heater_metal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.pin.html">
+     gdsfactory.cross_section.pin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.pn.html">
+     gdsfactory.cross_section.pn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.strip_heater_metal_undercut.html">
+     gdsfactory.cross_section.strip_heater_metal_undercut
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.strip_heater_metal.html">
+     gdsfactory.cross_section.strip_heater_metal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.strip_heater_doped.html">
+     gdsfactory.cross_section.strip_heater_doped
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.rib_heater_doped.html">
+     gdsfactory.cross_section.rib_heater_doped
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.rib_heater_doped_via_stack.html">
+     gdsfactory.cross_section.rib_heater_doped_via_stack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.transition.html">
+     gdsfactory.path.transition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cell.html">
+     gdsfactory.cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cell_without_validator.html">
+     gdsfactory.cell_without_validator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.types.Layer.html">
+     gdsfactory.types.Layer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.types.ComponentSpec.html">
+     gdsfactory.types.ComponentSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.types.LayerSpec.html">
+     gdsfactory.types.LayerSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.types.CrossSectionSpec.html">
+     gdsfactory.types.CrossSectionSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.types.CellSpec.html">
+     gdsfactory.types.CellSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.pack.html">
+     gdsfactory.pack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.grid.html">
+     gdsfactory.grid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.grid_with_text.html">
+     gdsfactory.grid_with_text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.get_netlist.get_netlist.html">
+     gdsfactory.get_netlist.get_netlist
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.write_drc_deck_macro.html">
+     gdsfactory.geometry.write_drc.write_drc_deck_macro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_width.html">
+     gdsfactory.geometry.write_drc.rule_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_space.html">
+     gdsfactory.geometry.write_drc.rule_space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_min_width_or_space.html">
+     gdsfactory.geometry.write_drc.rule_min_width_or_space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_separation.html">
+     gdsfactory.geometry.write_drc.rule_separation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_enclosing.html">
+     gdsfactory.geometry.write_drc.rule_enclosing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_area.html">
+     gdsfactory.geometry.write_drc.rule_area
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_density.html">
+     gdsfactory.geometry.write_drc.rule_density
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_not_inside.html">
+     gdsfactory.geometry.write_drc.rule_not_inside
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.Waveguide.html">
+     gdsfactory.simulation.gtidy3d.modes.Waveguide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler.html">
+     gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_width.html">
+     gdsfactory.simulation.gtidy3d.modes.sweep_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss.html">
+     gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.group_index.html">
+     gdsfactory.simulation.gtidy3d.modes.group_index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.plot_sweep_width.html">
+     gdsfactory.simulation.gtidy3d.modes.plot_sweep_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_modes_waveguide.html">
+     gdsfactory.simulation.modes.find_modes_waveguide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_modes_coupler.html">
+     gdsfactory.simulation.modes.find_modes_coupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_neff_vs_width.html">
+     gdsfactory.simulation.modes.find_neff_vs_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_mode_dispersion.html">
+     gdsfactory.simulation.modes.find_mode_dispersion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_coupling_vs_gap.html">
+     gdsfactory.simulation.modes.find_coupling_vs_gap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_neff_ng_dw_dh.html">
+     gdsfactory.simulation.modes.find_neff_ng_dw_dh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.plot_neff_ng_dw_dh.html">
+     gdsfactory.simulation.modes.plot_neff_ng_dw_dh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.plot_neff_vs_width.html">
+     gdsfactory.simulation.modes.plot_neff_vs_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.plot_coupling_vs_gap.html">
+     gdsfactory.simulation.modes.plot_coupling_vs_gap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.plot.plot_sparameters.html">
+     gdsfactory.simulation.plot.plot_sparameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.plot.plot_imbalance2x2.html">
+     gdsfactory.simulation.plot.plot_imbalance2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.plot.plot_loss2x2.html">
+     gdsfactory.simulation.plot.plot_loss2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.get_effective_indices.html">
+     gdsfactory.simulation.get_effective_indices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_mpi.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep_mpi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_batch.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_mpi.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating_mpi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_batch.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_batch.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.write_sparameters_lumerical.html">
+     gdsfactory.simulation.lumerical.write_sparameters_lumerical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.sax.read.model_from_csv.html">
+     gdsfactory.simulation.sax.read.model_from_csv
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.sax.read.model_from_component.html">
+     gdsfactory.simulation.sax.read.model_from_component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.sax.plot_model.html">
+     gdsfactory.simulation.sax.plot_model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.sax.models.html">
+     gdsfactory.simulation.sax.models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.simphony.plot_model.html">
+     gdsfactory.simulation.simphony.plot_model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.simphony.plot_circuit.html">
+     gdsfactory.simulation.simphony.plot_circuit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.simphony.plot_circuit_montecarlo.html">
+     gdsfactory.simulation.simphony.plot_circuit_montecarlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.simphony.components.html">
+     gdsfactory.simulation.simphony.components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.simphony.component_to_circuit.html">
+     gdsfactory.simulation.simphony.component_to_circuit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.install_design_kit.html">
+     gdsfactory.simulation.lumerical.interconnect.install_design_kit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.add_interconnect_element.html">
+     gdsfactory.simulation.lumerical.interconnect.add_interconnect_element
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings.html">
+     gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.send_to_interconnect.html">
+     gdsfactory.simulation.lumerical.interconnect.send_to_interconnect
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep.html">
+     gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep.html">
+     gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../routing.html">
+   Routing API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_route.html">
+     gdsfactory.routing.get_route
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_route_from_steps.html">
+     gdsfactory.routing.get_route_from_steps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.route_quad.html">
+     gdsfactory.routing.route_quad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.route_sharp.html">
+     gdsfactory.routing.route_sharp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_bundle.html">
+     gdsfactory.routing.get_bundle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_bundle_from_steps.html">
+     gdsfactory.routing.get_bundle_from_steps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_bundle_path_length_match.html">
+     gdsfactory.routing.get_bundle_path_length_match
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.route_ports_to_side.html">
+     gdsfactory.routing.route_ports_to_side
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.route_south.html">
+     gdsfactory.routing.route_south
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_routes_bend180.html">
+     gdsfactory.routing.get_routes_bend180
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_routes_straight.html">
+     gdsfactory.routing.get_routes_straight
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_route_sbend.html">
+     gdsfactory.routing.get_route_sbend
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_bundle_sbend.html">
+     gdsfactory.routing.get_bundle_sbend
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.fanout2x2.html">
+     gdsfactory.routing.fanout2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.fanout_component.html">
+     gdsfactory.routing.fanout_component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.fanout_ports.html">
+     gdsfactory.routing.fanout_ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.add_fiber_array.add_fiber_array.html">
+     gdsfactory.routing.add_fiber_array.add_fiber_array
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.add_fiber_single.add_fiber_single.html">
+     gdsfactory.routing.add_fiber_single.add_fiber_single
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.add_electrical_pads_shortest.html">
+     gdsfactory.routing.add_electrical_pads_shortest
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.add_electrical_pads_top.html">
+     gdsfactory.routing.add_electrical_pads_top
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.add_electrical_pads_top_dc.html">
+     gdsfactory.routing.add_electrical_pads_top_dc
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../cli.html">
+   Command line interface
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory/issues/new?title=Issue%20on%20page%20%2F_modules/gdsfactory/simulation/modes/find_modes.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <h1>Source code for gdsfactory.simulation.modes.find_modes</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Compute modes of a rectangular Si strip waveguide on top of oxide. Note that \</span>
+<span class="sd">you should only pay attention, here, to the guided modes, which are the modes \</span>
+<span class="sd">whose frequency falls under the light line -- that is, frequency &lt; beta / 1.45, \</span>
+<span class="sd">where 1.45 is the SiO2 index.</span>
+
+<span class="sd">Since there&#39;s no special lengthscale here, you can just</span>
+<span class="sd">use microns. In general, if you use units of x, the frequencies</span>
+<span class="sd">output are equivalent to x/lambda# so here, the frequencies will be</span>
+<span class="sd">output as um/lambda, e.g. 1.5um would correspond to the frequency</span>
+<span class="sd">1/1.5 = 0.6667.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+
+<span class="kn">import</span> <span class="nn">meep</span> <span class="k">as</span> <span class="nn">mp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">meep</span> <span class="kn">import</span> <span class="n">mpb</span>
+
+<span class="kn">from</span> <span class="nn">gdsfactory.pdk</span> <span class="kn">import</span> <span class="n">get_modes_path</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.simulation.disable_print</span> <span class="kn">import</span> <span class="n">disable_print</span><span class="p">,</span> <span class="n">enable_print</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.simulation.get_sparameters_path</span> <span class="kn">import</span> <span class="n">get_kwargs_hash</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.simulation.modes.get_mode_solver_coupler</span> <span class="kn">import</span> <span class="n">get_mode_solver_coupler</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.simulation.modes.get_mode_solver_rib</span> <span class="kn">import</span> <span class="n">get_mode_solver_rib</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.simulation.modes.types</span> <span class="kn">import</span> <span class="n">Mode</span>
+
+<span class="n">mpb</span><span class="o">.</span><span class="n">Verbosity</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="find_modes_waveguide"><a class="viewcode-back" href="../../../../_autosummary/gdsfactory.simulation.modes.find_modes_waveguide.html#gdsfactory.simulation.modes.find_modes_waveguide">[docs]</a><span class="k">def</span> <span class="nf">find_modes_waveguide</span><span class="p">(</span>
+    <span class="n">tol</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-6</span><span class="p">,</span>
+    <span class="n">wavelength</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.55</span><span class="p">,</span>
+    <span class="n">mode_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">parity</span><span class="o">=</span><span class="n">mp</span><span class="o">.</span><span class="n">NO_PARITY</span><span class="p">,</span>
+    <span class="n">cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">single_waveguide</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Mode</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Computes mode effective and group index for a rectangular waveguide.</span>
+
+<span class="sd">    single_waveguide=True</span>
+
+<span class="sd">    ::</span>
+
+<span class="sd">          __________________________</span>
+<span class="sd">          |</span>
+<span class="sd">          |</span>
+<span class="sd">          |         width</span>
+<span class="sd">          |     &lt;----------&gt;</span>
+<span class="sd">          |      ___________   _ _ _</span>
+<span class="sd">          |     |           |       |</span>
+<span class="sd">        sz|_____|  ncore    |_______|</span>
+<span class="sd">          |                         | wg_thickness</span>
+<span class="sd">          |slab_thickness    nslab  |</span>
+<span class="sd">          |_________________________|</span>
+<span class="sd">          |</span>
+<span class="sd">          |        nclad</span>
+<span class="sd">          |__________________________</span>
+<span class="sd">          &lt;------------------------&gt;</span>
+<span class="sd">                        sy</span>
+
+<span class="sd">    single_waveguide=False</span>
+
+<span class="sd">    ::</span>
+
+<span class="sd">          _____________________________________________________</span>
+<span class="sd">          |</span>
+<span class="sd">          |</span>
+<span class="sd">          |         widths[0]                 widths[1]</span>
+<span class="sd">          |     &lt;----------&gt;     gaps[0]    &lt;----------&gt;</span>
+<span class="sd">          |      ___________ &lt;-------------&gt; ___________      _</span>
+<span class="sd">          |     |           |               |           |     |</span>
+<span class="sd">        sz|_____|  ncore    |_______________|           |_____|</span>
+<span class="sd">          |                                                   | wg_thickness</span>
+<span class="sd">          |slab_thickness        nslab                        |</span>
+<span class="sd">          |___________________________________________________|</span>
+<span class="sd">          |</span>
+<span class="sd">          |&lt;---&gt;                                         &lt;---&gt;</span>
+<span class="sd">          |ymargin               nclad                   ymargin</span>
+<span class="sd">          |____________________________________________________</span>
+<span class="sd">          &lt;---------------------------------------------------&gt;</span>
+<span class="sd">                                   sy</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        mode_solver: function that returns mpb.ModeSolver.</span>
+<span class="sd">        tol: tolerance when finding modes.</span>
+<span class="sd">        wavelength: wavelength in um.</span>
+<span class="sd">        mode_number: mode order of the first mode.</span>
+<span class="sd">        parity: mp.ODD_Y mp.EVEN_X for TE, mp.EVEN_Y for TM.</span>
+<span class="sd">        cache: directory path to cache modes. None disables the file cache.</span>
+<span class="sd">        overwrite: forces simulating again.</span>
+<span class="sd">        kwargs: waveguide settings.</span>
+
+<span class="sd">    Keyword Args:</span>
+<span class="sd">        wg_width: wg_width (um).</span>
+<span class="sd">        wg_thickness: wg height (um).</span>
+<span class="sd">        slab_thickness: thickness for the waveguide slab.</span>
+<span class="sd">        ncore: core material refractive index.</span>
+<span class="sd">        nclad: clad material refractive index.</span>
+<span class="sd">        sy: simulation region width (um).</span>
+<span class="sd">        sz: simulation region height (um).</span>
+<span class="sd">        resolution: resolution (pixels/um).</span>
+<span class="sd">        nmodes: number of modes to compute.</span>
+
+<span class="sd">    Keyword Args:</span>
+<span class="sd">        wg_width: wg_width (um) for the symmetric case.</span>
+<span class="sd">        gap: for the case of only two waveguides.</span>
+<span class="sd">        wg_widths: list or tuple of waveguide widths.</span>
+<span class="sd">        gaps: list or tuple of waveguide gaps.</span>
+<span class="sd">        wg_thickness: wg height (um).</span>
+<span class="sd">        slab_thickness: thickness for the waveguide slab.</span>
+<span class="sd">        ncore: core material refractive index.</span>
+<span class="sd">        nclad: clad material refractive index.</span>
+<span class="sd">        nslab: Optional slab material refractive index. Defaults to ncore.</span>
+<span class="sd">        ymargin: margin in y.</span>
+<span class="sd">        sz: simulation region thickness (um).</span>
+<span class="sd">        resolution: resolution (pixels/um).</span>
+<span class="sd">        nmodes: number of modes.</span>
+<span class="sd">        sidewall_angles: waveguide sidewall angle (radians),</span>
+<span class="sd">            tapers from wg_width at top of slab, upwards, to top of waveguide.</span>
+
+<span class="sd">    Returns: Dict[mode_number, Mode]</span>
+
+<span class="sd">    compute mode_number lowest frequencies as a function of k. Also display</span>
+<span class="sd">    &quot;parities&quot;, i.e. whether the mode is symmetric or anti_symmetric</span>
+<span class="sd">    through the y=0 and z=0 planes.</span>
+<span class="sd">    mode_solver.run(mpb.display_yparities, mpb.display_zparities)</span>
+
+<span class="sd">    Above, we outputted the dispersion relation: frequency (omega) as a</span>
+<span class="sd">    function of wavevector kx (beta). Alternatively, you can compute</span>
+<span class="sd">    beta for a given omega -- for example, you might want to find the</span>
+<span class="sd">    modes and wavevectors at a fixed wavelength of 1.55 microns. You</span>
+<span class="sd">    can do that using the find_k function:</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">modes</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">mode_solver</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">get_mode_solver_rib</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">single_waveguide</span>
+        <span class="k">else</span> <span class="n">get_mode_solver_coupler</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">nmodes</span> <span class="o">=</span> <span class="n">mode_solver</span><span class="o">.</span><span class="n">nmodes</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">wavelength</span>
+
+    <span class="n">h</span> <span class="o">=</span> <span class="n">get_kwargs_hash</span><span class="p">(</span>
+        <span class="n">wavelength</span><span class="o">=</span><span class="n">wavelength</span><span class="p">,</span>
+        <span class="n">parity</span><span class="o">=</span><span class="n">parity</span><span class="p">,</span>
+        <span class="n">single_waveguide</span><span class="o">=</span><span class="n">single_waveguide</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">cache</span><span class="p">:</span>
+        <span class="n">cache_path</span> <span class="o">=</span> <span class="n">get_modes_path</span><span class="p">()</span>
+        <span class="n">cache_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">cache_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">mode_number</span><span class="si">}</span><span class="s2">.pkl&quot;</span>
+
+        <span class="k">if</span> <span class="n">filepath</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">overwrite</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">mode_number</span><span class="p">,</span> <span class="n">mode_number</span> <span class="o">+</span> <span class="n">nmodes</span><span class="p">)):</span>
+                <span class="n">filepath</span> <span class="o">=</span> <span class="n">cache_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">.pkl&quot;</span>
+                <span class="n">mode</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">filepath</span><span class="o">.</span><span class="n">read_bytes</span><span class="p">())</span>
+                <span class="n">modes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mode</span>
+            <span class="k">return</span> <span class="n">modes</span>
+
+    <span class="c1"># Output the x component of the Poynting vector for mode_number bands at omega</span>
+    <span class="n">disable_print</span><span class="p">()</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">mode_solver</span><span class="o">.</span><span class="n">find_k</span><span class="p">(</span>
+        <span class="n">parity</span><span class="p">,</span>
+        <span class="n">omega</span><span class="p">,</span>
+        <span class="n">mode_number</span><span class="p">,</span>
+        <span class="n">mode_number</span> <span class="o">+</span> <span class="n">nmodes</span><span class="p">,</span>
+        <span class="n">mp</span><span class="o">.</span><span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">tol</span><span class="p">,</span>
+        <span class="n">omega</span> <span class="o">*</span> <span class="mf">2.02</span><span class="p">,</span>
+        <span class="n">omega</span> <span class="o">*</span> <span class="mf">0.01</span><span class="p">,</span>
+        <span class="n">omega</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="c1"># mpb.output_poynting_x,</span>
+        <span class="n">mpb</span><span class="o">.</span><span class="n">display_yparities</span><span class="p">,</span>
+        <span class="n">mpb</span><span class="o">.</span><span class="n">display_group_velocities</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">enable_print</span><span class="p">()</span>
+    <span class="n">neff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">wavelength</span>
+
+    <span class="c1"># vg = mode_solver.compute_group_velocities()</span>
+    <span class="c1"># vg = vg[0]</span>
+    <span class="c1"># ng = 1 / np.array(vg)</span>
+
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">mode_number</span><span class="p">,</span> <span class="n">mode_number</span> <span class="o">+</span> <span class="n">nmodes</span><span class="p">)):</span>
+        <span class="n">Ei</span> <span class="o">=</span> <span class="n">mode_solver</span><span class="o">.</span><span class="n">get_efield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">Hi</span> <span class="o">=</span> <span class="n">mode_solver</span><span class="o">.</span><span class="n">get_hfield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">y_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">Ei</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">z_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">Ei</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">modes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Mode</span><span class="p">(</span>
+            <span class="n">mode_number</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
+            <span class="n">neff</span><span class="o">=</span><span class="n">neff</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+            <span class="n">wavelength</span><span class="o">=</span><span class="n">wavelength</span><span class="p">,</span>
+            <span class="n">E</span><span class="o">=</span><span class="n">Ei</span><span class="p">,</span>
+            <span class="n">H</span><span class="o">=</span><span class="n">Hi</span><span class="p">,</span>
+            <span class="n">eps</span><span class="o">=</span><span class="n">mode_solver</span><span class="o">.</span><span class="n">get_epsilon</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+                <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">mode_solver</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;sy&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span>
+                <span class="n">mode_solver</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;sy&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span>
+                <span class="n">y_num</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+                <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">mode_solver</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;sz&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span>
+                <span class="n">mode_solver</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;sz&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span>
+                <span class="n">z_num</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">cache</span><span class="p">:</span>
+            <span class="n">filepath</span> <span class="o">=</span> <span class="n">cache_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">.pkl&quot;</span>
+            <span class="n">filepath</span><span class="o">.</span><span class="n">write_bytes</span><span class="p">(</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">modes</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+    <span class="k">return</span> <span class="n">modes</span></div>
+
+
+<span class="n">find_modes_coupler</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">find_modes_waveguide</span><span class="p">,</span> <span class="n">single_waveguide</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">find_modes_waveguide</span><span class="p">(</span><span class="n">wg_width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+    <span class="n">m1</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># print(np.shape(m1.y))</span>
+    <span class="c1"># print(np.shape(m1.z))</span>
+    <span class="c1"># print(np.shape(m1.E[:, :, 0, 1]))</span>
+
+    <span class="c1"># tol: float = 1e-6</span>
+    <span class="c1"># wavelength: float = 1.55</span>
+    <span class="c1"># mode_number: int = 1</span>
+    <span class="c1"># parity = mp.NO_PARITY</span>
+    <span class="c1"># mode_solver = get_mode_solver_rib()</span>
+    <span class="c1"># nmodes = mode_solver.nmodes</span>
+    <span class="c1"># omega = 1 / wavelength</span>
+
+    <span class="c1"># # Output the x component of the Poynting vector for mode_number bands at omega</span>
+    <span class="c1"># k = mode_solver.find_k(</span>
+    <span class="c1">#     parity,</span>
+    <span class="c1">#     omega,</span>
+    <span class="c1">#     mode_number,</span>
+    <span class="c1">#     mode_number + nmodes,</span>
+    <span class="c1">#     mp.Vector3(1),</span>
+    <span class="c1">#     tol,</span>
+    <span class="c1">#     omega * 2.02,</span>
+    <span class="c1">#     omega * 0.01,</span>
+    <span class="c1">#     omega * 10,</span>
+    <span class="c1">#     mpb.output_poynting_x,</span>
+    <span class="c1">#     mpb.display_yparities,</span>
+    <span class="c1">#     mpb.display_group_velocities,</span>
+    <span class="c1"># )</span>
+    <span class="c1"># enable_print()</span>
+    <span class="c1"># vg = mode_solver.compute_group_velocities()</span>
+    <span class="c1"># vg0 = vg[0]</span>
+    <span class="c1"># neff = np.array(k) * wavelength</span>
+    <span class="c1"># ng = 1 / np.array(vg0)</span>
+
+    <span class="c1"># modes = {</span>
+    <span class="c1">#     i: Mode(</span>
+    <span class="c1">#         mode_number=i,</span>
+    <span class="c1">#         neff=neff[index],</span>
+    <span class="c1">#         solver=mode_solver,</span>
+    <span class="c1">#         wavelength=wavelength,</span>
+    <span class="c1">#     )</span>
+    <span class="c1">#     for index, i in enumerate(range(mode_number, mode_number + nmodes))</span>
+    <span class="c1"># }</span>
+</pre></div>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+      &copy; Copyright 2020, MIT License.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

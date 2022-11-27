@@ -1,0 +1,6 @@
+﻿gdsfactory.cross\_section.strip\_heater\_metal\_undercut
+========================================================
+
+.. currentmodule:: gdsfactory.cross_section
+
+.. autofunction:: strip_heater_metal_undercut

@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.sax.plot\_model
+=====================================
+
+.. currentmodule:: gdsfactory.simulation.sax
+
+.. autofunction:: plot_model

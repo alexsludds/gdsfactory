@@ -1,0 +1,6 @@
+﻿gdsfactory.cross\_section.strip
+===============================
+
+.. currentmodule:: gdsfactory.cross_section
+
+.. autofunction:: strip

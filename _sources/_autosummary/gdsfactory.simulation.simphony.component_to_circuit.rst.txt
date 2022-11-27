@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.simphony.component\_to\_circuit
+=====================================================
+
+.. currentmodule:: gdsfactory.simulation.simphony
+
+.. autofunction:: component_to_circuit

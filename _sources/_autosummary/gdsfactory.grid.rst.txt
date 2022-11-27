@@ -1,0 +1,6 @@
+﻿gdsfactory.grid
+===============
+
+.. currentmodule:: gdsfactory
+
+.. autofunction:: grid

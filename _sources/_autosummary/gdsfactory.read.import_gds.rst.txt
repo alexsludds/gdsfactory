@@ -1,0 +1,6 @@
+﻿gdsfactory.read.import\_gds
+===========================
+
+.. currentmodule:: gdsfactory.read
+
+.. autofunction:: import_gds

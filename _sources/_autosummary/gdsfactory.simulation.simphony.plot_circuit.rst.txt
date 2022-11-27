@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.simphony.plot\_circuit
+============================================
+
+.. currentmodule:: gdsfactory.simulation.simphony
+
+.. autofunction:: plot_circuit

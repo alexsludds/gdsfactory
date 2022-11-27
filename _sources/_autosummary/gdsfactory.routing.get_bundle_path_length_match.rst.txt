@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.get\_bundle\_path\_length\_match
+===================================================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: get_bundle_path_length_match

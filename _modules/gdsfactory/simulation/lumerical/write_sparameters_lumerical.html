@@ -1,0 +1,1657 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gdsfactory.simulation.lumerical.write_sparameters_lumerical &#8212; gdsfactory 6.2.6 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../README.html">
+   gdsfactory 6.2.6
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../git.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_2_install.html">
+     Install gdsfactory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_2_klayout.html">
+     Klayout integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_3_vscode.html">
+     VScode, PyCharm, Spyder, JupyterLab integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_4_gdsfactory_in_5minutes.html">
+     gdsfactory in 5 minutes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_0_python.html">
+     Python intro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/_1_git.html">
+     Git: Version control intro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../workflow.html">
+   Workflow
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../notebooks.html">
+   Layout tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/00_geometry.html">
+     Component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/01_references.html">
+     References and ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/02_movement.html">
+     Movement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/03_cells_autoname_and_cache.html">
+     Cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/03_layer_stack.html">
+     Layers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/03_waveguides_paths_crossections.html">
+     Path and CrossSection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/04_components_.html">
+     Components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/04_components_hierarchy.html">
+     Components with hierarchy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/04_routing.html">
+     Routing optical and RF ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/041_routing_electical.html">
+     Routing electrical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/07_mask.html">
+     Reticle assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/08_pdk.html">
+     PDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/09_pdk_import.html">
+     Import PDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/common_mistakes.html">
+     Common mistakes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/11_get_netlist.html">
+     get_netlist
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/10_yaml_component.html">
+     YAML Place and AutoRoute
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../plugins_process.html">
+   Plugins: Device simulators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/devsim/01_pin_waveguide.html">
+     DEVSIM TCAD simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/thermal/thermal.html">
+     Thermal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../plugins_mode_solver.html">
+   Plugins: Mode solvers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/mpb/001_mpb_waveguide.html">
+     MPB mode-solver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/tidy3d/01_tidy3d_modes.html">
+     Tidy3D mode solver
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../plugins_fdtd.html">
+   Plugins: FDTD
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/lumerical/1_fdtd_sparameters.html">
+     FDTD Lumerical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/meep/001_meep_sparameters.html">
+     Meep FDTD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/meep/002_gratings.html">
+     FDTD Meep gratings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/tidy3d/00_tidy3d.html">
+     FDTD tidy3d
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../plugins_circuits.html">
+   Plugins: Circuit simulators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/sax/sax.html">
+     SAX circuit simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/simphony/01_components.html">
+     Simphony circuit simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../notebooks/plugins/lumerical/2_interconnect.html">
+     Lumerical INTERCONNECT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../contribution.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../CHANGELOG.html">
+   CHANGELOG
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../components.html">
+   Components
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../api.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.Component.html">
+     gdsfactory.Component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.ComponentReference.html">
+     gdsfactory.ComponentReference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.read.import_gds.html">
+     gdsfactory.read.import_gds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.read.from_yaml.html">
+     gdsfactory.read.from_yaml
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.read.from_np.html">
+     gdsfactory.read.from_np
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.read.from_phidl.html">
+     gdsfactory.read.from_phidl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.read.from_dphox.html">
+     gdsfactory.read.from_dphox
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.Path.html">
+     gdsfactory.path.Path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.straight.html">
+     gdsfactory.path.straight
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.euler.html">
+     gdsfactory.path.euler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.arc.html">
+     gdsfactory.path.arc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.spiral_archimedean.html">
+     gdsfactory.path.spiral_archimedean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.smooth.html">
+     gdsfactory.path.smooth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.CrossSection.html">
+     gdsfactory.cross_section.CrossSection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.Transition.html">
+     gdsfactory.cross_section.Transition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.cross_section.html">
+     gdsfactory.cross_section.cross_section
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.strip.html">
+     gdsfactory.cross_section.strip
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.strip_auto_widen.html">
+     gdsfactory.cross_section.strip_auto_widen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.heater_metal.html">
+     gdsfactory.cross_section.heater_metal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.pin.html">
+     gdsfactory.cross_section.pin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.pn.html">
+     gdsfactory.cross_section.pn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.strip_heater_metal_undercut.html">
+     gdsfactory.cross_section.strip_heater_metal_undercut
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.strip_heater_metal.html">
+     gdsfactory.cross_section.strip_heater_metal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.strip_heater_doped.html">
+     gdsfactory.cross_section.strip_heater_doped
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.rib_heater_doped.html">
+     gdsfactory.cross_section.rib_heater_doped
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cross_section.rib_heater_doped_via_stack.html">
+     gdsfactory.cross_section.rib_heater_doped_via_stack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.path.transition.html">
+     gdsfactory.path.transition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cell.html">
+     gdsfactory.cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.cell_without_validator.html">
+     gdsfactory.cell_without_validator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.types.Layer.html">
+     gdsfactory.types.Layer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.types.ComponentSpec.html">
+     gdsfactory.types.ComponentSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.types.LayerSpec.html">
+     gdsfactory.types.LayerSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.types.CrossSectionSpec.html">
+     gdsfactory.types.CrossSectionSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.types.CellSpec.html">
+     gdsfactory.types.CellSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.pack.html">
+     gdsfactory.pack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.grid.html">
+     gdsfactory.grid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.grid_with_text.html">
+     gdsfactory.grid_with_text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.get_netlist.get_netlist.html">
+     gdsfactory.get_netlist.get_netlist
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.write_drc_deck_macro.html">
+     gdsfactory.geometry.write_drc.write_drc_deck_macro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_width.html">
+     gdsfactory.geometry.write_drc.rule_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_space.html">
+     gdsfactory.geometry.write_drc.rule_space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_min_width_or_space.html">
+     gdsfactory.geometry.write_drc.rule_min_width_or_space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_separation.html">
+     gdsfactory.geometry.write_drc.rule_separation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_enclosing.html">
+     gdsfactory.geometry.write_drc.rule_enclosing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_area.html">
+     gdsfactory.geometry.write_drc.rule_area
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_density.html">
+     gdsfactory.geometry.write_drc.rule_density
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.geometry.write_drc.rule_not_inside.html">
+     gdsfactory.geometry.write_drc.rule_not_inside
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.Waveguide.html">
+     gdsfactory.simulation.gtidy3d.modes.Waveguide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler.html">
+     gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_width.html">
+     gdsfactory.simulation.gtidy3d.modes.sweep_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss.html">
+     gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.group_index.html">
+     gdsfactory.simulation.gtidy3d.modes.group_index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.modes.plot_sweep_width.html">
+     gdsfactory.simulation.gtidy3d.modes.plot_sweep_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_modes_waveguide.html">
+     gdsfactory.simulation.modes.find_modes_waveguide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_modes_coupler.html">
+     gdsfactory.simulation.modes.find_modes_coupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_neff_vs_width.html">
+     gdsfactory.simulation.modes.find_neff_vs_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_mode_dispersion.html">
+     gdsfactory.simulation.modes.find_mode_dispersion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_coupling_vs_gap.html">
+     gdsfactory.simulation.modes.find_coupling_vs_gap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.find_neff_ng_dw_dh.html">
+     gdsfactory.simulation.modes.find_neff_ng_dw_dh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.plot_neff_ng_dw_dh.html">
+     gdsfactory.simulation.modes.plot_neff_ng_dw_dh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.plot_neff_vs_width.html">
+     gdsfactory.simulation.modes.plot_neff_vs_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.modes.plot_coupling_vs_gap.html">
+     gdsfactory.simulation.modes.plot_coupling_vs_gap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.plot.plot_sparameters.html">
+     gdsfactory.simulation.plot.plot_sparameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.plot.plot_imbalance2x2.html">
+     gdsfactory.simulation.plot.plot_imbalance2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.plot.plot_loss2x2.html">
+     gdsfactory.simulation.plot.plot_loss2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.get_effective_indices.html">
+     gdsfactory.simulation.get_effective_indices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_mpi.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep_mpi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_batch.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_mpi.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating_mpi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_batch.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_batch.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.write_sparameters_lumerical.html">
+     gdsfactory.simulation.lumerical.write_sparameters_lumerical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.sax.read.model_from_csv.html">
+     gdsfactory.simulation.sax.read.model_from_csv
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.sax.read.model_from_component.html">
+     gdsfactory.simulation.sax.read.model_from_component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.sax.plot_model.html">
+     gdsfactory.simulation.sax.plot_model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.sax.models.html">
+     gdsfactory.simulation.sax.models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.simphony.plot_model.html">
+     gdsfactory.simulation.simphony.plot_model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.simphony.plot_circuit.html">
+     gdsfactory.simulation.simphony.plot_circuit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.simphony.plot_circuit_montecarlo.html">
+     gdsfactory.simulation.simphony.plot_circuit_montecarlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.simphony.components.html">
+     gdsfactory.simulation.simphony.components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.simphony.component_to_circuit.html">
+     gdsfactory.simulation.simphony.component_to_circuit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.install_design_kit.html">
+     gdsfactory.simulation.lumerical.interconnect.install_design_kit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.add_interconnect_element.html">
+     gdsfactory.simulation.lumerical.interconnect.add_interconnect_element
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings.html">
+     gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.send_to_interconnect.html">
+     gdsfactory.simulation.lumerical.interconnect.send_to_interconnect
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep.html">
+     gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep.html">
+     gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../../routing.html">
+   Routing API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_route.html">
+     gdsfactory.routing.get_route
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_route_from_steps.html">
+     gdsfactory.routing.get_route_from_steps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.route_quad.html">
+     gdsfactory.routing.route_quad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.route_sharp.html">
+     gdsfactory.routing.route_sharp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_bundle.html">
+     gdsfactory.routing.get_bundle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_bundle_from_steps.html">
+     gdsfactory.routing.get_bundle_from_steps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_bundle_path_length_match.html">
+     gdsfactory.routing.get_bundle_path_length_match
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.route_ports_to_side.html">
+     gdsfactory.routing.route_ports_to_side
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.route_south.html">
+     gdsfactory.routing.route_south
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_routes_bend180.html">
+     gdsfactory.routing.get_routes_bend180
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_routes_straight.html">
+     gdsfactory.routing.get_routes_straight
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_route_sbend.html">
+     gdsfactory.routing.get_route_sbend
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.get_bundle_sbend.html">
+     gdsfactory.routing.get_bundle_sbend
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.fanout2x2.html">
+     gdsfactory.routing.fanout2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.fanout_component.html">
+     gdsfactory.routing.fanout_component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.fanout_ports.html">
+     gdsfactory.routing.fanout_ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.add_fiber_array.add_fiber_array.html">
+     gdsfactory.routing.add_fiber_array.add_fiber_array
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.add_fiber_single.add_fiber_single.html">
+     gdsfactory.routing.add_fiber_single.add_fiber_single
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.add_electrical_pads_shortest.html">
+     gdsfactory.routing.add_electrical_pads_shortest
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.add_electrical_pads_top.html">
+     gdsfactory.routing.add_electrical_pads_top
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../_autosummary/gdsfactory.routing.add_electrical_pads_top_dc.html">
+     gdsfactory.routing.add_electrical_pads_top_dc
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../cli.html">
+   Command line interface
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory/issues/new?title=Issue%20on%20page%20%2F_modules/gdsfactory/simulation/lumerical/write_sparameters_lumerical.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <h1>Source code for gdsfactory.simulation.lumerical.write_sparameters_lumerical</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Write Sparameters with Lumerical FDTD.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">omegaconf</span>
+
+<span class="kn">import</span> <span class="nn">gdsfactory</span> <span class="k">as</span> <span class="nn">gf</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.config</span> <span class="kn">import</span> <span class="n">__version__</span><span class="p">,</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.pdk</span> <span class="kn">import</span> <span class="n">get_layer_stack</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.simulation.get_sparameters_path</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">get_sparameters_path_lumerical</span> <span class="k">as</span> <span class="n">get_sparameters_path</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.tech</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SIMULATION_SETTINGS_LUMERICAL_FDTD</span><span class="p">,</span>
+    <span class="n">LayerStack</span><span class="p">,</span>
+    <span class="n">MaterialSpec</span><span class="p">,</span>
+    <span class="n">SimulationSettingsLumericalFdtd</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.types</span> <span class="kn">import</span> <span class="n">ComponentSpec</span><span class="p">,</span> <span class="n">PathType</span>
+
+<span class="n">run_false_warning</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">You have passed run=False to debug the simulation</span>
+
+<span class="s2">run=False returns the simulation session for you to debug and make sure it is correct</span>
+
+<span class="s2">To compute the Sparameters you need to pass run=True</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">set_material</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">structure</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">material</span><span class="p">:</span> <span class="n">MaterialSpec</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sets the material of a structure.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        session: lumerical session.</span>
+<span class="sd">        structure: name of the lumerical structure.</span>
+<span class="sd">        material: material spec, can be</span>
+<span class="sd">            a string from lumerical database materials.</span>
+<span class="sd">            a float or int, representing refractive index.</span>
+<span class="sd">            a complex for n, k materials.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="n">material</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">material</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="nb">complex</span><span class="p">):</span>
+        <span class="n">mat</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">addmaterial</span><span class="p">(</span><span class="s2">&quot;(n,k) Material&quot;</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">setmaterial</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="s2">&quot;Refractive Index&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">setmaterial</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="s2">&quot;Imaginary Refractive Index&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="n">mat</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">material</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Complex material requires a tuple or list of two numbers &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;(real, imag). Got </span><span class="si">{</span><span class="n">material</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="p">)</span>
+        <span class="n">real</span><span class="p">,</span> <span class="n">imag</span> <span class="o">=</span> <span class="n">material</span>
+        <span class="n">mat</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">addmaterial</span><span class="p">(</span><span class="s2">&quot;(n,k) Material&quot;</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">setmaterial</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="s2">&quot;Refractive Index&quot;</span><span class="p">,</span> <span class="n">real</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">setmaterial</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="s2">&quot;Imaginary Refractive Index&quot;</span><span class="p">,</span> <span class="n">imag</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="n">mat</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">material</span><span class="si">!r}</span><span class="s2"> needs to be a float refractive index, a complex number or tuple &quot;</span>
+            <span class="s2">&quot;or a string from lumerical&#39;s material database&quot;</span>
+        <span class="p">)</span>
+
+
+<div class="viewcode-block" id="write_sparameters_lumerical"><a class="viewcode-back" href="../../../../_autosummary/gdsfactory.simulation.lumerical.write_sparameters_lumerical.html#gdsfactory.simulation.lumerical.write_sparameters_lumerical">[docs]</a><span class="k">def</span> <span class="nf">write_sparameters_lumerical</span><span class="p">(</span>
+    <span class="n">component</span><span class="p">:</span> <span class="n">ComponentSpec</span><span class="p">,</span>
+    <span class="n">session</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">object</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">dirpath</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PathType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">layer_stack</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LayerStack</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">simulation_settings</span><span class="p">:</span> <span class="n">SimulationSettingsLumericalFdtd</span> <span class="o">=</span> <span class="n">SIMULATION_SETTINGS_LUMERICAL_FDTD</span><span class="p">,</span>
+    <span class="n">material_name_to_lumerical</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">MaterialSpec</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">delete_fsp_files</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">settings</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Returns and writes component Sparameters using Lumerical FDTD.</span>
+
+<span class="sd">    If simulation exists it returns the Sparameters directly unless overwrite=True</span>
+<span class="sd">    which forces a re-run of the simulation</span>
+
+<span class="sd">    Writes Sparameters both in .npz and .DAT (interconnect format) as well as</span>
+<span class="sd">    simulation settings in .YAML</span>
+
+<span class="sd">    In the npz format you can see `S12m` where `m` stands for magnitude</span>
+<span class="sd">    and `S12a` where `a` stands for angle in radians</span>
+
+<span class="sd">    Your components need to have ports, that will extend over the PML.</span>
+
+<span class="sd">    .. image:: https://i.imgur.com/dHAzZRw.png</span>
+
+<span class="sd">    For your Fab technology you can overwrite</span>
+
+<span class="sd">    - simulation_settings</span>
+<span class="sd">    - dirpath</span>
+<span class="sd">    - layerStack</span>
+
+<span class="sd">    converts gdsfactory units (um) to Lumerical units (m)</span>
+
+<span class="sd">    Disclaimer: This function tries to extract Sparameters automatically</span>
+<span class="sd">    is hard to make a function that will fit all your possible simulation settings.</span>
+<span class="sd">    You can use this function for inspiration to create your own.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        component: Component to simulate.</span>
+<span class="sd">        session: you can pass a session=lumapi.FDTD() or it will create one.</span>
+<span class="sd">        run: True runs Lumerical, False only draws simulation.</span>
+<span class="sd">        overwrite: run even if simulation results already exists.</span>
+<span class="sd">        dirpath: directory to store sparameters in npz.</span>
+<span class="sd">            Defaults to active Pdk.sparameters_path.</span>
+<span class="sd">        layer_stack: contains layer to thickness, zmin and material.</span>
+<span class="sd">            Defaults to active pdk.layer_stack.</span>
+<span class="sd">        simulation_settings: dataclass with all simulation_settings.</span>
+<span class="sd">        material_name_to_lumerical: alias to lumerical material&#39;s database name</span>
+<span class="sd">            or refractive index.</span>
+<span class="sd">            translate material name in LayerStack to lumerical&#39;s database name.</span>
+<span class="sd">        delete_fsp_files: deletes lumerical fsp files after simulation.</span>
+
+<span class="sd">    Keyword Args:</span>
+<span class="sd">        background_material: for the background.</span>
+<span class="sd">        port_margin: on both sides of the port width (um).</span>
+<span class="sd">        port_height: port height (um).</span>
+<span class="sd">        port_extension: port extension (um).</span>
+<span class="sd">        mesh_accuracy: 2 (1: coarse, 2: fine, 3: superfine).</span>
+<span class="sd">        zmargin: for the FDTD region (um).</span>
+<span class="sd">        ymargin: for the FDTD region (um).</span>
+<span class="sd">        xmargin: for the FDTD region (um).</span>
+<span class="sd">        wavelength_start: 1.2 (um).</span>
+<span class="sd">        wavelength_stop: 1.6 (um).</span>
+<span class="sd">        wavelength_points: 500.</span>
+<span class="sd">        simulation_time: (s) related to max path length 3e8/2.4*10e-12*1e6 = 1.25mm.</span>
+<span class="sd">        simulation_temperature: in kelvin (default = 300).</span>
+<span class="sd">        frequency_dependent_profile: computes mode profiles for different wavelengths.</span>
+<span class="sd">        field_profile_samples: number of wavelengths to compute field profile.</span>
+
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">         top view</span>
+<span class="sd">              ________________________________</span>
+<span class="sd">             |                               |</span>
+<span class="sd">             | xmargin                       | port_extension</span>
+<span class="sd">             |&lt;------&gt;          port_margin ||&lt;--&gt;</span>
+<span class="sd">          o2_|___________          _________||_o3</span>
+<span class="sd">             |           \        /          |</span>
+<span class="sd">             |            \      /           |</span>
+<span class="sd">             |             ======            |</span>
+<span class="sd">             |            /      \           |</span>
+<span class="sd">          o1_|___________/        \__________|_o4</span>
+<span class="sd">             |   |                           |</span>
+<span class="sd">             |   |ymargin                    |</span>
+<span class="sd">             |   |                           |</span>
+<span class="sd">             |___|___________________________|</span>
+
+<span class="sd">        side view</span>
+<span class="sd">              ________________________________</span>
+<span class="sd">             |                               |</span>
+<span class="sd">             |                               |</span>
+<span class="sd">             |                               |</span>
+<span class="sd">             |ymargin                        |</span>
+<span class="sd">             |&lt;---&gt; _____         _____      |</span>
+<span class="sd">             |     |     |       |     |     |</span>
+<span class="sd">             |     |     |       |     |     |</span>
+<span class="sd">             |     |_____|       |_____|     |</span>
+<span class="sd">             |       |                       |</span>
+<span class="sd">             |       |                       |</span>
+<span class="sd">             |       |zmargin                |</span>
+<span class="sd">             |       |                       |</span>
+<span class="sd">             |_______|_______________________|</span>
+
+
+
+<span class="sd">    Return:</span>
+<span class="sd">        Sparameters np.ndarray (wavelengths, o1@0,o1@0, o1@0,o2@0 ...)</span>
+<span class="sd">            suffix `a` for angle in radians and `m` for module.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">component</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">get_component</span><span class="p">(</span><span class="n">component</span><span class="p">)</span>
+    <span class="n">sim_settings</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">simulation_settings</span><span class="p">)</span>
+
+    <span class="n">layer_stack</span> <span class="o">=</span> <span class="n">layer_stack</span> <span class="ow">or</span> <span class="n">get_layer_stack</span><span class="p">()</span>
+
+    <span class="n">layer_to_thickness</span> <span class="o">=</span> <span class="n">layer_stack</span><span class="o">.</span><span class="n">get_layer_to_thickness</span><span class="p">()</span>
+    <span class="n">layer_to_zmin</span> <span class="o">=</span> <span class="n">layer_stack</span><span class="o">.</span><span class="n">get_layer_to_zmin</span><span class="p">()</span>
+    <span class="n">layer_to_material</span> <span class="o">=</span> <span class="n">layer_stack</span><span class="o">.</span><span class="n">get_layer_to_material</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">component</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="s2">&quot;simulation_settings&quot;</span><span class="p">):</span>
+        <span class="n">sim_settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">component</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">simulation_settings</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Updating </span><span class="si">{</span><span class="n">component</span><span class="o">.</span><span class="n">name</span><span class="si">!r}</span><span class="s2"> sim settings </span><span class="si">{</span><span class="n">component</span><span class="o">.</span><span class="n">simulation_settings</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="k">for</span> <span class="n">setting</span> <span class="ow">in</span> <span class="n">settings</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">setting</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sim_settings</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Invalid setting </span><span class="si">{</span><span class="n">setting</span><span class="si">!r}</span><span class="s2"> not in (</span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">sim_settings</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">)&quot;</span>
+            <span class="p">)</span>
+
+    <span class="n">sim_settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="n">SimulationSettingsLumericalFdtd</span><span class="p">(</span><span class="o">**</span><span class="n">sim_settings</span><span class="p">)</span>
+
+    <span class="n">component_extended</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">extend_ports</span><span class="p">(</span>
+        <span class="n">component</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">ss</span><span class="o">.</span><span class="n">distance_source_to_monitors</span>
+    <span class="p">)</span>
+
+    <span class="n">ports</span> <span class="o">=</span> <span class="n">component_extended</span><span class="o">.</span><span class="n">get_ports_list</span><span class="p">(</span><span class="n">port_type</span><span class="o">=</span><span class="s2">&quot;optical&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ports</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">component</span><span class="o">.</span><span class="n">name</span><span class="si">!r}</span><span class="s2"> does not have any optical ports&quot;</span><span class="p">)</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">extension</span><span class="o">.</span><span class="n">extend_ports</span><span class="p">(</span>
+        <span class="n">component</span><span class="o">=</span><span class="n">component</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">ss</span><span class="o">.</span><span class="n">port_extension</span>
+    <span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">remove_layers</span><span class="p">(</span><span class="n">component</span><span class="o">.</span><span class="n">layers</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">layer_to_thickness</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">_bb_valid</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;top&quot;</span>
+    <span class="n">gdspath</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">write_gds</span><span class="p">()</span>
+
+    <span class="n">filepath_npz</span> <span class="o">=</span> <span class="n">get_sparameters_path</span><span class="p">(</span>
+        <span class="n">component</span><span class="o">=</span><span class="n">component</span><span class="p">,</span>
+        <span class="n">dirpath</span><span class="o">=</span><span class="n">dirpath</span><span class="p">,</span>
+        <span class="n">layer_stack</span><span class="o">=</span><span class="n">layer_stack</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">settings</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="n">filepath_npz</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.dat&quot;</span><span class="p">)</span>
+    <span class="n">filepath_sim_settings</span> <span class="o">=</span> <span class="n">filepath</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.yml&quot;</span><span class="p">)</span>
+    <span class="n">filepath_fsp</span> <span class="o">=</span> <span class="n">filepath</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.fsp&quot;</span><span class="p">)</span>
+    <span class="n">fspdir</span> <span class="o">=</span> <span class="n">filepath</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filepath</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">_s-parametersweep&quot;</span>
+
+    <span class="k">if</span> <span class="n">run</span> <span class="ow">and</span> <span class="n">filepath_npz</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">overwrite</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reading Sparameters from </span><span class="si">{</span><span class="n">filepath_npz</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filepath_npz</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">run</span> <span class="ow">and</span> <span class="n">session</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">run_false_warning</span><span class="p">)</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing Sparameters to </span><span class="si">{</span><span class="n">filepath_npz</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">x_min</span> <span class="o">=</span> <span class="p">(</span><span class="n">component</span><span class="o">.</span><span class="n">xmin</span> <span class="o">-</span> <span class="n">ss</span><span class="o">.</span><span class="n">xmargin</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-6</span>
+    <span class="n">x_max</span> <span class="o">=</span> <span class="p">(</span><span class="n">component</span><span class="o">.</span><span class="n">xmax</span> <span class="o">+</span> <span class="n">ss</span><span class="o">.</span><span class="n">xmargin</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-6</span>
+    <span class="n">y_min</span> <span class="o">=</span> <span class="p">(</span><span class="n">component</span><span class="o">.</span><span class="n">ymin</span> <span class="o">-</span> <span class="n">ss</span><span class="o">.</span><span class="n">ymargin</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-6</span>
+    <span class="n">y_max</span> <span class="o">=</span> <span class="p">(</span><span class="n">component</span><span class="o">.</span><span class="n">ymax</span> <span class="o">+</span> <span class="n">ss</span><span class="o">.</span><span class="n">ymargin</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-6</span>
+
+    <span class="n">layers_thickness</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">layer_to_thickness</span><span class="p">[</span><span class="n">layer</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">component</span><span class="o">.</span><span class="n">get_layers</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">layer_to_thickness</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">layers_thickness</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;no layers for component </span><span class="si">{</span><span class="n">component</span><span class="o">.</span><span class="n">get_layers</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;in layer stack </span><span class="si">{</span><span class="n">layer_stack</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="n">layers_zmin</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">layer_to_zmin</span><span class="p">[</span><span class="n">layer</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">component</span><span class="o">.</span><span class="n">get_layers</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">layer_to_zmin</span>
+    <span class="p">]</span>
+    <span class="n">component_thickness</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">layers_thickness</span><span class="p">)</span>
+    <span class="n">component_zmin</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">layers_zmin</span><span class="p">)</span>
+
+    <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">component_zmin</span> <span class="o">+</span> <span class="n">component_thickness</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">1e-6</span>
+    <span class="n">z_span</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">ss</span><span class="o">.</span><span class="n">zmargin</span> <span class="o">+</span> <span class="n">component_thickness</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-6</span>
+
+    <span class="n">x_span</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span>
+    <span class="n">y_span</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">y_min</span>
+
+    <span class="n">layers</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get_layers</span><span class="p">()</span>
+    <span class="n">sim_settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">layer_stack</span><span class="o">=</span><span class="n">layer_stack</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()))</span>
+
+    <span class="n">sim_settings</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">simulation_settings</span><span class="o">=</span><span class="n">sim_settings</span><span class="p">,</span>
+        <span class="n">component</span><span class="o">=</span><span class="n">component</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+        <span class="n">version</span><span class="o">=</span><span class="n">__version__</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Simulation size = </span><span class="si">{</span><span class="n">x_span</span><span class="o">*</span><span class="mf">1e6</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y_span</span><span class="o">*</span><span class="mf">1e6</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">z_span</span><span class="o">*</span><span class="mf">1e6</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> um&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># from pprint import pprint</span>
+    <span class="c1"># filepath_sim_settings.write_text(omegaconf.OmegaConf.to_yaml(sim_settings))</span>
+    <span class="c1"># print(filepath_sim_settings)</span>
+    <span class="c1"># pprint(sim_settings)</span>
+    <span class="c1"># return</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">lumapi</span>
+    <span class="k">except</span> <span class="ne">ModuleNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;Cannot import lumapi (Python Lumerical API). &quot;</span>
+            <span class="s2">&quot;You can add set the PYTHONPATH variable or add it with `sys.path.append()`&quot;</span>
+        <span class="p">)</span>
+        <span class="k">raise</span> <span class="n">e</span>
+    <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">e</span>
+
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">session</span> <span class="ow">or</span> <span class="n">lumapi</span><span class="o">.</span><span class="n">FDTD</span><span class="p">(</span><span class="n">hide</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">newproject</span><span class="p">()</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">selectall</span><span class="p">()</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">deleteall</span><span class="p">()</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">addrect</span><span class="p">(</span>
+        <span class="n">x_min</span><span class="o">=</span><span class="n">x_min</span><span class="p">,</span>
+        <span class="n">x_max</span><span class="o">=</span><span class="n">x_max</span><span class="p">,</span>
+        <span class="n">y_min</span><span class="o">=</span><span class="n">y_min</span><span class="p">,</span>
+        <span class="n">y_max</span><span class="o">=</span><span class="n">y_max</span><span class="p">,</span>
+        <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,</span>
+        <span class="n">z_span</span><span class="o">=</span><span class="n">z_span</span><span class="p">,</span>
+        <span class="n">index</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;clad&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">material_name_to_lumerical_new</span> <span class="o">=</span> <span class="n">material_name_to_lumerical</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">material_name_to_lumerical</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">material_name_to_lumerical</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">material_name_to_lumerical</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">material_name_to_lumerical_new</span><span class="p">)</span>
+
+    <span class="n">material</span> <span class="o">=</span> <span class="n">material_name_to_lumerical</span><span class="p">[</span><span class="n">ss</span><span class="o">.</span><span class="n">background_material</span><span class="p">]</span>
+    <span class="n">set_material</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">structure</span><span class="o">=</span><span class="s2">&quot;clad&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="n">material</span><span class="p">)</span>
+
+    <span class="n">s</span><span class="o">.</span><span class="n">addfdtd</span><span class="p">(</span>
+        <span class="n">dimension</span><span class="o">=</span><span class="s2">&quot;3D&quot;</span><span class="p">,</span>
+        <span class="n">x_min</span><span class="o">=</span><span class="n">x_min</span><span class="p">,</span>
+        <span class="n">x_max</span><span class="o">=</span><span class="n">x_max</span><span class="p">,</span>
+        <span class="n">y_min</span><span class="o">=</span><span class="n">y_min</span><span class="p">,</span>
+        <span class="n">y_max</span><span class="o">=</span><span class="n">y_max</span><span class="p">,</span>
+        <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,</span>
+        <span class="n">z_span</span><span class="o">=</span><span class="n">z_span</span><span class="p">,</span>
+        <span class="n">mesh_accuracy</span><span class="o">=</span><span class="n">ss</span><span class="o">.</span><span class="n">mesh_accuracy</span><span class="p">,</span>
+        <span class="n">use_early_shutoff</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">simulation_time</span><span class="o">=</span><span class="n">ss</span><span class="o">.</span><span class="n">simulation_time</span><span class="p">,</span>
+        <span class="n">simulation_temperature</span><span class="o">=</span><span class="n">ss</span><span class="o">.</span><span class="n">simulation_temperature</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">layer</span><span class="p">,</span> <span class="n">thickness</span> <span class="ow">in</span> <span class="n">layer_to_thickness</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">layer</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">layers</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="k">if</span> <span class="n">layer</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">layer_to_material</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">layer</span><span class="si">}</span><span class="s2"> not in </span><span class="si">{</span><span class="n">layer_to_material</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">material_name</span> <span class="o">=</span> <span class="n">layer_to_material</span><span class="p">[</span><span class="n">layer</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">material_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">material_name_to_lumerical</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">material_name</span><span class="si">!r}</span><span class="s2"> not in </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">material_name_to_lumerical</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="n">material</span> <span class="o">=</span> <span class="n">material_name_to_lumerical</span><span class="p">[</span><span class="n">material_name</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">layer</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">layer_to_zmin</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">layer</span><span class="si">}</span><span class="s2"> not in </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">layer_to_zmin</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">zmin</span> <span class="o">=</span> <span class="n">layer_to_zmin</span><span class="p">[</span><span class="n">layer</span><span class="p">]</span>
+        <span class="n">zmax</span> <span class="o">=</span> <span class="n">zmin</span> <span class="o">+</span> <span class="n">thickness</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">zmax</span> <span class="o">+</span> <span class="n">zmin</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+        <span class="n">s</span><span class="o">.</span><span class="n">gdsimport</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">gdspath</span><span class="p">),</span> <span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">layer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">layer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">layername</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;GDS_LAYER_</span><span class="si">{</span><span class="n">layer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">layer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">layername</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="n">z</span> <span class="o">*</span> <span class="mf">1e-6</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">layername</span><span class="p">,</span> <span class="s2">&quot;z span&quot;</span><span class="p">,</span> <span class="n">thickness</span> <span class="o">*</span> <span class="mf">1e-6</span><span class="p">)</span>
+        <span class="n">set_material</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">structure</span><span class="o">=</span><span class="n">layername</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="n">material</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;adding </span><span class="si">{</span><span class="n">layer</span><span class="si">}</span><span class="s2">, thickness = </span><span class="si">{</span><span class="n">thickness</span><span class="si">}</span><span class="s2"> um, zmin = </span><span class="si">{</span><span class="n">zmin</span><span class="si">}</span><span class="s2"> um &quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">port</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ports</span><span class="p">):</span>
+        <span class="n">zmin</span> <span class="o">=</span> <span class="n">layer_to_zmin</span><span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">layer</span><span class="p">]</span>
+        <span class="n">thickness</span> <span class="o">=</span> <span class="n">layer_to_thickness</span><span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">layer</span><span class="p">]</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">zmin</span> <span class="o">+</span> <span class="n">thickness</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">zspan</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">ss</span><span class="o">.</span><span class="n">port_margin</span> <span class="o">+</span> <span class="n">thickness</span>
+
+        <span class="n">s</span><span class="o">.</span><span class="n">addport</span><span class="p">()</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;FDTD::ports::port </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="mf">1e-6</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="mf">1e-6</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="n">z</span> <span class="o">*</span> <span class="mf">1e-6</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;z span&quot;</span><span class="p">,</span> <span class="n">zspan</span> <span class="o">*</span> <span class="mf">1e-6</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;frequency dependent profile&quot;</span><span class="p">,</span> <span class="n">ss</span><span class="o">.</span><span class="n">frequency_dependent_profile</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;number of field profile samples&quot;</span><span class="p">,</span> <span class="n">ss</span><span class="o">.</span><span class="n">field_profile_samples</span><span class="p">)</span>
+
+        <span class="n">deg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span>
+        <span class="c1"># if port.orientation not in [0, 90, 180, 270]:</span>
+        <span class="c1">#     raise ValueError(f&quot;{port.orientation} needs to be [0, 90, 180, 270]&quot;)</span>
+
+        <span class="k">if</span> <span class="o">-</span><span class="mi">45</span> <span class="o">&lt;=</span> <span class="n">deg</span> <span class="o">&lt;=</span> <span class="mi">45</span><span class="p">:</span>
+            <span class="n">direction</span> <span class="o">=</span> <span class="s2">&quot;Backward&quot;</span>
+            <span class="n">injection_axis</span> <span class="o">=</span> <span class="s2">&quot;x-axis&quot;</span>
+            <span class="n">dxp</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">dyp</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">ss</span><span class="o">.</span><span class="n">port_margin</span> <span class="o">+</span> <span class="n">port</span><span class="o">.</span><span class="n">width</span>
+        <span class="k">elif</span> <span class="mi">45</span> <span class="o">&lt;</span> <span class="n">deg</span> <span class="o">&lt;</span> <span class="mi">90</span> <span class="o">+</span> <span class="mi">45</span><span class="p">:</span>
+            <span class="n">direction</span> <span class="o">=</span> <span class="s2">&quot;Backward&quot;</span>
+            <span class="n">injection_axis</span> <span class="o">=</span> <span class="s2">&quot;y-axis&quot;</span>
+            <span class="n">dxp</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">ss</span><span class="o">.</span><span class="n">port_margin</span> <span class="o">+</span> <span class="n">port</span><span class="o">.</span><span class="n">width</span>
+            <span class="n">dyp</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">elif</span> <span class="mi">90</span> <span class="o">+</span> <span class="mi">45</span> <span class="o">&lt;</span> <span class="n">deg</span> <span class="o">&lt;</span> <span class="mi">180</span> <span class="o">+</span> <span class="mi">45</span><span class="p">:</span>
+            <span class="n">direction</span> <span class="o">=</span> <span class="s2">&quot;Forward&quot;</span>
+            <span class="n">injection_axis</span> <span class="o">=</span> <span class="s2">&quot;x-axis&quot;</span>
+            <span class="n">dxp</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">dyp</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">ss</span><span class="o">.</span><span class="n">port_margin</span> <span class="o">+</span> <span class="n">port</span><span class="o">.</span><span class="n">width</span>
+        <span class="k">elif</span> <span class="mi">180</span> <span class="o">+</span> <span class="mi">45</span> <span class="o">&lt;</span> <span class="n">deg</span> <span class="o">&lt;</span> <span class="mi">180</span> <span class="o">+</span> <span class="mi">45</span> <span class="o">+</span> <span class="mi">90</span><span class="p">:</span>
+            <span class="n">direction</span> <span class="o">=</span> <span class="s2">&quot;Forward&quot;</span>
+            <span class="n">injection_axis</span> <span class="o">=</span> <span class="s2">&quot;y-axis&quot;</span>
+            <span class="n">dxp</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">ss</span><span class="o">.</span><span class="n">port_margin</span> <span class="o">+</span> <span class="n">port</span><span class="o">.</span><span class="n">width</span>
+            <span class="n">dyp</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;port </span><span class="si">{</span><span class="n">port</span><span class="o">.</span><span class="n">name</span><span class="si">!r}</span><span class="s2"> orientation </span><span class="si">{</span><span class="n">port</span><span class="o">.</span><span class="n">orientation</span><span class="si">}</span><span class="s2"> is not valid&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;direction&quot;</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;injection axis&quot;</span><span class="p">,</span> <span class="n">injection_axis</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;y span&quot;</span><span class="p">,</span> <span class="n">dyp</span> <span class="o">*</span> <span class="mf">1e-6</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;x span&quot;</span><span class="p">,</span> <span class="n">dxp</span> <span class="o">*</span> <span class="mf">1e-6</span><span class="p">)</span>
+        <span class="c1"># s.setnamed(p, &quot;theta&quot;, deg)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="c1"># s.setnamed(p, &quot;name&quot;, f&quot;o{i+1}&quot;)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;port </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">port</span><span class="o">.</span><span class="n">name</span><span class="si">!r}</span><span class="s2">: at (</span><span class="si">{</span><span class="n">port</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">port</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">, 0)&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;size = (</span><span class="si">{</span><span class="n">dxp</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">dyp</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">zspan</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">s</span><span class="o">.</span><span class="n">setglobalsource</span><span class="p">(</span><span class="s2">&quot;wavelength start&quot;</span><span class="p">,</span> <span class="n">ss</span><span class="o">.</span><span class="n">wavelength_start</span> <span class="o">*</span> <span class="mf">1e-6</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">setglobalsource</span><span class="p">(</span><span class="s2">&quot;wavelength stop&quot;</span><span class="p">,</span> <span class="n">ss</span><span class="o">.</span><span class="n">wavelength_stop</span> <span class="o">*</span> <span class="mf">1e-6</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">setnamed</span><span class="p">(</span><span class="s2">&quot;FDTD::ports&quot;</span><span class="p">,</span> <span class="s2">&quot;monitor frequency points&quot;</span><span class="p">,</span> <span class="n">ss</span><span class="o">.</span><span class="n">wavelength_points</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">run</span><span class="p">:</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">filepath_fsp</span><span class="p">))</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">deletesweep</span><span class="p">(</span><span class="s2">&quot;s-parameter sweep&quot;</span><span class="p">)</span>
+
+        <span class="n">s</span><span class="o">.</span><span class="n">addsweep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setsweep</span><span class="p">(</span><span class="s2">&quot;s-parameter sweep&quot;</span><span class="p">,</span> <span class="s2">&quot;Excite all ports&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">setsweep</span><span class="p">(</span><span class="s2">&quot;S sweep&quot;</span><span class="p">,</span> <span class="s2">&quot;auto symmetry&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">runsweep</span><span class="p">(</span><span class="s2">&quot;s-parameter sweep&quot;</span><span class="p">)</span>
+        <span class="n">sp</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">getsweepresult</span><span class="p">(</span><span class="s2">&quot;s-parameter sweep&quot;</span><span class="p">,</span> <span class="s2">&quot;S parameters&quot;</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">exportsweep</span><span class="p">(</span><span class="s2">&quot;s-parameter sweep&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;wrote sparameters to </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">sp</span><span class="p">[</span><span class="s2">&quot;wavelengths&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;lambda&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1e6</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">savez_compressed</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="o">**</span><span class="n">sp</span><span class="p">)</span>
+
+        <span class="c1"># keys = [key for key in sp.keys() if key.startswith(&quot;S&quot;)]</span>
+        <span class="c1"># ra = {</span>
+        <span class="c1">#     f&quot;{key.lower()}a&quot;: list(np.unwrap(np.angle(sp[key].flatten())))</span>
+        <span class="c1">#     for key in keys</span>
+        <span class="c1"># }</span>
+        <span class="c1"># rm = {f&quot;{key.lower()}m&quot;: list(np.abs(sp[key].flatten())) for key in keys}</span>
+        <span class="c1"># results = {&quot;wavelengths&quot;: wavelengths}</span>
+        <span class="c1"># results.update(ra)</span>
+        <span class="c1"># results.update(rm)</span>
+        <span class="c1"># df = pd.DataFrame(results, index=wavelengths)</span>
+        <span class="c1"># df.to_csv(filepath_npz, index=False)</span>
+
+        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">sim_settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">compute_time_seconds</span><span class="o">=</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+        <span class="n">sim_settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">compute_time_minutes</span><span class="o">=</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="n">filepath_sim_settings</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">omegaconf</span><span class="o">.</span><span class="n">OmegaConf</span><span class="o">.</span><span class="n">to_yaml</span><span class="p">(</span><span class="n">sim_settings</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">delete_fsp_files</span> <span class="ow">and</span> <span class="n">fspdir</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">fspdir</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;deleting simulation files in </span><span class="si">{</span><span class="n">fspdir</span><span class="si">}</span><span class="s2">. &quot;</span>
+                <span class="s2">&quot;To keep them, use delete_fsp_files=False flag&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">sp</span>
+
+    <span class="n">filepath_sim_settings</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">omegaconf</span><span class="o">.</span><span class="n">OmegaConf</span><span class="o">.</span><span class="n">to_yaml</span><span class="p">(</span><span class="n">sim_settings</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">s</span></div>
+
+
+<span class="k">def</span> <span class="nf">_sample_write_coupler_ring</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Write Sparameters when changing a component setting.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">write_sparameters_lumerical</span><span class="p">(</span>
+            <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">coupler_ring</span><span class="p">(</span>
+                <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">length_x</span><span class="o">=</span><span class="n">length_x</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span> <span class="n">gap</span><span class="o">=</span><span class="n">gap</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">width</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">length_x</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">gap</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">radius</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_sample_bend_circular</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Write Sparameters for a circular bend with different radius.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">write_sparameters_lumerical</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">bend_circular</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">radius</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_sample_bend_euler</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Write Sparameters for a euler bend with different radius.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">write_sparameters_lumerical</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">bend_euler</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">radius</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_sample_convergence_mesh</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">write_sparameters_lumerical</span><span class="p">(</span>
+            <span class="n">component</span><span class="o">=</span><span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">straight</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+            <span class="n">mesh_accuracy</span><span class="o">=</span><span class="n">mesh_accuracy</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">mesh_accuracy</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_sample_convergence_wavelength</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">write_sparameters_lumerical</span><span class="p">(</span>
+            <span class="n">component</span><span class="o">=</span><span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">straight</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+            <span class="n">wavelength_start</span><span class="o">=</span><span class="n">wavelength_start</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">wavelength_start</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">]</span>
+    <span class="p">]</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">lumapi</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">lumapi</span><span class="o">.</span><span class="n">FDTD</span><span class="p">()</span>
+
+    <span class="c1"># component = gf.components.straight(length=2.5)</span>
+    <span class="n">component</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">mmi1x2</span><span class="p">()</span>
+
+    <span class="n">material_name_to_lumerical</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">si</span><span class="o">=</span><span class="p">(</span><span class="mf">3.45</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># or dict(si=3.45+2j)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">write_sparameters_lumerical</span><span class="p">(</span>
+        <span class="n">component</span><span class="o">=</span><span class="n">component</span><span class="p">,</span>
+        <span class="n">material_name_to_lumerical</span><span class="o">=</span><span class="n">material_name_to_lumerical</span><span class="p">,</span>
+        <span class="n">run</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">session</span><span class="o">=</span><span class="n">s</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># c = gf.components.coupler_ring(length_x=3)</span>
+    <span class="c1"># c = gf.components.mmi1x2()</span>
+    <span class="c1"># print(r)</span>
+    <span class="c1"># print(r.keys())</span>
+    <span class="c1"># print(component.ports.keys())</span>
+</pre></div>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+      &copy; Copyright 2020, MIT License.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

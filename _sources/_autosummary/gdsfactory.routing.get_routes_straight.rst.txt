@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.get\_routes\_straight
+========================================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: get_routes_straight

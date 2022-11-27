@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.lumerical.write\_sparameters\_lumerical
+=============================================================
+
+.. currentmodule:: gdsfactory.simulation.lumerical
+
+.. autofunction:: write_sparameters_lumerical

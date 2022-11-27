@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.lumerical.interconnect.plot\_wavelength\_sweep
+====================================================================
+
+.. currentmodule:: gdsfactory.simulation.lumerical.interconnect
+
+.. autofunction:: plot_wavelength_sweep

@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.modes.find\_coupling\_vs\_gap
+===================================================
+
+.. currentmodule:: gdsfactory.simulation.modes
+
+.. autofunction:: find_coupling_vs_gap

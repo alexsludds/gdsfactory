@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.get\_effective\_indices
+=============================================
+
+.. currentmodule:: gdsfactory.simulation
+
+.. autofunction:: get_effective_indices

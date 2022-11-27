@@ -1,0 +1,6 @@
+﻿gdsfactory.cross\_section.pn
+============================
+
+.. currentmodule:: gdsfactory.cross_section
+
+.. autofunction:: pn

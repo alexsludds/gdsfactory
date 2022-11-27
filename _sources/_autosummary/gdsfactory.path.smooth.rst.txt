@@ -1,0 +1,6 @@
+﻿gdsfactory.path.smooth
+======================
+
+.. currentmodule:: gdsfactory.path
+
+.. autofunction:: smooth

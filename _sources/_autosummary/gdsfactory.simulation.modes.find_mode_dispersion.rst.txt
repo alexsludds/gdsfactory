@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.modes.find\_mode\_dispersion
+==================================================
+
+.. currentmodule:: gdsfactory.simulation.modes
+
+.. autofunction:: find_mode_dispersion

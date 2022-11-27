@@ -1,0 +1,6 @@
+﻿gdsfactory.pack
+===============
+
+.. currentmodule:: gdsfactory
+
+.. autofunction:: pack

@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.gtidy3d.modes.Waveguide
+=============================================
+
+.. currentmodule:: gdsfactory.simulation.gtidy3d.modes
+
+.. autopydantic_model:: Waveguide

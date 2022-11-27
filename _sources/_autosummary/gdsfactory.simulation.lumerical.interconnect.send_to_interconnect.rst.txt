@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.lumerical.interconnect.send\_to\_interconnect
+===================================================================
+
+.. currentmodule:: gdsfactory.simulation.lumerical.interconnect
+
+.. autofunction:: send_to_interconnect

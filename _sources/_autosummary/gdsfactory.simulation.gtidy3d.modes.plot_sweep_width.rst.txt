@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.gtidy3d.modes.plot\_sweep\_width
+======================================================
+
+.. currentmodule:: gdsfactory.simulation.gtidy3d.modes
+
+.. autofunction:: plot_sweep_width

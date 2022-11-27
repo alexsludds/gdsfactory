@@ -1,0 +1,6 @@
+﻿gdsfactory.types.ComponentSpec
+==============================
+
+.. currentmodule:: gdsfactory.types
+
+.. autodata:: ComponentSpec

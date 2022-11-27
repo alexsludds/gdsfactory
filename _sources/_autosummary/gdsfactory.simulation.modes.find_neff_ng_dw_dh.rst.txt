@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.modes.find\_neff\_ng\_dw\_dh
+==================================================
+
+.. currentmodule:: gdsfactory.simulation.modes
+
+.. autofunction:: find_neff_ng_dw_dh

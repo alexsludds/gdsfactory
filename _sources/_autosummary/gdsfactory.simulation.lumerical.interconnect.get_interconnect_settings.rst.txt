@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.lumerical.interconnect.get\_interconnect\_settings
+========================================================================
+
+.. currentmodule:: gdsfactory.simulation.lumerical.interconnect
+
+.. autofunction:: get_interconnect_settings

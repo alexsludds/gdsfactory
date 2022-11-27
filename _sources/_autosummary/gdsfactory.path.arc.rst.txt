@@ -1,0 +1,6 @@
+﻿gdsfactory.path.arc
+===================
+
+.. currentmodule:: gdsfactory.path
+
+.. autofunction:: arc

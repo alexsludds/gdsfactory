@@ -1,0 +1,6 @@
+﻿gdsfactory.types.Layer
+======================
+
+.. currentmodule:: gdsfactory.types
+
+.. autodata:: Layer

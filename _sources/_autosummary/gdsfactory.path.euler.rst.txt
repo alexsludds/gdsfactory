@@ -1,0 +1,6 @@
+﻿gdsfactory.path.euler
+=====================
+
+.. currentmodule:: gdsfactory.path
+
+.. autofunction:: euler

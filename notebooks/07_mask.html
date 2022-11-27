@@ -1,0 +1,2787 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Reticle assembly &#8212; gdsfactory 6.2.6 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/autodoc_pydantic.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PDK" href="08_pdk.html" />
+    <link rel="prev" title="Routing electrical" href="041_routing_electical.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   gdsfactory 6.2.6
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../git.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_2_install.html">
+     Install gdsfactory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_2_klayout.html">
+     Klayout integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_3_vscode.html">
+     VScode, PyCharm, Spyder, JupyterLab integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_4_gdsfactory_in_5minutes.html">
+     gdsfactory in 5 minutes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_0_python.html">
+     Python intro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="_1_git.html">
+     Git: Version control intro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workflow.html">
+   Workflow
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../notebooks.html">
+   Layout tutorial
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="00_geometry.html">
+     Component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_references.html">
+     References and ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_movement.html">
+     Movement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_cells_autoname_and_cache.html">
+     Cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_layer_stack.html">
+     Layers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_waveguides_paths_crossections.html">
+     Path and CrossSection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_components_.html">
+     Components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_components_hierarchy.html">
+     Components with hierarchy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_routing.html">
+     Routing optical and RF ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="041_routing_electical.html">
+     Routing electrical
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Reticle assembly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08_pdk.html">
+     PDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09_pdk_import.html">
+     Import PDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="common_mistakes.html">
+     Common mistakes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11_get_netlist.html">
+     get_netlist
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10_yaml_component.html">
+     YAML Place and AutoRoute
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../plugins_process.html">
+   Plugins: Device simulators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plugins/devsim/01_pin_waveguide.html">
+     DEVSIM TCAD simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plugins/thermal/thermal.html">
+     Thermal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../plugins_mode_solver.html">
+   Plugins: Mode solvers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plugins/mpb/001_mpb_waveguide.html">
+     MPB mode-solver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plugins/tidy3d/01_tidy3d_modes.html">
+     Tidy3D mode solver
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../plugins_fdtd.html">
+   Plugins: FDTD
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plugins/lumerical/1_fdtd_sparameters.html">
+     FDTD Lumerical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plugins/meep/001_meep_sparameters.html">
+     Meep FDTD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plugins/meep/002_gratings.html">
+     FDTD Meep gratings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plugins/tidy3d/00_tidy3d.html">
+     FDTD tidy3d
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../plugins_circuits.html">
+   Plugins: Circuit simulators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plugins/sax/sax.html">
+     SAX circuit simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plugins/simphony/01_components.html">
+     Simphony circuit simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plugins/lumerical/2_interconnect.html">
+     Lumerical INTERCONNECT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contribution.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHANGELOG.html">
+   CHANGELOG
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../components.html">
+   Components
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api.html">
+   API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.Component.html">
+     gdsfactory.Component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.ComponentReference.html">
+     gdsfactory.ComponentReference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.read.import_gds.html">
+     gdsfactory.read.import_gds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.read.from_yaml.html">
+     gdsfactory.read.from_yaml
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.read.from_np.html">
+     gdsfactory.read.from_np
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.read.from_phidl.html">
+     gdsfactory.read.from_phidl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.read.from_dphox.html">
+     gdsfactory.read.from_dphox
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.path.Path.html">
+     gdsfactory.path.Path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.path.straight.html">
+     gdsfactory.path.straight
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.path.euler.html">
+     gdsfactory.path.euler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.path.arc.html">
+     gdsfactory.path.arc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.path.spiral_archimedean.html">
+     gdsfactory.path.spiral_archimedean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.path.smooth.html">
+     gdsfactory.path.smooth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.CrossSection.html">
+     gdsfactory.cross_section.CrossSection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.Transition.html">
+     gdsfactory.cross_section.Transition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.cross_section.html">
+     gdsfactory.cross_section.cross_section
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.strip.html">
+     gdsfactory.cross_section.strip
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.strip_auto_widen.html">
+     gdsfactory.cross_section.strip_auto_widen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.heater_metal.html">
+     gdsfactory.cross_section.heater_metal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.pin.html">
+     gdsfactory.cross_section.pin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.pn.html">
+     gdsfactory.cross_section.pn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.strip_heater_metal_undercut.html">
+     gdsfactory.cross_section.strip_heater_metal_undercut
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.strip_heater_metal.html">
+     gdsfactory.cross_section.strip_heater_metal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.strip_heater_doped.html">
+     gdsfactory.cross_section.strip_heater_doped
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.rib_heater_doped.html">
+     gdsfactory.cross_section.rib_heater_doped
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cross_section.rib_heater_doped_via_stack.html">
+     gdsfactory.cross_section.rib_heater_doped_via_stack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.path.transition.html">
+     gdsfactory.path.transition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cell.html">
+     gdsfactory.cell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.cell_without_validator.html">
+     gdsfactory.cell_without_validator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.types.Layer.html">
+     gdsfactory.types.Layer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.types.ComponentSpec.html">
+     gdsfactory.types.ComponentSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.types.LayerSpec.html">
+     gdsfactory.types.LayerSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.types.CrossSectionSpec.html">
+     gdsfactory.types.CrossSectionSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.types.CellSpec.html">
+     gdsfactory.types.CellSpec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.pack.html">
+     gdsfactory.pack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.grid.html">
+     gdsfactory.grid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.grid_with_text.html">
+     gdsfactory.grid_with_text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.get_netlist.get_netlist.html">
+     gdsfactory.get_netlist.get_netlist
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.geometry.write_drc.write_drc_deck_macro.html">
+     gdsfactory.geometry.write_drc.write_drc_deck_macro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.geometry.write_drc.rule_width.html">
+     gdsfactory.geometry.write_drc.rule_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.geometry.write_drc.rule_space.html">
+     gdsfactory.geometry.write_drc.rule_space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.geometry.write_drc.rule_min_width_or_space.html">
+     gdsfactory.geometry.write_drc.rule_min_width_or_space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.geometry.write_drc.rule_separation.html">
+     gdsfactory.geometry.write_drc.rule_separation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.geometry.write_drc.rule_enclosing.html">
+     gdsfactory.geometry.write_drc.rule_enclosing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.geometry.write_drc.rule_area.html">
+     gdsfactory.geometry.write_drc.rule_area
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.geometry.write_drc.rule_density.html">
+     gdsfactory.geometry.write_drc.rule_density
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.geometry.write_drc.rule_not_inside.html">
+     gdsfactory.geometry.write_drc.rule_not_inside
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gtidy3d.modes.Waveguide.html">
+     gdsfactory.simulation.gtidy3d.modes.Waveguide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler.html">
+     gdsfactory.simulation.gtidy3d.modes.WaveguideCoupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_width.html">
+     gdsfactory.simulation.gtidy3d.modes.sweep_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss.html">
+     gdsfactory.simulation.gtidy3d.modes.sweep_bend_loss
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gtidy3d.modes.group_index.html">
+     gdsfactory.simulation.gtidy3d.modes.group_index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gtidy3d.modes.plot_sweep_width.html">
+     gdsfactory.simulation.gtidy3d.modes.plot_sweep_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.modes.find_modes_waveguide.html">
+     gdsfactory.simulation.modes.find_modes_waveguide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.modes.find_modes_coupler.html">
+     gdsfactory.simulation.modes.find_modes_coupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.modes.find_neff_vs_width.html">
+     gdsfactory.simulation.modes.find_neff_vs_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.modes.find_mode_dispersion.html">
+     gdsfactory.simulation.modes.find_mode_dispersion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.modes.find_coupling_vs_gap.html">
+     gdsfactory.simulation.modes.find_coupling_vs_gap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.modes.find_neff_ng_dw_dh.html">
+     gdsfactory.simulation.modes.find_neff_ng_dw_dh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.modes.plot_neff_ng_dw_dh.html">
+     gdsfactory.simulation.modes.plot_neff_ng_dw_dh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.modes.plot_neff_vs_width.html">
+     gdsfactory.simulation.modes.plot_neff_vs_width
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.modes.plot_coupling_vs_gap.html">
+     gdsfactory.simulation.modes.plot_coupling_vs_gap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.plot.plot_sparameters.html">
+     gdsfactory.simulation.plot.plot_sparameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.plot.plot_imbalance2x2.html">
+     gdsfactory.simulation.plot.plot_imbalance2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.plot.plot_loss2x2.html">
+     gdsfactory.simulation.plot.plot_loss2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.get_effective_indices.html">
+     gdsfactory.simulation.get_effective_indices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_mpi.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep_mpi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_meep_batch.html">
+     gdsfactory.simulation.gmeep.write_sparameters_meep_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_mpi.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating_mpi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gmeep.write_sparameters_grating_batch.html">
+     gdsfactory.simulation.gmeep.write_sparameters_grating_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_batch.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch.html">
+     gdsfactory.simulation.gtidy3d.write_sparameters_grating_coupler_batch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.lumerical.write_sparameters_lumerical.html">
+     gdsfactory.simulation.lumerical.write_sparameters_lumerical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.sax.read.model_from_csv.html">
+     gdsfactory.simulation.sax.read.model_from_csv
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.sax.read.model_from_component.html">
+     gdsfactory.simulation.sax.read.model_from_component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.sax.plot_model.html">
+     gdsfactory.simulation.sax.plot_model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.sax.models.html">
+     gdsfactory.simulation.sax.models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.simphony.plot_model.html">
+     gdsfactory.simulation.simphony.plot_model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.simphony.plot_circuit.html">
+     gdsfactory.simulation.simphony.plot_circuit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.simphony.plot_circuit_montecarlo.html">
+     gdsfactory.simulation.simphony.plot_circuit_montecarlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.simphony.components.html">
+     gdsfactory.simulation.simphony.components
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.simphony.component_to_circuit.html">
+     gdsfactory.simulation.simphony.component_to_circuit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.lumerical.interconnect.install_design_kit.html">
+     gdsfactory.simulation.lumerical.interconnect.install_design_kit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.lumerical.interconnect.add_interconnect_element.html">
+     gdsfactory.simulation.lumerical.interconnect.add_interconnect_element
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings.html">
+     gdsfactory.simulation.lumerical.interconnect.get_interconnect_settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.lumerical.interconnect.send_to_interconnect.html">
+     gdsfactory.simulation.lumerical.interconnect.send_to_interconnect
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep.html">
+     gdsfactory.simulation.lumerical.interconnect.run_wavelength_sweep
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep.html">
+     gdsfactory.simulation.lumerical.interconnect.plot_wavelength_sweep
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../routing.html">
+   Routing API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.get_route.html">
+     gdsfactory.routing.get_route
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.get_route_from_steps.html">
+     gdsfactory.routing.get_route_from_steps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.route_quad.html">
+     gdsfactory.routing.route_quad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.route_sharp.html">
+     gdsfactory.routing.route_sharp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.get_bundle.html">
+     gdsfactory.routing.get_bundle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.get_bundle_from_steps.html">
+     gdsfactory.routing.get_bundle_from_steps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.get_bundle_path_length_match.html">
+     gdsfactory.routing.get_bundle_path_length_match
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.route_ports_to_side.html">
+     gdsfactory.routing.route_ports_to_side
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.route_south.html">
+     gdsfactory.routing.route_south
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.get_routes_bend180.html">
+     gdsfactory.routing.get_routes_bend180
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.get_routes_straight.html">
+     gdsfactory.routing.get_routes_straight
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.get_route_sbend.html">
+     gdsfactory.routing.get_route_sbend
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.get_bundle_sbend.html">
+     gdsfactory.routing.get_bundle_sbend
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.fanout2x2.html">
+     gdsfactory.routing.fanout2x2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.fanout_component.html">
+     gdsfactory.routing.fanout_component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.fanout_ports.html">
+     gdsfactory.routing.fanout_ports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.add_fiber_array.add_fiber_array.html">
+     gdsfactory.routing.add_fiber_array.add_fiber_array
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.add_fiber_single.add_fiber_single.html">
+     gdsfactory.routing.add_fiber_single.add_fiber_single
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.add_electrical_pads_shortest.html">
+     gdsfactory.routing.add_electrical_pads_shortest
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.add_electrical_pads_top.html">
+     gdsfactory.routing.add_electrical_pads_top
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../_autosummary/gdsfactory.routing.add_electrical_pads_top_dc.html">
+     gdsfactory.routing.add_electrical_pads_top_dc
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cli.html">
+   Command line interface
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory/issues/new?title=Issue%20on%20page%20%2Fnotebooks/07_mask.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/gdsfactory/gdsfactory/edit/master/docs/notebooks/07_mask.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/07_mask.ipynb.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Test-protocols">
+   Test protocols
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#1.-SiEPIC-labels">
+     1. SiEPIC labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#2.-YAML-labels">
+     2. YAML labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#3.-EHVA-labels">
+     3. EHVA labels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Pack">
+   Pack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Grid">
+   Grid
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Component-in-python">
+   Component in python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Metadata">
+   Metadata
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Component-in-YAML">
+   Component in YAML
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#1.-pack_doe">
+     1. pack_doe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#2.-pack_doe_grid">
+     2. pack_doe_grid
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Reticle assembly</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Test-protocols">
+   Test protocols
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#1.-SiEPIC-labels">
+     1. SiEPIC labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#2.-YAML-labels">
+     2. YAML labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#3.-EHVA-labels">
+     3. EHVA labels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Pack">
+   Pack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Grid">
+   Grid
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Component-in-python">
+   Component in python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Metadata">
+   Metadata
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Component-in-YAML">
+   Component in YAML
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#1.-pack_doe">
+     1. pack_doe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#2.-pack_doe_grid">
+     2. pack_doe_grid
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars and line breaks on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+    white-space: pre;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<section id="Reticle-assembly">
+<h1>Reticle assembly<a class="headerlink" href="#Reticle-assembly" title="Permalink to this headline">#</a></h1>
+<p>With gdsfactory you can easily go from a Component, to a Component sweep, to a top level Component full of subcomponents.</p>
+<section id="Test-protocols">
+<h2>Test protocols<a class="headerlink" href="#Test-protocols" title="Permalink to this headline">#</a></h2>
+<p>To measure your reticle / die after fabrication you need to decide your test configurations. This includes things like:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Individual</span> <span class="pre">input</span> <span class="pre">and</span> <span class="pre">output</span> <span class="pre">fibers</span></code> versus <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">array</span></code>. I recommend <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">array</span></code> for easier testing and higher throughtput, but also understand the flexibility of single fibers for some cases.</p></li>
+<li><p>Fiber array pitch (127um or 250um) if using a fiber array.</p></li>
+<li><p>Pad pitch for DC and RF high speed probes (100, 125, 150, 200um). Probe configuration (GSG, GS …)</p></li>
+<li><p>Test layout for DC, RF and optical fibers.</p></li>
+</ul>
+<p>To enable automatic testing you need to add labels to all the devices that you want to test. GDS labels are not fabricated and are only visible in the GDS file.</p>
+<p>Lets show some different automatic labeling schemas:</p>
+<ol class="arabic simple">
+<li><p>SiEPIC ubc Ebeam PDK schema, labels one of the grating couplers from the fiber array.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_label_yaml</span></code> includes a YAML based Label with all testing information.</p></li>
+<li><p>EHVA automatic testers, include a Label component declaration as described in this <a class="reference external" href="https://drive.google.com/file/d/1kbQNrVLzPbefh3by7g2s865bcsA2vl5l/view">doc</a></p></li>
+</ol>
+<section id="1.-SiEPIC-labels">
+<h3>1. SiEPIC labels<a class="headerlink" href="#1.-SiEPIC-labels" title="Permalink to this headline">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gdsfactory</span> <span class="k">as</span> <span class="nn">gf</span>
+<span class="kn">from</span> <span class="nn">gdsfactory.labels</span> <span class="kn">import</span> <span class="n">add_label_yaml</span><span class="p">,</span> <span class="n">add_label_ehva</span>
+
+<span class="n">gf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">set_plot_options</span><span class="p">(</span><span class="n">show_subports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+2022-11-27 23:45:18.443 | INFO     | gdsfactory.config:&lt;module&gt;:46 - Load &#39;/home/runner/work/gdsfactory/gdsfactory/gdsfactory&#39; 6.2.6
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mmi</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">mmi2x2</span><span class="p">()</span>
+<span class="n">mmi_te_siepic</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">add_fiber_array_siepic</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="n">mmi</span><span class="p">)</span>
+<span class="n">mmi_te_siepic</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_3_0.png" src="../_images/notebooks_07_mask_3_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+mmi2x2_add_fiber_array__bd3f01a4: uid 037b9fab, ports ['vertical_te_00', 'vertical_te_01', 'vertical_te_02', 'vertical_te_03'], references ['add_fiber_array_1'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mmi_te_siepic</span><span class="o">.</span><span class="n">get_labels</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&lt;gdstk.Label at 0x7fc34ffc6c10&gt;]
+</pre></div></div>
+</div>
+</section>
+<section id="2.-YAML-labels">
+<h3>2. YAML labels<a class="headerlink" href="#2.-YAML-labels" title="Permalink to this headline">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mmi</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">mmi2x2</span><span class="p">()</span>
+<span class="n">mmi_te_yaml</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">add_fiber_array</span><span class="p">(</span><span class="n">mmi</span><span class="p">,</span> <span class="n">get_input_labels_function</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">add_label_yaml</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="n">mmi_te_yaml</span><span class="p">)</span>
+<span class="n">mmi_te_yaml</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_6_0.png" src="../_images/notebooks_07_mask_6_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+mmi2x2_add_fiber_array_fda39c4b: uid 1aa07572, ports ['vertical_te_00', 'vertical_te_01', 'vertical_te_02', 'vertical_te_03', 'vertical_te_10', 'vertical_te_20'], references ['bend_euler_1', 'straight_1', 'straight_2', 'bend_euler_2', 'straight_3', 'straight_4', 'bend_euler_3', 'straight_5', 'straight_6', 'bend_euler_4', 'straight_7', 'straight_8', 'bend_euler_5', 'bend_euler_6', 'straight_9', 'straight_10', 'straight_11', 'bend_euler_7', 'bend_euler_8', 'straight_12', 'straight_13', 'straight_14', 'bend_euler_9', 'bend_euler_10', 'straight_15', 'straight_16', 'straight_17', 'bend_euler_11', 'bend_euler_12', 'straight_18', 'straight_19', 'straight_20', 'bend_euler_13', 'bend_euler_14', 'bend_euler_15', 'bend_euler_16', 'bend_euler_17', 'bend_euler_18', 'straight_21', 'straight_22', 'straight_23', 'straight_24', 'straight_25', 'grating_coupler_elliptical_trenches_1', 'grating_coupler_elliptical_trenches_2', 'grating_coupler_elliptical_trenches_3', 'grating_coupler_elliptical_trenches_4', 'grating_coupler_elliptical_trenches_5', 'grating_coupler_elliptical_trenches_6', 'mmi2x2_1'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mmi_te_yaml</span><span class="o">.</span><span class="n">get_labels</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&lt;gdstk.Label at 0x7fc347e82870&gt;]
+</pre></div></div>
+</div>
+</section>
+<section id="3.-EHVA-labels">
+<h3>3. EHVA labels<a class="headerlink" href="#3.-EHVA-labels" title="Permalink to this headline">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mmi_te_ehva</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">add_fiber_array</span><span class="p">(</span><span class="n">mmi</span><span class="p">,</span> <span class="n">get_input_labels_function</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">mmi_te_ehva</span><span class="o">.</span><span class="n">remove_labels</span><span class="p">()</span>
+<span class="n">add_label_ehva</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="n">mmi_te_ehva</span><span class="p">,</span> <span class="n">die</span><span class="o">=</span><span class="s2">&quot;mpw1&quot;</span><span class="p">)</span>
+<span class="n">mmi_te_ehva</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_9_0.png" src="../_images/notebooks_07_mask_9_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+mmi2x2_add_fiber_array_fda39c4b: uid 1aa07572, ports ['vertical_te_00', 'vertical_te_01', 'vertical_te_02', 'vertical_te_03', 'vertical_te_10', 'vertical_te_20'], references ['bend_euler_1', 'straight_1', 'straight_2', 'bend_euler_2', 'straight_3', 'straight_4', 'bend_euler_3', 'straight_5', 'straight_6', 'bend_euler_4', 'straight_7', 'straight_8', 'bend_euler_5', 'bend_euler_6', 'straight_9', 'straight_10', 'straight_11', 'bend_euler_7', 'bend_euler_8', 'straight_12', 'straight_13', 'straight_14', 'bend_euler_9', 'bend_euler_10', 'straight_15', 'straight_16', 'straight_17', 'bend_euler_11', 'bend_euler_12', 'straight_18', 'straight_19', 'straight_20', 'bend_euler_13', 'bend_euler_14', 'bend_euler_15', 'bend_euler_16', 'bend_euler_17', 'bend_euler_18', 'straight_21', 'straight_22', 'straight_23', 'straight_24', 'straight_25', 'grating_coupler_elliptical_trenches_1', 'grating_coupler_elliptical_trenches_2', 'grating_coupler_elliptical_trenches_3', 'grating_coupler_elliptical_trenches_4', 'grating_coupler_elliptical_trenches_5', 'grating_coupler_elliptical_trenches_6', 'mmi2x2_1'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="n">mmi_te_ehva</span><span class="o">.</span><span class="n">get_labels</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">label</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+DIE NAME:mpw1
+CIRCUIT NAME:mmi2x2_add_fiber_array_fda39c4b
+
+OPTICALPORT NAME: vertical_te_20 TYPE: vertical_te, POSITION RELATIVE:(320.3, -80.968), ORIENTATION: 270.0
+OPTICALPORT NAME: vertical_te_03 TYPE: vertical_te, POSITION RELATIVE:(193.3, -80.968), ORIENTATION: 270.0
+OPTICALPORT NAME: vertical_te_02 TYPE: vertical_te, POSITION RELATIVE:(66.3, -80.968), ORIENTATION: 270.0
+OPTICALPORT NAME: vertical_te_01 TYPE: vertical_te, POSITION RELATIVE:(-60.7, -80.968), ORIENTATION: 270.0
+OPTICALPORT NAME: vertical_te_00 TYPE: vertical_te, POSITION RELATIVE:(-187.7, -80.968), ORIENTATION: 270.0
+OPTICALPORT NAME: vertical_te_10 TYPE: vertical_te, POSITION RELATIVE:(-314.7, -80.968), ORIENTATION: 270.0
+</pre></div></div>
+</div>
+<p>One advantage of the YAML and EHVA formats is that you can track any changes on the components directly from the GDS label, as the label already stores any changes of the child device, as well as any settings that you specify.</p>
+<p>Settings can have many levels of hierarchy, but you can still access any children setting with <code class="docutils literal notranslate"><span class="pre">:</span></code> notation.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>grating_coupler:
+    function: grating_coupler_elliptical_trenches
+    settings:
+        polarization: te
+        taper_angle: 35
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mmi</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">mmi2x2</span><span class="p">(</span><span class="n">length_mmi</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">mmi_te_ehva</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">add_fiber_array</span><span class="p">(</span><span class="n">mmi</span><span class="p">,</span> <span class="n">get_input_labels_function</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">mmi_te_ehva</span><span class="o">.</span><span class="n">remove_labels</span><span class="p">()</span>
+<span class="n">add_label_ehva</span><span class="p">(</span>
+    <span class="n">component</span><span class="o">=</span><span class="n">mmi_te_ehva</span><span class="p">,</span>
+    <span class="n">die</span><span class="o">=</span><span class="s2">&quot;mpw1&quot;</span><span class="p">,</span>
+    <span class="n">metadata_include_parent</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;grating_coupler:settings:polarization&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">mmi_te_ehva</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_12_0.png" src="../_images/notebooks_07_mask_12_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+mmi2x2_length_mmi10_add_4adbd0f2: uid 0fd8d799, ports ['vertical_te_00', 'vertical_te_01', 'vertical_te_02', 'vertical_te_03', 'vertical_te_10', 'vertical_te_20'], references ['bend_euler_1', 'straight_1', 'straight_2', 'bend_euler_2', 'straight_3', 'straight_4', 'bend_euler_3', 'straight_5', 'straight_6', 'bend_euler_4', 'straight_7', 'straight_8', 'bend_euler_5', 'bend_euler_6', 'straight_9', 'straight_10', 'straight_11', 'bend_euler_7', 'bend_euler_8', 'straight_12', 'straight_13', 'straight_14', 'bend_euler_9', 'bend_euler_10', 'straight_15', 'straight_16', 'straight_17', 'bend_euler_11', 'bend_euler_12', 'straight_18', 'straight_19', 'straight_20', 'bend_euler_13', 'bend_euler_14', 'bend_euler_15', 'bend_euler_16', 'bend_euler_17', 'bend_euler_18', 'straight_21', 'straight_22', 'straight_23', 'straight_24', 'straight_25', 'grating_coupler_elliptical_trenches_1', 'grating_coupler_elliptical_trenches_2', 'grating_coupler_elliptical_trenches_3', 'grating_coupler_elliptical_trenches_4', 'grating_coupler_elliptical_trenches_5', 'grating_coupler_elliptical_trenches_6', 'mmi2x2_1'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mmi_te_ehva</span><span class="o">.</span><span class="n">get_labels</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&lt;gdstk.Label at 0x7fc347cd0ab0&gt;]
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Pack">
+<h2>Pack<a class="headerlink" href="#Pack" title="Permalink to this headline">#</a></h2>
+<p>Lets start with a resistance sweep, where you change the resistance width to measure sheet resistance.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sweep</span> <span class="o">=</span> <span class="p">[</span><span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">resistance_sheet</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span> <span class="k">for</span> <span class="n">width</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]]</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">sweep</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_15_0.png" src="../_images/notebooks_07_mask_15_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+pack_0_e1ddc4db: uid e1ddc4db, ports ['resistance_sheet_width100_0_pad1', 'resistance_sheet_width100_0_pad2', 'resistance_sheet_width1_1_pad1', 'resistance_sheet_width1_1_pad2', 'resistance_sheet_2_pad1', 'resistance_sheet_2_pad2'], references ['resistance_sheet_1', 'resistance_sheet_2', 'resistance_sheet_3'], 0 polygons</div>
+</div>
+<p>Then we add spirals with different lengths to measure waveguide propagation loss.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spiral</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">spiral_inner_io_fiber_single</span><span class="p">()</span>
+<span class="n">spiral</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_17_0.png" src="../_images/notebooks_07_mask_17_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+spiral_inner_io_2a92e51_825ccbf1: uid 9aeee25b, ports ['o2', 'o1'], references ['spiral_inner_io_1', 'bend_euler_1', 'bend_euler_2'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spiral_te</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">add_fiber_single</span><span class="p">(</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">spiral_inner_io_fiber_single</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">spiral_te</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_18_0.png" src="../_images/notebooks_07_mask_18_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+spiral_inner_io_2a92e51_ecd14920: uid 61f3a980, ports ['vertical_te_0', 'vertical_te_1', 'loopback1', 'loopback2'], references ['move_1', 'grating_coupler_elliptical_trenches_1', 'grating_coupler_elliptical_trenches_2', 'straight_1', 'grating_coupler_elliptical_trenches_3', 'grating_coupler_elliptical_trenches_4'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># which is equivalent to</span>
+<span class="n">spiral_te</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">add_fiber_single</span><span class="p">,</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">rotate90</span><span class="p">,</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">spiral_inner_io_fiber_single</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">spiral_te</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mf">10e3</span><span class="p">)</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_19_0.png" src="../_images/notebooks_07_mask_19_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+spiral_inner_io_fdc8380_e3832d19: uid 7c8d2362, ports ['vertical_te_0', 'vertical_te_1', 'loopback1', 'loopback2'], references ['move_1', 'grating_coupler_elliptical_trenches_1', 'grating_coupler_elliptical_trenches_2', 'straight_1', 'grating_coupler_elliptical_trenches_3', 'grating_coupler_elliptical_trenches_4'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gdsfactory</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">add_label_ehva_mpw1</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">add_label_ehva</span><span class="p">,</span> <span class="n">die</span><span class="o">=</span><span class="s2">&quot;mpw1&quot;</span><span class="p">)</span>
+<span class="n">add_fiber_single_no_labels</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">add_fiber_single</span><span class="p">,</span> <span class="n">get_input_label_text_function</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+
+<span class="n">spiral_te</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
+    <span class="n">add_label_ehva_mpw1</span><span class="p">,</span>
+    <span class="n">add_fiber_single_no_labels</span><span class="p">,</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">rotate90</span><span class="p">,</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">spiral_inner_io_fiber_single</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">sweep</span> <span class="o">=</span> <span class="p">[</span><span class="n">spiral_te</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="n">length</span><span class="p">)</span> <span class="k">for</span> <span class="n">length</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">10e3</span><span class="p">,</span> <span class="mf">20e3</span><span class="p">,</span> <span class="mf">30e3</span><span class="p">]]</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">sweep</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_20_0.png" src="../_images/notebooks_07_mask_20_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+pack_0_d922e6b3: uid d922e6b3, ports ['spiral_inner_io_d5fcbb4_10e07edd_0_vertical_te_0', 'spiral_inner_io_d5fcbb4_10e07edd_0_vertical_te_1', 'spiral_inner_io_d5fcbb4_10e07edd_0_loopback1', 'spiral_inner_io_d5fcbb4_10e07edd_0_loopback2', 'spiral_inner_io_0f60acb_8579b98a_1_vertical_te_0', 'spiral_inner_io_0f60acb_8579b98a_1_vertical_te_1', 'spiral_inner_io_0f60acb_8579b98a_1_loopback1', 'spiral_inner_io_0f60acb_8579b98a_1_loopback2', 'spiral_inner_io_fdc8380_324f4326_2_vertical_te_0', 'spiral_inner_io_fdc8380_324f4326_2_vertical_te_1', 'spiral_inner_io_fdc8380_324f4326_2_loopback1', 'spiral_inner_io_fdc8380_324f4326_2_loopback2'], references ['add_fiber_single_1', 'add_fiber_single_2', 'add_fiber_single_3'], 0 polygons</div>
+</div>
+<p>Together with GDS labels that are not fabricated, you can also add some physical labels that will be fabricated.</p>
+<p>For example you can add prefix <code class="docutils literal notranslate"><span class="pre">S</span></code> at the <code class="docutils literal notranslate"><span class="pre">north-center</span></code> of each spiral using <code class="docutils literal notranslate"><span class="pre">text_rectangular</span></code> which is DRC clean and anchored on <code class="docutils literal notranslate"><span class="pre">nc</span></code> (north-center)</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text_metal3</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">text_rectangular_multi_layer</span><span class="p">,</span> <span class="n">layers</span><span class="o">=</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">LAYER</span><span class="o">.</span><span class="n">M3</span><span class="p">,)</span>
+<span class="p">)</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">sweep</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text_metal3</span><span class="p">,</span> <span class="n">text_anchors</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;nc&quot;</span><span class="p">,),</span> <span class="n">text_prefix</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_22_0.png" src="../_images/notebooks_07_mask_22_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+pack_0_21feba44: uid 21feba44, ports ['spiral_inner_io_d5fcbb4_10e07edd_0_vertical_te_0', 'spiral_inner_io_d5fcbb4_10e07edd_0_vertical_te_1', 'spiral_inner_io_d5fcbb4_10e07edd_0_loopback1', 'spiral_inner_io_d5fcbb4_10e07edd_0_loopback2', 'spiral_inner_io_0f60acb_8579b98a_1_vertical_te_0', 'spiral_inner_io_0f60acb_8579b98a_1_vertical_te_1', 'spiral_inner_io_0f60acb_8579b98a_1_loopback1', 'spiral_inner_io_0f60acb_8579b98a_1_loopback2', 'spiral_inner_io_fdc8380_324f4326_2_vertical_te_0', 'spiral_inner_io_fdc8380_324f4326_2_vertical_te_1', 'spiral_inner_io_fdc8380_324f4326_2_loopback1', 'spiral_inner_io_fdc8380_324f4326_2_loopback2'], references ['add_fiber_single_1', 'copy_layers_1', 'add_fiber_single_2', 'copy_layers_2', 'add_fiber_single_3', 'copy_layers_3'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text_metal2</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="n">gf</span><span class="o">.</span><span class="n">LAYER</span><span class="o">.</span><span class="n">M2</span><span class="p">)</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">sweep</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text_metal2</span><span class="p">,</span> <span class="n">text_anchors</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;nc&quot;</span><span class="p">,),</span> <span class="n">text_prefix</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_23_0.png" src="../_images/notebooks_07_mask_23_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+pack_0_48a75ca8: uid 48a75ca8, ports ['spiral_inner_io_d5fcbb4_10e07edd_0_vertical_te_0', 'spiral_inner_io_d5fcbb4_10e07edd_0_vertical_te_1', 'spiral_inner_io_d5fcbb4_10e07edd_0_loopback1', 'spiral_inner_io_d5fcbb4_10e07edd_0_loopback2', 'spiral_inner_io_0f60acb_8579b98a_1_vertical_te_0', 'spiral_inner_io_0f60acb_8579b98a_1_vertical_te_1', 'spiral_inner_io_0f60acb_8579b98a_1_loopback1', 'spiral_inner_io_0f60acb_8579b98a_1_loopback2', 'spiral_inner_io_fdc8380_324f4326_2_vertical_te_0', 'spiral_inner_io_fdc8380_324f4326_2_vertical_te_1', 'spiral_inner_io_fdc8380_324f4326_2_loopback1', 'spiral_inner_io_fdc8380_324f4326_2_loopback2'], references ['add_fiber_single_1', 'text_1', 'add_fiber_single_2', 'text_2', 'add_fiber_single_3', 'text_3'], 0 polygons</div>
+</div>
+</section>
+<section id="Grid">
+<h2>Grid<a class="headerlink" href="#Grid" title="Permalink to this headline">#</a></h2>
+<p>You can also pack components with a constant spacing.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">sweep</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_25_0.png" src="../_images/notebooks_07_mask_25_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+grid_602bdf14: uid 7dce6569, ports ['0_0_vertical_te_0', '0_0_vertical_te_1', '0_0_loopback1', '0_0_loopback2', '1_0_vertical_te_0', '1_0_vertical_te_1', '1_0_loopback1', '1_0_loopback2', '2_0_vertical_te_0', '2_0_vertical_te_1', '2_0_loopback1', '2_0_loopback2'], references ['0_0', '1_0', '2_0'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">sweep</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sweep</span><span class="p">)))</span>
+<span class="n">gh</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_26_0.png" src="../_images/notebooks_07_mask_26_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+grid_03a549e7: uid 326d652e, ports ['0_0_vertical_te_0', '0_0_vertical_te_1', '0_0_loopback1', '0_0_loopback2', '0_1_vertical_te_0', '0_1_vertical_te_1', '0_1_loopback1', '0_1_loopback2', '0_2_vertical_te_0', '0_2_vertical_te_1', '0_2_loopback1', '0_2_loopback2'], references ['0_0', '0_1', '0_2'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh_ymin</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">sweep</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sweep</span><span class="p">)),</span> <span class="n">align_y</span><span class="o">=</span><span class="s2">&quot;ymin&quot;</span><span class="p">)</span>
+<span class="n">gh_ymin</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_27_0.png" src="../_images/notebooks_07_mask_27_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+grid_934da313: uid a13448e1, ports ['0_0_vertical_te_0', '0_0_vertical_te_1', '0_0_loopback1', '0_0_loopback2', '0_1_vertical_te_0', '0_1_vertical_te_1', '0_1_loopback1', '0_1_loopback2', '0_2_vertical_te_0', '0_2_vertical_te_1', '0_2_loopback1', '0_2_loopback2'], references ['0_0', '0_1', '0_2'], 0 polygons</div>
+</div>
+<p>You can also add text labels to each element of the sweep</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh_ymin</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">grid_with_text</span><span class="p">(</span>
+    <span class="n">sweep</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sweep</span><span class="p">)),</span> <span class="n">align_y</span><span class="o">=</span><span class="s2">&quot;ymin&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text_metal3</span>
+<span class="p">)</span>
+<span class="n">gh_ymin</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_29_0.png" src="../_images/notebooks_07_mask_29_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+grid_with_text_f76ee5e0: uid b046ca75, ports [], references ['grid_1', 'copy_layers_1', 'copy_layers_2', 'copy_layers_3'], 0 polygons</div>
+</div>
+<p>You can modify the text by customizing the <code class="docutils literal notranslate"><span class="pre">text_function</span></code> that you pass to <code class="docutils literal notranslate"><span class="pre">grid_with_text</span></code></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gh_ymin_m2</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">grid_with_text</span><span class="p">(</span>
+    <span class="n">sweep</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sweep</span><span class="p">)),</span> <span class="n">align_y</span><span class="o">=</span><span class="s2">&quot;ymin&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text_metal2</span>
+<span class="p">)</span>
+<span class="n">gh_ymin_m2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_31_0.png" src="../_images/notebooks_07_mask_31_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+grid_with_text_e7ad2b1a: uid cb71d0e5, ports [], references ['grid_1', 'text_1', 'text_2', 'text_3'], 0 polygons</div>
+</div>
+<p>You have 2 ways of defining a mask:</p>
+<ol class="arabic simple">
+<li><p>in python</p></li>
+<li><p>in YAML</p></li>
+</ol>
+</section>
+<section id="Component-in-python">
+<h2>Component in python<a class="headerlink" href="#Component-in-python" title="Permalink to this headline">#</a></h2>
+<p>You can define a Component top cell reticle or die using <code class="docutils literal notranslate"><span class="pre">grid</span></code> and <code class="docutils literal notranslate"><span class="pre">pack</span></code> python functions.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gdsfactory</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">text_metal3</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">text_rectangular_multi_layer</span><span class="p">,</span> <span class="n">layers</span><span class="o">=</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">LAYER</span><span class="o">.</span><span class="n">M3</span><span class="p">,)</span>
+<span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">grid_with_text</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text_metal3</span><span class="p">)</span>
+<span class="n">pack</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">pack</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text_metal3</span><span class="p">)</span>
+
+<span class="n">gratings_sweep</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">grating_coupler_elliptical</span><span class="p">(</span><span class="n">taper_angle</span><span class="o">=</span><span class="n">taper_angle</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">taper_angle</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">gratings</span> <span class="o">=</span> <span class="n">grid</span><span class="p">(</span><span class="n">gratings_sweep</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">gratings</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_33_0.png" src="../_images/notebooks_07_mask_33_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+grid_with_text_f921cf21: uid 78d78a01, ports [], references ['grid_1'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gratings_sweep</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">grating_coupler_elliptical</span><span class="p">(</span><span class="n">taper_angle</span><span class="o">=</span><span class="n">taper_angle</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">taper_angle</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">gratings_loss_sweep</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">grating_coupler_loss_fiber_single</span><span class="p">(</span><span class="n">grating_coupler</span><span class="o">=</span><span class="n">grating</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">grating</span> <span class="ow">in</span> <span class="n">gratings_sweep</span>
+<span class="p">]</span>
+<span class="n">gratings</span> <span class="o">=</span> <span class="n">grid</span><span class="p">(</span>
+    <span class="n">gratings_loss_sweep</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">gratings_loss_sweep</span><span class="p">)),</span> <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">gratings</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_34_0.png" src="../_images/notebooks_07_mask_34_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+grid_with_text_5d132578: uid 3457417d, ports [], references ['grid_1', 'copy_layers_1', 'copy_layers_2', 'copy_layers_3'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sweep_resistance</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">resistance_sheet</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span> <span class="k">for</span> <span class="n">width</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">resistance</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">sweep_resistance</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">resistance</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_35_0.png" src="../_images/notebooks_07_mask_35_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+pack_0_00f938b8: uid 00f938b8, ports ['resistance_sheet_width100_0_pad1', 'resistance_sheet_width100_0_pad2', 'resistance_sheet_width1_1_pad1', 'resistance_sheet_width1_1_pad2', 'resistance_sheet_2_pad1', 'resistance_sheet_2_pad2'], references ['resistance_sheet_1', 'resistance_sheet_2', 'resistance_sheet_3'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spiral_te</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">add_fiber_single</span><span class="p">,</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">rotate90</span><span class="p">,</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">spiral_inner_io_fiber_single</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">sweep_spirals</span> <span class="o">=</span> <span class="p">[</span><span class="n">spiral_te</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="n">length</span><span class="p">)</span> <span class="k">for</span> <span class="n">length</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">10e3</span><span class="p">,</span> <span class="mf">20e3</span><span class="p">,</span> <span class="mf">30e3</span><span class="p">]]</span>
+<span class="n">spirals</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">sweep_spirals</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">spirals</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_36_0.png" src="../_images/notebooks_07_mask_36_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+pack_0_fb8bebdf: uid fb8bebdf, ports ['spiral_inner_io_d5fcbb4_a691242b_0_vertical_te_0', 'spiral_inner_io_d5fcbb4_a691242b_0_vertical_te_1', 'spiral_inner_io_d5fcbb4_a691242b_0_loopback1', 'spiral_inner_io_d5fcbb4_a691242b_0_loopback2', 'spiral_inner_io_0f60acb_cb00603c_1_vertical_te_0', 'spiral_inner_io_0f60acb_cb00603c_1_vertical_te_1', 'spiral_inner_io_0f60acb_cb00603c_1_loopback1', 'spiral_inner_io_0f60acb_cb00603c_1_loopback2', 'spiral_inner_io_fdc8380_e3832d19_2_vertical_te_0', 'spiral_inner_io_fdc8380_e3832d19_2_vertical_te_1', 'spiral_inner_io_fdc8380_e3832d19_2_loopback1', 'spiral_inner_io_fdc8380_e3832d19_2_loopback2'], references ['add_fiber_single_1', 'add_fiber_single_2', 'add_fiber_single_3'], 0 polygons</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">pack</span><span class="p">([</span><span class="n">spirals</span><span class="p">,</span> <span class="n">resistance</span><span class="p">,</span> <span class="n">gratings</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">mask</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_37_0.png" src="../_images/notebooks_07_mask_37_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+pack_0_ba79617d: uid ba79617d, ports ['pack_0_fb8bebdf_0_spiral_inner_io_d5fcbb4_a691242b_0_vertical_te_0', 'pack_0_fb8bebdf_0_spiral_inner_io_d5fcbb4_a691242b_0_vertical_te_1', 'pack_0_fb8bebdf_0_spiral_inner_io_d5fcbb4_a691242b_0_loopback1', 'pack_0_fb8bebdf_0_spiral_inner_io_d5fcbb4_a691242b_0_loopback2', 'pack_0_fb8bebdf_0_spiral_inner_io_0f60acb_cb00603c_1_vertical_te_0', 'pack_0_fb8bebdf_0_spiral_inner_io_0f60acb_cb00603c_1_vertical_te_1', 'pack_0_fb8bebdf_0_spiral_inner_io_0f60acb_cb00603c_1_loopback1', 'pack_0_fb8bebdf_0_spiral_inner_io_0f60acb_cb00603c_1_loopback2', 'pack_0_fb8bebdf_0_spiral_inner_io_fdc8380_e3832d19_2_vertical_te_0', 'pack_0_fb8bebdf_0_spiral_inner_io_fdc8380_e3832d19_2_vertical_te_1', 'pack_0_fb8bebdf_0_spiral_inner_io_fdc8380_e3832d19_2_loopback1', 'pack_0_fb8bebdf_0_spiral_inner_io_fdc8380_e3832d19_2_loopback2', 'pack_0_00f938b8_1_resistance_sheet_width100_0_pad1', 'pack_0_00f938b8_1_resistance_sheet_width100_0_pad2', 'pack_0_00f938b8_1_resistance_sheet_width1_1_pad1', 'pack_0_00f938b8_1_resistance_sheet_width1_1_pad2', 'pack_0_00f938b8_1_resistance_sheet_2_pad1', 'pack_0_00f938b8_1_resistance_sheet_2_pad2'], references ['pack_0_fb8bebdf_1', 'pack_0_00f938b8_1', 'grid_with_text_1'], 0 polygons</div>
+</div>
+<p>As you can see you can define your mask in a single line.</p>
+<p>For more complex mask, you can also create a new cell to build up more complexity</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@gf</span><span class="o">.</span><span class="n">cell</span>
+<span class="k">def</span> <span class="nf">mask</span><span class="p">():</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">Component</span><span class="p">()</span>
+    <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">gf</span><span class="o">.</span><span class="n">pack</span><span class="p">([</span><span class="n">spirals</span><span class="p">,</span> <span class="n">resistance</span><span class="p">,</span> <span class="n">gratings</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">seal_ring</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">c</span>
+
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">mask</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_39_0.png" src="../_images/notebooks_07_mask_39_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+mask: uid 731c0b7c, ports [], references ['pack_0_3a42fb0f_1', 'seal_ring_1'], 0 polygons</div>
+</div>
+</section>
+<section id="Metadata">
+<h2>Metadata<a class="headerlink" href="#Metadata" title="Permalink to this headline">#</a></h2>
+<p>When saving GDS files is also convenient to store the metadata settings that you used to generate the GDS file.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdspath</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">write_gds_with_metadata</span><span class="p">(</span><span class="n">gdsdir</span><span class="o">=</span><span class="s2">&quot;extra&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+2022-11-27 23:45:27.542 | INFO     | gdsfactory.component:_write_library:1454 - Wrote to &#39;extra/mask.gds&#39;
+2022-11-27 23:45:28.324 | INFO     | gdsfactory.component:write_gds_with_metadata:1539 - Write YAML metadata to &#39;extra/mask.yml&#39;
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yaml_path</span> <span class="o">=</span> <span class="n">gdspath</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.yml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels_path</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">write_labels</span><span class="o">.</span><span class="n">write_labels_klayout</span><span class="p">(</span>
+    <span class="n">gdspath</span><span class="o">=</span><span class="n">gdspath</span><span class="p">,</span> <span class="n">layer_label</span><span class="o">=</span><span class="p">(</span><span class="mi">201</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+2022-11-27 23:45:28.410 | INFO     | gdsfactory.labels.write_labels:write_labels_klayout:85 - Wrote 18 labels to CSV /home/runner/work/gdsfactory/gdsfactory/docs/notebooks/extra/mask.csv
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">omegaconf</span> <span class="kn">import</span> <span class="n">OmegaConf</span>
+
+<span class="n">mask_metadata</span> <span class="o">=</span> <span class="n">OmegaConf</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">yaml_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_metadata</span> <span class="o">=</span> <span class="n">tm</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">merge_test_metadata</span><span class="p">(</span>
+    <span class="n">labels_path</span><span class="o">=</span><span class="n">labels_path</span><span class="p">,</span> <span class="n">mask_metadata</span><span class="o">=</span><span class="n">mask_metadata</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tm</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([&#39;spiral_inner_io_d5fcbb42&#39;, &#39;spiral_inner_io_0f60acb9&#39;, &#39;spiral_inner_io_fdc8380c&#39;, &#39;grating_coupler_ellipti_396d882b&#39;, &#39;grating_coupler_ellipti_54408399&#39;, &#39;grating_coupler_ellipti_4b8de7b1&#39;])
+</pre></div></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CSV labels  ------|
+                  |--&gt; merge_test_metadata dict
+                  |
+YAML metatada  ---
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spiral_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">test_metadata</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;spiral&quot;</span><span class="p">)]</span>
+<span class="n">spiral_names</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;spiral_inner_io_d5fcbb42&#39;,
+ &#39;spiral_inner_io_0f60acb9&#39;,
+ &#39;spiral_inner_io_fdc8380c&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spiral_lengths</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">test_metadata</span><span class="p">[</span><span class="n">spiral_name</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">length</span> <span class="k">for</span> <span class="n">spiral_name</span> <span class="ow">in</span> <span class="n">spiral_names</span>
+<span class="p">]</span>
+<span class="n">spiral_lengths</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[29999.994, 20000.004, 9999.992]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gc_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">test_metadata</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;grating&quot;</span><span class="p">)]</span>
+<span class="n">gc_names</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;grating_coupler_ellipti_396d882b&#39;,
+ &#39;grating_coupler_ellipti_54408399&#39;,
+ &#39;grating_coupler_ellipti_4b8de7b1&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gc_taper_angles</span> <span class="o">=</span> <span class="p">[</span><span class="n">test_metadata</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">full</span><span class="o">.</span><span class="n">taper_angle</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">gc_names</span><span class="p">]</span>
+<span class="n">gc_taper_angles</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[20, 30, 40]
+</pre></div></div>
+</div>
+</section>
+<section id="Component-in-YAML">
+<h2>Component in YAML<a class="headerlink" href="#Component-in-YAML" title="Permalink to this headline">#</a></h2>
+<p>You can also define your component in YAML format thanks to <code class="docutils literal notranslate"><span class="pre">gdsfactory.read.from_yaml</span></code></p>
+<p>You need to define:</p>
+<ul class="simple">
+<li><p>instances</p></li>
+<li><p>placements</p></li>
+</ul>
+<p>and you can leverage:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pack_doe</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pack_doe_grid</span></code></p></li>
+</ol>
+<section id="1.-pack_doe">
+<h3>1. pack_doe<a class="headerlink" href="#1.-pack_doe" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pack_doe</span></code> places components as compact as possible</p>
+<p>When running this tutorial make sure you UNCOMMENT this line <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">widget</span></code> so you can live update your changes in the YAML file</p>
+<p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">%matplotlib</span> <span class="pre">widget</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">widget</span></code></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %matplotlib widget</span>
+
+<span class="kn">import</span> <span class="nn">ipywidgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">gdsfactory</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">Textarea</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="mi">480</span><span class="p">)</span>
+
+<span class="n">x</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">name: mask_grid</span>
+
+<span class="s2">instances:</span>
+<span class="s2">  rings:</span>
+<span class="s2">    component: pack_doe</span>
+<span class="s2">    settings:</span>
+<span class="s2">      doe: ring_single</span>
+<span class="s2">      settings:</span>
+<span class="s2">        radius: [30, 50, 20, 40]</span>
+<span class="s2">        length_x: [1, 2, 3]</span>
+<span class="s2">      do_permutations: True</span>
+<span class="s2">      function:</span>
+<span class="s2">        function: add_fiber_array</span>
+<span class="s2">        settings:</span>
+<span class="s2">            fanout_length: 200</span>
+
+<span class="s2">  mzis:</span>
+<span class="s2">    component: pack_doe</span>
+<span class="s2">    settings:</span>
+<span class="s2">      doe: mzi</span>
+<span class="s2">      settings:</span>
+<span class="s2">        delta_length: [10, 100]</span>
+<span class="s2">      function: add_fiber_array</span>
+
+<span class="s2">placements:</span>
+<span class="s2">  rings:</span>
+<span class="s2">    xmin: 50</span>
+
+<span class="s2">  mzis:</span>
+<span class="s2">    xmin: rings,east</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">out</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">change</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">])</span>
+        <span class="c1"># clear_output()</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">show_ports</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+        <span class="k">with</span> <span class="n">out</span><span class="p">:</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+
+<span class="n">x</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="p">({</span><span class="s2">&quot;new&quot;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "791fc987e7204663b585f6741a84ca77"}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ba85fd9a3b5240129db78a15d419f5b1"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_55_2.png" src="../_images/notebooks_07_mask_55_2.png" />
+</div>
+</div>
+</section>
+<section id="2.-pack_doe_grid">
+<h3>2. pack_doe_grid<a class="headerlink" href="#2.-pack_doe_grid" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pack_doe_grid</span></code> places each component on a regular grid</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">name: mask_compact</span>
+
+<span class="s2">instances:</span>
+<span class="s2">  rings:</span>
+<span class="s2">    component: pack_doe</span>
+<span class="s2">    settings:</span>
+<span class="s2">      doe: ring_single</span>
+<span class="s2">      settings:</span>
+<span class="s2">        radius: [30, 50, 20, 40]</span>
+<span class="s2">        length_x: [1, 2, 3]</span>
+<span class="s2">      do_permutations: True</span>
+<span class="s2">      function:</span>
+<span class="s2">        function: add_fiber_array</span>
+<span class="s2">        settings:</span>
+<span class="s2">            fanout_length: 200</span>
+
+
+<span class="s2">  mzis:</span>
+<span class="s2">    component: pack_doe_grid</span>
+<span class="s2">    settings:</span>
+<span class="s2">      doe: mzi</span>
+<span class="s2">      settings:</span>
+<span class="s2">        delta_length: [10, 100]</span>
+<span class="s2">      do_permutations: True</span>
+<span class="s2">      spacing: [10, 10]</span>
+<span class="s2">      function: add_fiber_array</span>
+
+<span class="s2">placements:</span>
+<span class="s2">  rings:</span>
+<span class="s2">    xmin: 50</span>
+
+<span class="s2">  mzis:</span>
+<span class="s2">    xmin: rings,east</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_57_0.png" src="../_images/notebooks_07_mask_57_0.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "791fc987e7204663b585f6741a84ca77"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ba85fd9a3b5240129db78a15d419f5b1"}</script></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gdsfactory</span> <span class="k">as</span> <span class="nn">gf</span>
+
+
+<span class="k">def</span> <span class="nf">mzi_te</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">gc</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">grating_coupler_elliptical_tm</span><span class="p">()</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">mzi_phase_shifter_top_heater_metal</span><span class="p">(</span><span class="n">delta_length</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">add_fiber_single</span><span class="p">(</span>
+        <span class="n">c</span><span class="p">,</span> <span class="n">get_input_label_text_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">grating_coupler</span><span class="o">=</span><span class="n">gc</span>
+    <span class="p">)</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">add_label_yaml</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">c</span>
+
+
+<span class="c1"># Lets write a mask</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">mzi_te</span><span class="p">(),</span>
+        <span class="n">mzi_te</span><span class="p">(),</span>
+        <span class="n">gf</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">mzi_te</span><span class="p">),</span>
+        <span class="n">gf</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">add_label_yaml</span><span class="p">(</span>
+            <span class="n">gf</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">mirror</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">routing</span><span class="o">.</span><span class="n">add_fiber_single</span><span class="p">(</span><span class="n">gf</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">mmi1x2</span><span class="p">))</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="n">gdspath</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">write_gds</span><span class="p">(</span><span class="s2">&quot;mask.gds&quot;</span><span class="p">)</span>
+<span class="n">csvpath</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">write_labels</span><span class="o">.</span><span class="n">write_labels_gdstk</span><span class="p">(</span><span class="n">gdspath</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;component_name&quot;</span><span class="p">)</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+2022-11-27 23:45:31.074 | INFO     | gdsfactory.component:_write_library:1454 - Wrote to &#39;mask.gds&#39;
+2022-11-27 23:45:31.078 | INFO     | gdsfactory.labels.write_labels:write_labels_gdstk:130 - Wrote 10 labels to /home/runner/work/gdsfactory/gdsfactory/docs/notebooks/mask.csv
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_58_1.png" src="../_images/notebooks_07_mask_58_1.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+grid_aafbbaff: uid b5eea6ef, ports ['0_0_e1', '0_0_e2', '0_0_vertical_tm_0', '0_0_vertical_tm_1', '0_0_loopback1', '0_0_loopback2', '1_0_e1', '1_0_e2', '1_0_vertical_tm_0', '1_0_vertical_tm_1', '1_0_loopback1', '1_0_loopback2', '2_0_e1', '2_0_e2', '2_0_vertical_tm_0', '2_0_vertical_tm_1', '2_0_loopback1', '2_0_loopback2', '3_0_vertical_te_00', '3_0_vertical_te_1', '3_0_vertical_te_2', '3_0_loopback1', '3_0_loopback2'], references ['0_0', '1_0', '2_0', '3_0'], 0 polygons</div>
+</div>
+<p>Lets add some <code class="docutils literal notranslate"><span class="pre">blue</span></code> markers to make sure we can find all the grating couplers that we need to test.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gdsfactory.read.labels</span> <span class="kn">import</span> <span class="n">read_labels_yaml</span><span class="p">,</span> <span class="n">add_port_markers</span>
+
+<span class="c1"># You can make sure that all the ports will be tested by adding port markers</span>
+<span class="n">add_port_markers</span><span class="p">(</span><span class="n">gdspath</span><span class="o">=</span><span class="n">gdspath</span><span class="p">,</span> <span class="n">csvpath</span><span class="o">=</span><span class="n">csvpath</span><span class="p">,</span> <span class="n">marker_size</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_07_mask_60_0.png" src="../_images/notebooks_07_mask_60_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+overlay: uid f2ddbdf2, ports [], references ['grid_aafbbaff_1', 'rectangle_1', 'rectangle_2', 'rectangle_3', 'rectangle_4', 'rectangle_5', 'rectangle_6', 'rectangle_7', 'rectangle_8', 'rectangle_9', 'rectangle_10', 'rectangle_11', 'rectangle_12', 'rectangle_13', 'rectangle_14', 'rectangle_15', 'rectangle_16', 'rectangle_17'], 0 polygons</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"16eed0e3a67c4f8e857f2e8147eb616d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9120cbaa2ee04e3a83cccddcff568c20": {"model_name": "TextStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TextStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "791fc987e7204663b585f6741a84ca77": {"model_name": "TextareaModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "TextareaModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "TextareaView", "continuous_update": true, "description": "", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_16eed0e3a67c4f8e857f2e8147eb616d", "placeholder": "\u200b", "rows": 20, "style": "IPY_MODEL_9120cbaa2ee04e3a83cccddcff568c20", "tabbable": null, "tooltip": null, "value": "\nname: mask_compact\n\ninstances:\n  rings:\n    component: pack_doe\n    settings:\n      doe: ring_single\n      settings:\n        radius: [30, 50, 20, 40]\n        length_x: [1, 2, 3]\n      do_permutations: True\n      function:\n        function: add_fiber_array\n        settings:\n            fanout_length: 200\n\n\n  mzis:\n    component: pack_doe_grid\n    settings:\n      doe: mzi\n      settings:\n        delta_length: [10, 100]\n      do_permutations: True\n      spacing: [10, 10]\n      function: add_fiber_array\n\nplacements:\n  rings:\n    xmin: 50\n\n  mzis:\n    xmin: rings,east\n"}}, "b129b2da32d74b9987c5d23e89ffe274": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ba85fd9a3b5240129db78a15d419f5b1": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_b129b2da32d74b9987c5d23e89ffe274", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="041_routing_electical.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Routing electrical</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="08_pdk.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PDK</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+      &copy; Copyright 2020, MIT License.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

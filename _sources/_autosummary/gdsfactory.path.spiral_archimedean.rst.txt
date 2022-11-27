@@ -1,0 +1,6 @@
+﻿gdsfactory.path.spiral\_archimedean
+===================================
+
+.. currentmodule:: gdsfactory.path
+
+.. autofunction:: spiral_archimedean

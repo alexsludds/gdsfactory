@@ -1,0 +1,6 @@
+﻿gdsfactory.read.from\_np
+========================
+
+.. currentmodule:: gdsfactory.read
+
+.. autofunction:: from_np

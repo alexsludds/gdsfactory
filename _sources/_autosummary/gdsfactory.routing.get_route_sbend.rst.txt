@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.get\_route\_sbend
+====================================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: get_route_sbend

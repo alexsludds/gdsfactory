@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.gtidy3d.write\_sparameters\_grating\_coupler
+==================================================================
+
+.. currentmodule:: gdsfactory.simulation.gtidy3d
+
+.. autofunction:: write_sparameters_grating_coupler

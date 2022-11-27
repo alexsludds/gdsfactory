@@ -1,0 +1,6 @@
+﻿gdsfactory.get\_netlist.get\_netlist
+====================================
+
+.. currentmodule:: gdsfactory.get_netlist
+
+.. autofunction:: get_netlist

@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.plot.plot\_loss2x2
+========================================
+
+.. currentmodule:: gdsfactory.simulation.plot
+
+.. autofunction:: plot_loss2x2

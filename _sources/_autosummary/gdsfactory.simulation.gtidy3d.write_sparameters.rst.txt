@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.gtidy3d.write\_sparameters
+================================================
+
+.. currentmodule:: gdsfactory.simulation.gtidy3d
+
+.. autofunction:: write_sparameters

@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.simphony.plot\_model
+==========================================
+
+.. currentmodule:: gdsfactory.simulation.simphony
+
+.. autofunction:: plot_model

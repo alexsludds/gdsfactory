@@ -1,0 +1,6 @@
+﻿gdsfactory.cell\_without\_validator
+===================================
+
+.. currentmodule:: gdsfactory
+
+.. autofunction:: cell_without_validator

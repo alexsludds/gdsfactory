@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.modes.find\_neff\_vs\_width
+=================================================
+
+.. currentmodule:: gdsfactory.simulation.modes
+
+.. autofunction:: find_neff_vs_width

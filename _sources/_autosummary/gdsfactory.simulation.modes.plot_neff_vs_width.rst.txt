@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.modes.plot\_neff\_vs\_width
+=================================================
+
+.. currentmodule:: gdsfactory.simulation.modes
+
+.. autofunction:: plot_neff_vs_width

@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.simphony.plot\_circuit\_montecarlo
+========================================================
+
+.. currentmodule:: gdsfactory.simulation.simphony
+
+.. autofunction:: plot_circuit_montecarlo

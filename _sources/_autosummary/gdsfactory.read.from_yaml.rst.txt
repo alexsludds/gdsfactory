@@ -1,0 +1,6 @@
+﻿gdsfactory.read.from\_yaml
+==========================
+
+.. currentmodule:: gdsfactory.read
+
+.. autofunction:: from_yaml

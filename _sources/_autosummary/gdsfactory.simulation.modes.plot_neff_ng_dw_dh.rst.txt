@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.modes.plot\_neff\_ng\_dw\_dh
+==================================================
+
+.. currentmodule:: gdsfactory.simulation.modes
+
+.. autofunction:: plot_neff_ng_dw_dh

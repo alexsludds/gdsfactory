@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.modes.plot\_coupling\_vs\_gap
+===================================================
+
+.. currentmodule:: gdsfactory.simulation.modes
+
+.. autofunction:: plot_coupling_vs_gap

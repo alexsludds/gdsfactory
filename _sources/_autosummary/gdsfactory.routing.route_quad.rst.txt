@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.route\_quad
+==============================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: route_quad

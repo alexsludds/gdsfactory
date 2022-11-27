@@ -1,0 +1,6 @@
+﻿gdsfactory.read.from\_dphox
+===========================
+
+.. currentmodule:: gdsfactory.read
+
+.. autofunction:: from_dphox

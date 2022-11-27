@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.route\_sharp
+===============================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: route_sharp

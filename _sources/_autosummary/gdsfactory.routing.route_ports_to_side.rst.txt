@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.route\_ports\_to\_side
+=========================================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: route_ports_to_side

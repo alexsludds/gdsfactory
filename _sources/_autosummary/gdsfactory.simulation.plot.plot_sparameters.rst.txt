@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.plot.plot\_sparameters
+============================================
+
+.. currentmodule:: gdsfactory.simulation.plot
+
+.. autofunction:: plot_sparameters

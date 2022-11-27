@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.route\_south
+===============================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: route_south

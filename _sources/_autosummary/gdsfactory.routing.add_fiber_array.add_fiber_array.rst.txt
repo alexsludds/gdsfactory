@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.add\_fiber\_array.add\_fiber\_array
+======================================================
+
+.. currentmodule:: gdsfactory.routing.add_fiber_array
+
+.. autofunction:: add_fiber_array

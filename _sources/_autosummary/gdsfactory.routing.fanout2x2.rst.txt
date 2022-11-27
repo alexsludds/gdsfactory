@@ -1,0 +1,6 @@
+﻿gdsfactory.routing.fanout2x2
+============================
+
+.. currentmodule:: gdsfactory.routing
+
+.. autofunction:: fanout2x2

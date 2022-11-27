@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.gtidy3d.modes.group\_index
+================================================
+
+.. currentmodule:: gdsfactory.simulation.gtidy3d.modes
+
+.. autofunction:: group_index

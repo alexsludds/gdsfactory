@@ -1,0 +1,6 @@
+﻿gdsfactory.geometry.write\_drc.rule\_not\_inside
+================================================
+
+.. currentmodule:: gdsfactory.geometry.write_drc
+
+.. autofunction:: rule_not_inside

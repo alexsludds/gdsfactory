@@ -1,0 +1,6 @@
+﻿gdsfactory.cross\_section.Transition
+====================================
+
+.. currentmodule:: gdsfactory.cross_section
+
+.. autopydantic_model:: Transition

@@ -1,0 +1,6 @@
+﻿gdsfactory.grid\_with\_text
+===========================
+
+.. currentmodule:: gdsfactory
+
+.. autofunction:: grid_with_text

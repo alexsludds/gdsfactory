@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.gmeep.write\_sparameters\_meep
+====================================================
+
+.. currentmodule:: gdsfactory.simulation.gmeep
+
+.. autofunction:: write_sparameters_meep

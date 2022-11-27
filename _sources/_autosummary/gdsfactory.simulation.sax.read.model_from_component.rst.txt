@@ -1,0 +1,6 @@
+﻿gdsfactory.simulation.sax.read.model\_from\_component
+=====================================================
+
+.. currentmodule:: gdsfactory.simulation.sax.read
+
+.. autofunction:: model_from_component
